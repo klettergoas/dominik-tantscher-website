@@ -18,14 +18,12 @@ Alle Texte liegen in `src/content/*.json` (1:1 aus den Kundenunterlagen). Kompon
 
 ## Porträt (Über mich)
 
-`assets-source/portrait-original.png` wird freigestellt zu `public/assets/portrait.webp` (macOS nötig, Vision-Framework):
+`public/assets/portrait.webp` ist das Originalfoto, unverändert eingebunden. Der Hintergrund läuft über eine Transparenzmaske (`public/assets/portrait-mask.png`) weich in die Seite aus; die Person bleibt voll deckend. Maske neu erzeugen (macOS nötig, Vision-Framework):
 
 ```bash
-swift scripts/portrait-mask.swift assets-source/portrait-original.png /tmp/mask.png
-python3 scripts/portrait-cutout.py assets-source/portrait-original.png /tmp/mask.png public/assets/portrait.webp
+swift scripts/portrait-mask.swift public/assets/portrait.webp /tmp/silhouette.png
+python3 scripts/portrait-fade-mask.py /tmp/silhouette.png public/assets/portrait-mask.png
 ```
-
-Die Pixel der Person bleiben unverändert; nur die Randzone zum Originalhintergrund wird neu berechnet.
 
 ## Deployment (World4You)
 
