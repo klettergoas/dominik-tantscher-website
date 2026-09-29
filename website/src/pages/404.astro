@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import page from '../content/notfound.json';
+---
+<Base title={page.meta.title} noindex canonical={false}>
+  <section class="section section--flush grid">
+    <div class="notfound">
+      <h1 class="h1">{page.title}</h1>
+      <div><Button href="/">{page.button}</Button></div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    grid-column: 1 / span 9;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 96px;
+  }
+  @media (max-width: 767px) {
+    .notfound { gap: 24px; padding-bottom: 40px; }
+  }
+</style>

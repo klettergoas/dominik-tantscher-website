@@ -1,0 +1,3 @@
+.DS_Store
+# Lokale Server-Angaben fürs Deployment (siehe website/.env.deploy.example)
+.env.deploy

@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import LegalSection from '../components/LegalSection.astro';
+import page from '../content/datenschutz.json';
+
+// Weiche Trennstelle für schmale Bildschirme: „Datenschutz-erklärung“ statt „Datenschutzerklä-rung“
+const title = page.title.replace('Datenschutzerklärung', 'Datenschutz\u00ADerklärung');
+---
+<Base title={page.meta.title} description={page.meta.description}>
+  <section class="grid legal-hero">
+    <div class="page-hero">
+      <SectionLabel>{page.label}</SectionLabel>
+      <h1 class="h1 h1--legal privacy__title">{title}</h1>
+      <p class="lead page-hero__lead">{page.lead}</p>
+    </div>
+  </section>
+
+  <div class="privacy">
+    {page.sections.map((s) => <LegalSection n={s.n} title={s.title} blocks={s.blocks} />)}
+    <p class="label-s privacy__stand">{page.stand}</p>
+  </div>
+</Base>
+
+<style>
+  .legal-hero { padding: var(--sec-y) var(--pad-x) 64px; }
+  .page-hero {
+    grid-column: 1 / span 9;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .page-hero__lead { max-width: 760px; }
+  .privacy__title { hyphens: manual; }
+  .privacy { padding: 0 var(--pad-x) var(--sec-y); }
+  .privacy__stand {
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+  }
+  @media (max-width: 1279px) {
+    .page-hero { grid-column: 1 / span 12; }
+  }
+  @media (max-width: 767px) {
+    .legal-hero { padding-bottom: 40px; }
+  }
+</style>

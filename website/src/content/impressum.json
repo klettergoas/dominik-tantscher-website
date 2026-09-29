@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Impressum · Dominik Tantscher",
+    "description": "Angaben gemäß § 5 E-Commerce-Gesetz und § 25 Mediengesetz"
+  },
+  "title": "Impressum",
+  "intro": "Angaben gemäß § 5 E-Commerce-Gesetz und § 25 Mediengesetz",
+  "rows": [
+    {
+      "k": "",
+      "lines": [
+        "Dominik Tantscher",
+        "Einzelunternehmen",
+        "Am Flurweg 6",
+        "8121 Deutschfeistritz",
+        "Österreich"
+      ]
+    },
+    {
+      "k": "Kontakt",
+      "lines": [
+        "E-Mail: ki@dominik-tantscher.at",
+        "Telefon: 0664 50 77 100"
+      ]
+    },
+    {
+      "k": "Unternehmensgegenstand",
+      "lines": [
+        "Einrichtung und Implementierung von KI-Anwendungen sowie Schulungen für Klein- und Kleinstunternehmen"
+      ]
+    },
+    {
+      "k": "Gewerbewortlaut",
+      "lines": [
+        "Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik"
+      ]
+    },
+    {
+      "k": "Gewerbebehörde",
+      "lines": [
+        "Bezirkshauptmannschaft Graz-Umgebung"
+      ]
+    },
+    {
+      "k": "Umsatzsteuer",
+      "lines": [
+        "Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG. Es wird keine Umsatzsteuer ausgewiesen."
+      ]
+    },
+    {
+      "k": "Verantwortlich für den Inhalt",
+      "lines": [
+        "Dominik Tantscher, Anschrift wie oben"
+      ]
+    }
+  ]
+}

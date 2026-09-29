@@ -1,0 +1,29 @@
+{
+  "name": "Dominik Tantscher",
+  "url": "https://dominik-tantscher.at",
+  "email": "ki@dominik-tantscher.at",
+  "phone": "0664 50 77 100",
+  "phoneHref": "tel:+436645077100",
+  "phoneIntl": "+43 664 5077100",
+  "tallyUrl": "https://tally.so/r/5BRD2d",
+  "tallyLabel": "FRAGEBOGEN AUSFÜLLEN →",
+  "claim": "KI – maßgeschneidert auf Ihre Bedürfnisse.",
+  "address": {
+    "street": "Am Flurweg 6",
+    "zip": "8121",
+    "city": "Deutschfeistritz",
+    "country": "AT"
+  },
+  "nav": [
+    { "key": "start", "label": "START", "mobileLabel": "Start", "href": "/" },
+    { "key": "leistungen", "label": "LEISTUNGEN", "mobileLabel": "Leistungen", "href": "/leistungen" },
+    { "key": "preise", "label": "PREISE", "mobileLabel": "Preise", "href": "/preise" },
+    { "key": "ueber-mich", "label": "ÜBER MICH", "mobileLabel": "Über mich", "href": "/ueber-mich" },
+    { "key": "kontakt", "label": "KONTAKT", "mobileLabel": "Kontakt", "href": "/kontakt" }
+  ],
+  "cta": {
+    "title": "Welcher Ablauf kostet Sie am meisten Zeit?",
+    "text": "Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann."
+  },
+  "pricesButton": { "label": "LEISTUNGEN UND PREISE", "href": "/preise" }
+}

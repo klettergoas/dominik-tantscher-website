@@ -1,0 +1,2 @@
+# Bibliotheken nur per include nutzbar, nicht direkt abrufbar
+Require all denied

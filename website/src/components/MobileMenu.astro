@@ -1,0 +1,164 @@
+---
+import site from '../content/site.json';
+import { nbsp } from '../lib/format';
+
+interface Props { active: string }
+const { active } = Astro.props;
+---
+<div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menü" hidden>
+  <div class="mobile-menu__head">
+    <a class="mobile-menu__logo" href="/">
+      <img src="/assets/dt-lockup.svg" alt="Dominik Tantscher – Startseite" width="151" height="28" />
+    </a>
+    <button class="mobile-menu__close" type="button" aria-label="Menü schließen">✕</button>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Hauptnavigation (Menü)">
+    {site.nav.map((item, i) => (
+      <a href={item.href} aria-current={item.key === active ? 'page' : undefined}>
+        <span>{item.mobileLabel}</span>
+        <span class="mobile-menu__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+      </a>
+    ))}
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="btn btn--primary mobile-menu__cta" href={site.tallyUrl} target="_blank" rel="noopener">{site.tallyLabel}</a>
+    <div class="mobile-menu__contact">
+      <a href={site.phoneHref}>{nbsp(site.phone)}</a>
+      <a href={`mailto:${site.email}`}>E-MAIL</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu__head {
+    flex: none;
+    height: var(--header-h);
+    padding: 0 var(--pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-menu__logo img { height: 28px; width: auto; }
+  .mobile-menu__close {
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    padding: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: var(--text);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
+    padding: 16px var(--pad-x) 0;
+  }
+  .mobile-menu__nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .mobile-menu__nav a:hover { color: var(--accent); }
+  .mobile-menu__n {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-2);
+  }
+  .mobile-menu__nav a[aria-current='page'] .mobile-menu__n { color: var(--accent); }
+  .mobile-menu__foot {
+    margin-top: auto;
+    padding: 24px var(--pad-x) 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mobile-menu__cta {
+    display: block;
+    padding: 18px 20px;
+  }
+  .mobile-menu__contact {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .mobile-menu__contact a {
+    color: var(--text);
+    padding: 10px 0;
+  }
+  .mobile-menu__contact a:hover { color: var(--accent); }
+</style>
+
+<script>
+  const menu = document.getElementById('mobile-menu');
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const close = menu?.querySelector<HTMLButtonElement>('.mobile-menu__close');
+
+  if (menu && toggle && close) {
+    toggle.hidden = false;
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const focusables = () =>
+      Array.from(menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+
+    const open = () => {
+      menu.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+      close.focus();
+    };
+    const shut = (returnFocus = true) => {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      if (returnFocus) toggle.focus();
+    };
+
+    toggle.addEventListener('click', open);
+    close.addEventListener('click', () => shut());
+    menu.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        shut();
+      } else if (e.key === 'Tab') {
+        const items = focusables();
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+    desktop.addEventListener('change', (e) => {
+      if (e.matches && !menu.hidden) shut(false);
+    });
+  }
+</script>

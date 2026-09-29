@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import CtaBox from '../components/CtaBox.astro';
+import page from '../content/ueber-mich.json';
+---
+<Base title={page.meta.title} description={page.meta.description} active="ueber-mich">
+  <section class="section grid hero">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+      <p class="intro">{page.hero.intro}</p>
+    </div>
+    <figure class="portrait">
+      <img
+        src={page.portrait.src}
+        width={page.portrait.width}
+        height={page.portrait.height}
+        alt={page.portrait.alt}
+        fetchpriority="high"
+      />
+    </figure>
+  </section>
+
+  <section class="section grid">
+    <div class="about">
+      {page.paragraphs.map((p) => (
+        <p>{p.strong && <><strong>{p.strong}</strong> </>}{p.text}</p>
+      ))}
+      <div class="card about__highlight">
+        <p>{page.highlight}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--flush cta-wrap">
+    <CtaBox />
+  </section>
+</Base>
+
+<style>
+  .hero { overflow: hidden; }
+  .page-hero {
+    grid-column: 1 / span 7;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Freigestelltes Porträt: reicht bis an die Trennlinie, läuft nach links und unten
+     in den Seitenhintergrund aus; dezenter Lichtschein dahinter hebt Haare vom Grund ab */
+  .portrait {
+    grid-column: 8 / span 5;
+    position: relative;
+    margin: calc(-1 * var(--sec-y) + 24px) 0 calc(-1 * var(--sec-y));
+    align-self: end;
+  }
+  .portrait::before {
+    content: '';
+    position: absolute;
+    inset: 4% -12% 10%;
+    background: radial-gradient(ellipse 50% 50% at 50% 42%, var(--surface), transparent);
+  }
+  .portrait img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 22%);
+    mask-image: linear-gradient(to right, transparent, #000 22%);
+  }
+  .intro {
+    max-width: 820px;
+    font-size: var(--t-quote);
+    line-height: 1.4;
+  }
+  .about {
+    grid-column: 4 / span 7;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+  .about strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+  .about__highlight {
+    margin-top: 12px;
+    padding: 32px;
+  }
+  .about__highlight p {
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .cta-wrap { padding-bottom: 64px; }
+  @media (max-width: 1279px) {
+    .about { grid-column: 3 / span 9; }
+  }
+  @media (max-width: 1023px) {
+    .about { grid-column: 1 / span 12; }
+  }
+  @media (max-width: 767px) {
+    .page-hero { gap: 24px; }
+    .portrait {
+      width: 100%;
+      max-width: 360px;
+      margin: 16px auto calc(-1 * var(--sec-y));
+    }
+    .portrait img {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .about { gap: 24px; font-size: 17px; }
+    .about__highlight { margin-top: 8px; padding: 24px 20px; }
+    .about__highlight p { font-size: 20px; }
+    .cta-wrap { padding-bottom: var(--sec-y); }
+  }
+</style>

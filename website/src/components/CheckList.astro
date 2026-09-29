@@ -1,0 +1,39 @@
+---
+interface Props { items: string[] }
+const { items } = Astro.props;
+---
+<ul class="checklist">
+  {items.map((item) => (
+    <li><span class="check" aria-hidden="true">✓</span><span>{item}</span></li>
+  ))}
+</ul>
+
+<style>
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--border);
+  }
+  .checklist li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 24px 20px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  .checklist .check { margin-top: 2px; }
+  @media (max-width: 767px) {
+    .checklist { grid-template-columns: minmax(0, 1fr); }
+    .checklist li {
+      gap: 14px;
+      padding: 16px 0;
+      font-size: 17px;
+    }
+    .checklist .check { margin-top: 1px; }
+  }
+</style>

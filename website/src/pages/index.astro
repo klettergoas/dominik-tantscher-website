@@ -1,0 +1,191 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import Button from '../components/Button.astro';
+import CheckList from '../components/CheckList.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import BenefitBlock from '../components/BenefitBlock.astro';
+import CtaBox from '../components/CtaBox.astro';
+import start from '../content/start.json';
+import site from '../content/site.json';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: site.name,
+  url: site.url,
+  email: site.email,
+  telephone: site.phoneIntl,
+  image: `${site.url}/og-image.png`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    postalCode: site.address.zip,
+    addressLocality: site.address.city,
+    addressCountry: site.address.country,
+  },
+  areaServed: { '@type': 'Country', name: 'Österreich' },
+};
+---
+<Base title={start.meta.title} description={start.meta.description} active="start">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="section hero grid">
+    <div class="hero__content">
+      <SectionLabel>{start.hero.label}</SectionLabel>
+      <h1 class="h1">{start.hero.title}<br /><span class="accent">{start.hero.titleAccent}</span></h1>
+      <p class="lead hero__lead">{start.hero.lead}</p>
+      <div class="hero__actions">
+        <Button href={site.tallyUrl} external>{site.tallyLabel}</Button>
+        <Button href={site.pricesButton.href} variant="secondary">{site.pricesButton.label}</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid">
+    <SectionLabel class="col-label">{start.why.label}</SectionLabel>
+    <div class="col-content why">
+      <div class="why__text">
+        <h2 class="h2">{start.why.title}</h2>
+        <p class="body">{start.why.text}</p>
+      </div>
+      <div class="card why__goal">
+        <p class="label-s">{start.why.goalLabel}</p>
+        <p class="why__goal-text">{start.why.goal}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid">
+    <SectionLabel class="col-label">{start.pains.label}</SectionLabel>
+    <div class="col-content pains">
+      <h2 class="h2">{start.pains.title}</h2>
+      <CheckList items={start.pains.items} />
+      <p class="pains__summary">{start.pains.summary}</p>
+    </div>
+  </section>
+
+  <section class="section services" aria-labelledby="leistungen-titel">
+    <SectionLabel>{start.servicesLabel}</SectionLabel>
+    <h2 id="leistungen-titel" class="sr-only">Leistungen</h2>
+    <ServiceGrid />
+    <ProcessSteps />
+  </section>
+
+  <BenefitBlock label={start.benefitsLabel} />
+
+  <section class="section grid">
+    <p class="tailored"><strong>{start.tailored.strong}</strong> {start.tailored.text}</p>
+  </section>
+
+  <section class="section section--flush">
+    <CtaBox />
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-bottom: calc(var(--sec-y) + 8px);
+    background-image: linear-gradient(to right, var(--surface) 1px, transparent 1px);
+    background-size: calc((100% - 2 * var(--pad-x) + var(--gap)) / 12) 100%;
+    background-position: var(--pad-x) 0;
+  }
+  .hero__content {
+    grid-column: 1 / span 8;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .hero__lead { max-width: 620px; }
+  .hero__actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .col-label { grid-column: 1 / span 3; }
+  .col-content { grid-column: 4 / span 9; }
+
+  .why {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 48px;
+  }
+  .why__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .why__goal {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self: start;
+  }
+  .why__goal .label-s { letter-spacing: .2em; }
+  .why__goal-text {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .pains {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .pains__summary {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--accent);
+  }
+
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .tailored {
+    grid-column: 4 / span 8;
+    font-size: var(--t-quote);
+    line-height: 1.4;
+  }
+  .tailored strong { color: var(--accent); }
+
+  @media (max-width: 1279px) {
+    .hero__content { grid-column: 1 / span 11; }
+    .why { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  }
+  @media (max-width: 1023px) {
+    .col-label { grid-column: 1 / span 12; margin-bottom: 24px; }
+    .col-content { grid-column: 1 / span 12; }
+    .tailored { grid-column: 1 / span 12; }
+  }
+  @media (max-width: 767px) {
+    .hero {
+      padding-bottom: var(--sec-y);
+      background-image: none;
+    }
+    .hero__content { gap: 24px; }
+    .hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+    .col-label { margin-bottom: 20px; }
+    .why { gap: 20px; }
+    .why__text { gap: 20px; }
+    .why__goal { padding: 24px; gap: 12px; }
+    .why__goal .label-s { letter-spacing: .18em; }
+    .why__goal-text { font-size: 20px; }
+    .pains { gap: 20px; }
+    .pains__summary { font-size: 18px; }
+    .services { gap: 20px; }
+    .tailored { line-height: 1.45; }
+  }
+</style>

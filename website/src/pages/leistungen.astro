@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import ServiceRows from '../components/ServiceRows.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import BenefitBlock from '../components/BenefitBlock.astro';
+import CtaBox from '../components/CtaBox.astro';
+import page from '../content/leistungen.json';
+---
+<Base title={page.meta.title} description={page.meta.description} active="leistungen">
+  <section class="section grid">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+    </div>
+  </section>
+
+  <ServiceRows />
+
+  <section class="section">
+    <ProcessSteps />
+  </section>
+
+  <BenefitBlock label={page.benefitsLabel} />
+
+  <section class="section section--flush cta-wrap">
+    <CtaBox secondary />
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    grid-column: 1 / span 9;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .cta-wrap { padding-bottom: 64px; }
+  @media (max-width: 767px) {
+    .page-hero { gap: 24px; }
+    .cta-wrap { padding-bottom: var(--sec-y); }
+  }
+</style>

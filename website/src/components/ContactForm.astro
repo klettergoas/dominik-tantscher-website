@@ -1,0 +1,302 @@
+---
+import kontakt from '../content/kontakt.json';
+import site from '../content/site.json';
+const f = kontakt.form;
+const m = f.message;
+---
+<div class="contact-form">
+  <div id="gesendet" class="form-box form-box--ok" role="status" tabindex="-1">
+    <span class="form-box__check" aria-hidden="true">✓</span>
+    <div class="form-box__text">
+      <p class="form-box__title">{f.successTitle}</p>
+      <p class="form-box__sub">{f.successText}</p>
+    </div>
+  </div>
+
+  <form class="form" action="/kontakt.php" method="post">
+    {f.fields.map((field) => (
+      <div class="field">
+        <label class="label-s" for={`f-${field.name}`}>{field.label}</label>
+        <input
+          id={`f-${field.name}`}
+          type={field.type}
+          name={field.name}
+          autocomplete={field.autocomplete}
+          maxlength={field.maxlength}
+          required={field.required}
+          data-error={field.error}
+        />
+        {field.error && (
+          <p class="field__error" id={`err-${field.name}`} hidden><span class="field__icon" aria-hidden="true">!</span><span>{field.error}</span></p>
+        )}
+      </div>
+    ))}
+    <div class="field field--wide">
+      <label class="label-s" for={`f-${m.name}`}>{m.label}</label>
+      <textarea id={`f-${m.name}`} name={m.name} rows={m.rows} maxlength={m.maxlength} required data-error={m.error}></textarea>
+      <p class="field__error" id={`err-${m.name}`} hidden><span class="field__icon" aria-hidden="true">!</span><span>{m.error}</span></p>
+    </div>
+
+    <!-- Spamschutz: Honeypot (bleibt leer) und Ausfülldauer in Sekunden (per JS) -->
+    <div class="hp" aria-hidden="true">
+      <label for="f-website">Website</label>
+      <input id="f-website" type="text" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <input type="hidden" name="dauer" value="" />
+
+    <div id="sendefehler" class="form-box form-box--error field--wide" role="alert" tabindex="-1">
+      <span class="form-box__icon" aria-hidden="true">!</span>
+      <p class="form-box__msg">{f.errorBefore}<a class="text-link" href={`mailto:${site.email}`}>{site.email}</a>{f.errorAfter}</p>
+    </div>
+
+    <div class="form__foot field--wide">
+      <p class="form__hint">{f.hintBefore}<a class="text-link" href="/datenschutz">{f.hintLink}</a>{f.hintAfter}</p>
+      <button class="btn btn--primary btn--block-m form__submit" type="submit">{f.submit}</button>
+    </div>
+  </form>
+</div>
+
+<style>
+  .form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .field--wide { grid-column: 1 / span 2; }
+  .field input,
+  .field textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    outline: none;
+    transition: border-color 150ms ease;
+  }
+  .field input {
+    height: 56px;
+    padding: 0 16px;
+  }
+  .field textarea {
+    min-height: 120px;
+    padding: 14px 16px;
+    line-height: 1.55;
+    resize: vertical;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--state);
+    box-shadow: 0 0 0 1px var(--state);
+  }
+  .field [aria-invalid='true'],
+  .field [aria-invalid='true']:focus {
+    border-color: var(--error);
+    box-shadow: 0 0 0 1px var(--error);
+  }
+  .field__error {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--error);
+  }
+  .field__error[hidden] { display: none; }
+  .field__icon {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    border: 1.5px solid var(--error);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .form__foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+  .form__hint {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-2);
+    max-width: 440px;
+  }
+  .form__submit { flex: none; }
+
+  /* Rückmeldungen: ohne JS über Sprungmarke (#gesendet / #sendefehler) sichtbar */
+  .form-box {
+    display: none;
+    background: var(--surface);
+    padding: 20px 24px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .form-box:focus { outline: none; }
+  .form-box:focus-visible { outline: 2px solid var(--state); outline-offset: 3px; }
+  .form-box--ok { border: 1px solid var(--accent); }
+  .form-box--error { border: 1px solid var(--error); }
+  .form-box:target,
+  .form-box.is-visible { display: flex; }
+  .contact-form:has(#gesendet:target) .form,
+  .contact-form.is-sent .form { display: none; }
+
+  .form-box__check {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .form-box__icon {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--error);
+    border-radius: 50%;
+    color: var(--error);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .form-box__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .form-box__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .form-box__sub {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-2);
+  }
+  .form-box__msg {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  @media (max-width: 767px) {
+    .form {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+    }
+    .field--wide { grid-column: 1; }
+    .form__foot {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      gap: 20px;
+    }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.contact-form');
+  const form = root?.querySelector<HTMLFormElement>('.form');
+
+  if (root && form) {
+    const loadedAt = Date.now();
+    const success = root.querySelector<HTMLElement>('#gesendet')!;
+    const failure = root.querySelector<HTMLElement>('#sendefehler')!;
+    const submit = form.querySelector<HTMLButtonElement>('.form__submit')!;
+    const dauer = form.querySelector<HTMLInputElement>('input[name="dauer"]')!;
+    const fields = Array.from(form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-error]'));
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    form.noValidate = true;
+
+    const isValid = (el: HTMLInputElement | HTMLTextAreaElement) => {
+      const value = el.value.trim();
+      if (el.required && value === '') return false;
+      if (el.type === 'email' && value !== '' && !emailPattern.test(value)) return false;
+      return true;
+    };
+
+    const validate = (el: HTMLInputElement | HTMLTextAreaElement) => {
+      const ok = isValid(el);
+      const error = document.getElementById(`err-${el.name}`);
+      el.setAttribute('aria-invalid', String(!ok));
+      if (error) {
+        error.hidden = ok;
+        if (ok) el.removeAttribute('aria-describedby');
+        else el.setAttribute('aria-describedby', error.id);
+      }
+      return ok;
+    };
+
+    fields.forEach((el) => {
+      el.addEventListener('blur', () => validate(el));
+      el.addEventListener('input', () => {
+        if (el.getAttribute('aria-invalid') === 'true') validate(el);
+      });
+    });
+
+    const showFailure = () => {
+      failure.classList.add('is-visible');
+      failure.focus();
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const invalid = fields.filter((el) => !validate(el));
+      if (invalid.length) {
+        invalid[0].focus();
+        return;
+      }
+
+      failure.classList.remove('is-visible');
+      dauer.value = String(Math.round((Date.now() - loadedAt) / 1000));
+      submit.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        const data = await res.json().catch(() => null);
+        if (!res.ok || !data?.ok) throw new Error('send failed');
+        root.classList.add('is-sent');
+        success.classList.add('is-visible');
+        success.focus();
+      } catch {
+        showFailure();
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  }
+</script>

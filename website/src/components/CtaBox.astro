@@ -1,0 +1,60 @@
+---
+import Button from './Button.astro';
+import site from '../content/site.json';
+
+interface Props { secondary?: boolean }
+const { secondary = false } = Astro.props;
+---
+<div class="cta card">
+  <div class="cta__text">
+    <h2 class="cta__title">{site.cta.title}</h2>
+    <p class="body">{site.cta.text}</p>
+  </div>
+  <div class="cta__actions">
+    <Button href={site.tallyUrl} external size="lg">{site.tallyLabel}</Button>
+    {secondary && <Button href={site.pricesButton.href} variant="secondary" size="lg">{site.pricesButton.label}</Button>}
+  </div>
+</div>
+
+<style>
+  .cta {
+    padding: 64px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: end;
+  }
+  .cta__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cta__title {
+    font-size: var(--t-h2-cta);
+    line-height: 1.1;
+  }
+  .cta__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  @media (max-width: 1023px) {
+    .cta {
+      padding: 48px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+    .cta__actions { align-items: flex-start; }
+  }
+  @media (max-width: 767px) {
+    .cta {
+      padding: 28px 20px;
+      gap: 18px;
+    }
+    .cta__text { gap: 18px; }
+    .cta__title { line-height: 1.15; }
+    .cta .body { font-size: 16px; }
+    .cta__actions { align-items: stretch; }
+  }
+</style>

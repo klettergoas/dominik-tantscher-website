@@ -1,0 +1,87 @@
+---
+import services from '../content/services.json';
+---
+<ul class="service-grid">
+  {services.items.map((s) => (
+    <li class="service-grid__item">
+      <div class="service-grid__head">
+        <span class="service-grid__n">{s.n}</span>
+        <h3 class="service-grid__title">{s.title}</h3>
+      </div>
+      <p class="service-grid__text">{s.text}</p>
+      <p class="service-grid__tag">{s.tag}</p>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .service-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid var(--border);
+  }
+  .service-grid__item {
+    padding: 32px 28px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 340px;
+  }
+  .service-grid__item:last-child { border-right: 0; }
+  .service-grid__head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .service-grid__n {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .service-grid__title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .service-grid__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+    flex: 1;
+  }
+  .service-grid__tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    color: var(--accent);
+  }
+
+  @media (max-width: 1279px) {
+    .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-grid__item { min-height: 0; border-bottom: 1px solid var(--border); }
+    .service-grid__item:nth-child(2n) { border-right: 0; }
+    .service-grid__item:nth-last-child(-n + 2) { border-bottom: 0; }
+  }
+  @media (max-width: 767px) {
+    .service-grid { grid-template-columns: minmax(0, 1fr); }
+    .service-grid__item,
+    .service-grid__item:nth-last-child(-n + 2) {
+      padding: 24px 20px;
+      gap: 12px;
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-grid__item:last-child { border-bottom: 0; }
+    .service-grid__head {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .service-grid__n { font-size: 13px; }
+    .service-grid__title { font-size: 22px; }
+  }
+</style>

@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Leistungen und Preise · Dominik Tantscher",
+    "description": "Feste Pakete zum Festpreis: Potenzialcheck, Einrichtung, eigene Lösung, Schulung. Pilotpreise für die ersten fünf Betriebe."
+  },
+  "hero": {
+    "label": "LEISTUNGEN UND PREISE · STAND 09/2026",
+    "title": "Was es kostet – bevor Sie fragen müssen.",
+    "lead": "Jede Leistung hat einen festen Umfang und einen festen Preis. Sie wissen vorab, was Sie bekommen und was es kostet. Was darüber hinausgeht, rechne ich nach Stunden ab – nie ohne Ihre Freigabe."
+  },
+  "packages": {
+    "label": "LEISTUNGSPAKETE",
+    "headService": "LEISTUNG UND UMFANG",
+    "headPilot": "PILOTPREIS",
+    "headRegular": "REGULÄR",
+    "items": [
+      { "n": "01", "title": "Potenzialcheck", "text": "90 Minuten online oder vor Ort. Wir gehen Ihren Büroalltag durch. Sie erhalten danach einen Kurzbericht mit drei priorisierten Prozessen und einer realistischen Einschätzung, was KI dort leisten kann – und was nicht. Dazu drei Quick Wins: konkrete Tipps, die Sie sofort selbst umsetzen können, auch ohne Auftrag.", "pilotPre": "", "pilot": "0 €", "pilotLabel": "PILOT", "regPre": "", "reg": "149 €", "regLabel": "JE TERMIN" },
+      { "n": "02", "title": "Einrichtung", "text": "Ein halber Tag. Ein Werkzeug (ChatGPT, Claude oder Gemini), ein Prozess (z. B. Angebotserstellung), bis zu drei Vorlagen mit Ihrem Firmenwissen und Ihrem Ton, dazu die Einweisung. Jeder weitere Prozess sowie Anbindungen an E-Mail, Kalender oder Ablage nach Aufwand.", "pilotPre": "", "pilot": "299 €", "pilotLabel": "PILOT", "regPre": "", "reg": "499 €", "regLabel": "FIXPREIS" },
+      { "n": "03", "title": "Eigene Lösung", "text": "Gebaut für ein klar definiertes Problem: ein Chatbot für Ihr Firmenwissen, ein Werkzeug für Ihre Rechnungen. Enthalten sind ein Anwendungsfall, eine Wissensquelle, zwei Korrekturschleifen und ein Übergabe-Workshop, nach dem Sie selbst Änderungen machen können. Alle Zugänge laufen auf Ihren Betrieb. Größerer Umfang nach Aufwand.", "pilotPre": "ab", "pilot": "999 €", "pilotLabel": "PILOT", "regPre": "ab", "reg": "1.499 €", "regLabel": "FESTPREIS-ANGEBOT" },
+      { "n": "04", "title": "Schulung und Begleitung", "text": "Praxisnah an Ihren eigenen Aufgaben, nicht an Beispielen. Auf Wunsch inklusive der KI-Kompetenz nach EU AI Act, die Betriebe mit KI-Einsatz seit Februar 2025 sicherstellen müssen. Bis 8 Personen.", "pilotPre": "", "pilot": "149 €", "pilotLabel": "90 MINUTEN", "regPre": "", "reg": "499 €", "regLabel": "HALBTAG" }
+    ]
+  },
+  "extra": {
+    "title": "Was darüber hinausgeht",
+    "rows": [
+      { "k": "Weitere Prozesse, Anbindungen, Änderungen", "v": "110 €/h" },
+      { "k": "Angebot und Kostenschätzung vorab", "v": "kostenlos" },
+      { "k": "Mindestverrechnung je Einsatz", "v": "30 Min" },
+      { "k": "Abrechnung danach in Schritten von", "v": "15 Min" }
+    ],
+    "note": "Ich beginne erst nach Ihrer schriftlichen Freigabe. Übersteigt der Aufwand die Schätzung, melde ich mich vorher – nicht mit der Rechnung."
+  },
+  "travel": {
+    "title": "Anfahrt",
+    "rows": [
+      { "k": "Online, unabhängig von der Entfernung", "v": "0 €" },
+      { "k": "Vor Ort bis 20 km", "v": "0 €" },
+      { "k": "Vor Ort 21 – 40 km", "v": "39 €" },
+      { "k": "Vor Ort 41 – 80 km", "v": "79 €" },
+      { "k": "Vor Ort über 80 km", "v": "auf Anfrage" }
+    ],
+    "note": "Entfernung einfach, ab 8121 Deutschfeistritz. Einrichtung und Schulung wirken vor Ort meist besser, der Potenzialcheck funktioniert online genauso gut."
+  },
+  "pilot": {
+    "title": "Pilotpreise – für die ersten Betriebe",
+    "text": "Ich baue dieses Angebot gerade auf und suche dafür fünf Betriebe, die den Anfang machen. Sie bekommen dieselbe Leistung zum reduzierten Preis. Dafür bitte ich Sie um zweierlei: ein kurzes Gespräch rund acht Wochen nach der Einrichtung darüber, was im Alltag funktioniert und was nicht – und um die Erlaubnis, Ihren Betrieb als Referenz zu nennen."
+  },
+  "footnote": "Alle Preise in Euro. Als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG wird keine Umsatzsteuer ausgewiesen, die Preise sind somit Endpreise. Lizenz- und Betriebskosten der eingesetzten Werkzeuge (z. B. ChatGPT, Claude, Gemini) trägt der Auftraggeber direkt beim jeweiligen Anbieter. Angebote sind 30 Tage gültig. Preisänderungen vorbehalten."
+}

@@ -1,0 +1,170 @@
+---
+import preise from '../content/preise.json';
+const p = preise.packages;
+---
+<div class="prices" role="table" aria-label="Leistungspakete mit Pilotpreis und regulärem Preis">
+  <div class="prices__row prices__row--head" role="row">
+    <div class="prices__head-service" role="columnheader">{p.headService}</div>
+    <div class="prices__head-pilot" role="columnheader">{p.headPilot}</div>
+    <div class="prices__head-reg" role="columnheader">{p.headRegular}</div>
+  </div>
+  {p.items.map((pk) => (
+    <div class="prices__row" role="row">
+      <div class="prices__service" role="cell">
+        <span class="prices__n">{pk.n}</span>
+        <div class="prices__desc">
+          <h3 class="prices__title">{pk.title}</h3>
+          <p class="prices__text">{pk.text}</p>
+        </div>
+      </div>
+      <div class="prices__cell prices__cell--pilot" role="cell">
+        <span class="prices__mlabel">{p.headPilot}</span>
+        <span class="prices__amount">{pk.pilotPre && <span class="prices__pre">{pk.pilotPre}</span>}<span class="prices__value">{pk.pilot}</span></span>
+        <span class="prices__unit">{pk.pilotLabel}</span>
+      </div>
+      <div class="prices__cell" role="cell">
+        <span class="prices__mlabel">{p.headRegular}</span>
+        <span class="prices__amount">{pk.regPre && <span class="prices__pre">{pk.regPre}</span>}<span class="prices__value">{pk.reg}</span></span>
+        <span class="prices__unit">{pk.regLabel}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .prices {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    --col-price: 208px;
+  }
+  .prices__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--col-price) var(--col-price);
+    border-bottom: 1px solid var(--border);
+  }
+  .prices__row:last-child { border-bottom: 0; }
+  .prices__row--head {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .2em;
+    color: var(--text-2);
+  }
+  .prices__head-service { padding: 18px 0 18px 28px; }
+  .prices__head-pilot {
+    padding: 18px 28px;
+    background: var(--surface);
+    color: var(--accent);
+    border-left: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    margin-top: -1px;
+  }
+  .prices__head-reg {
+    padding: 18px 28px;
+    border-left: 1px solid var(--border);
+  }
+  .prices__service {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+  .prices__n {
+    padding: 32px 0 32px 28px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .prices__desc {
+    padding: 32px 40px 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .prices__title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .prices__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  .prices__cell {
+    padding: 32px 28px;
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .prices__cell--pilot {
+    background: var(--surface);
+    color: var(--accent);
+  }
+  .prices__mlabel { display: none; }
+  .prices__amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .prices__pre {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .prices__value {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+  }
+  .prices__unit {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    color: var(--text-2);
+  }
+  .prices__cell--pilot .prices__unit { color: var(--text); }
+
+  @media (max-width: 1279px) {
+    .prices { --col-price: 176px; }
+    .prices__n { padding-left: 24px; }
+    .prices__service { grid-template-columns: 60px minmax(0, 1fr); }
+    .prices__head-service { padding-left: 24px; }
+    .prices__desc { padding-right: 28px; }
+    .prices__cell, .prices__head-pilot, .prices__head-reg { padding-left: 24px; padding-right: 24px; }
+    .prices__value { font-size: 32px; }
+  }
+
+  /* Mobil: gestapelt – Titel, Text, dann Pilot/Regulär nebeneinander */
+  @media (max-width: 767px) {
+    .prices__row--head { display: none; }
+    .prices__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .prices__service {
+      grid-column: 1 / span 2;
+      grid-template-columns: minmax(0, 1fr);
+      padding: 24px 20px;
+      gap: 8px;
+    }
+    .prices__n { padding: 0; font-size: 13px; }
+    .prices__desc { padding: 0; gap: 10px; }
+    .prices__title { font-size: 22px; }
+    .prices__cell {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .prices__cell--pilot {
+      border-left: 0;
+      border-top: 2px solid var(--accent);
+    }
+    .prices__mlabel {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .18em;
+      color: var(--text-2);
+    }
+    .prices__cell--pilot .prices__mlabel { color: var(--accent); }
+    .prices__value { font-size: 28px; }
+    .prices__pre { font-size: 16px; }
+    .prices__unit { font-size: 11px; letter-spacing: .14em; }
+  }
+</style>

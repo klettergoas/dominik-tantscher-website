@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "title": "Datenschutzerklärung · Dominik Tantscher",
+    "description": "Ich verarbeite personenbezogene Daten nur, soweit das für den Betrieb dieser Website und für die Bearbeitung Ihrer Anfragen erforderlich ist."
+  },
+  "label": "DATENSCHUTZERKLÄRUNG · STAND SEPTEMBER 2026",
+  "title": "Datenschutzerklärung",
+  "lead": "Ich verarbeite personenbezogene Daten nur, soweit das für den Betrieb dieser Website und für die Bearbeitung Ihrer Anfragen erforderlich ist. Ich verkaufe keine Daten und gebe sie nicht zu Werbezwecken weiter.",
+  "sections": [
+    {
+      "n": "01",
+      "title": "Verantwortlicher",
+      "blocks": [
+        {
+          "lines": [
+            "Dominik Tantscher",
+            "Am Flurweg 6",
+            "8121 Deutschfeistritz, Österreich",
+            "ki@dominik-tantscher.at · 0664 50 77 100"
+          ]
+        },
+        {
+          "p": "Für alle Fragen zum Datenschutz erreichen Sie mich direkt unter dieser Adresse. Einen Datenschutzbeauftragten muss ich nicht bestellen, weil mein Unternehmen die dafür maßgeblichen Voraussetzungen nicht erfüllt."
+        }
+      ]
+    },
+    {
+      "n": "02",
+      "title": "Aufruf der Website",
+      "blocks": [
+        {
+          "p": "Beim Aufruf dieser Website werden vom Webserver automatisch jene Daten erfasst, die Ihr Browser übermittelt:"
+        },
+        {
+          "list": [
+            "IP-Adresse",
+            "Datum und Uhrzeit des Zugriffs",
+            "aufgerufene Seite und übertragene Datenmenge",
+            "Browsertyp und Betriebssystem",
+            "gegebenenfalls die zuvor besuchte Seite"
+          ]
+        },
+        {
+          "defs": [
+            {
+              "k": "ZWECK",
+              "v": "Betrieb, Stabilität und Sicherheit der Website"
+            },
+            {
+              "k": "RECHTSGRUNDLAGE",
+              "v": "Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse an einem technisch fehlerfreien und sicheren Betrieb"
+            },
+            {
+              "k": "SPEICHERDAUER",
+              "v": "7 Tage, danach automatische Löschung"
+            }
+          ]
+        },
+        {
+          "p": "Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und nicht dazu verwendet, Sie zu identifizieren."
+        },
+        {
+          "sub": "Hosting"
+        },
+        {
+          "p": "Die Website wird gehostet von der World4You Internet Services GmbH, Hafenstraße 35, 4020 Linz, Österreich. Der Anbieter verarbeitet die oben genannten Daten in meinem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrags gemäß Art. 28 DSGVO. Die Server stehen in Rechenzentren der IONOS SE in Deutschland (Karlsruhe bzw. Frankfurt am Main). World4You ist Teil der IONOS Group; die IONOS SE ist als Unterauftragsverarbeiterin eingebunden. Die Verarbeitung erfolgt ausschließlich innerhalb der EU."
+        }
+      ]
+    },
+    {
+      "n": "03",
+      "title": "Kontaktaufnahme per E-Mail oder Telefon",
+      "blocks": [
+        {
+          "p": "Wenn Sie mich kontaktieren, verarbeite ich die dabei übermittelten Daten – insbesondere Ihren Namen, Ihre Kontaktdaten und den Inhalt Ihrer Nachricht."
+        },
+        {
+          "defs": [
+            {
+              "k": "ZWECK",
+              "v": "Bearbeitung Ihrer Anfrage"
+            },
+            {
+              "k": "RECHTSGRUNDLAGE",
+              "v": "Art. 6 Abs. 1 lit. b DSGVO bei Anfragen im Zusammenhang mit einem Vertrag oder dessen Anbahnung, ansonsten Art. 6 Abs. 1 lit. f DSGVO"
+            },
+            {
+              "k": "SPEICHERDAUER",
+              "v": "Bis zur abschließenden Bearbeitung Ihrer Anfrage. Entsteht daraus ein Auftrag, gelten die gesetzlichen Aufbewahrungsfristen von bis zu sieben Jahren."
+            }
+          ]
+        },
+        {
+          "p": "Mein E-Mail-Postfach wird über Google Workspace betrieben (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Dazu besteht ein Auftragsverarbeitungsvertrag. Eine Verarbeitung in Drittstaaten ist dabei nicht ausgeschlossen; Google stützt diese auf die Standardvertragsklauseln der Europäischen Kommission."
+        }
+      ]
+    },
+    {
+      "n": "04",
+      "title": "Kontaktformular",
+      "blocks": [
+        {
+          "p": "Wenn Sie das Kontaktformular auf dieser Website nutzen, verarbeite ich die Angaben, die Sie dort eintragen:"
+        },
+        {
+          "list": [
+            "Name und E-Mail-Adresse (Pflichtfelder)",
+            "Betrieb / Firma und Telefonnummer (freiwillig)",
+            "den Inhalt Ihrer Nachricht (Pflichtfeld)"
+          ]
+        },
+        {
+          "defs": [
+            {
+              "k": "ZWECK",
+              "v": "Bearbeitung Ihrer Anfrage und Kontaktaufnahme"
+            },
+            {
+              "k": "RECHTSGRUNDLAGE",
+              "v": "Art. 6 Abs. 1 lit. b DSGVO bei Anfragen im Zusammenhang mit einem Vertrag oder dessen Anbahnung, ansonsten Art. 6 Abs. 1 lit. f DSGVO"
+            },
+            {
+              "k": "SPEICHERDAUER",
+              "v": "Bis zur abschließenden Bearbeitung Ihrer Anfrage. Entsteht daraus ein Auftrag, gelten die gesetzlichen Aufbewahrungsfristen von bis zu sieben Jahren."
+            }
+          ]
+        },
+        {
+          "p": "Die Formulardaten werden verschlüsselt (TLS) an den Webserver dieser Website übertragen und von dort als E-Mail an mein Postfach weitergeleitet (Hosting siehe Abschnitt 02, E-Mail siehe Abschnitt 03). Eine zusätzliche Speicherung in einer Datenbank findet nicht statt."
+        }
+      ]
+    },
+    {
+      "n": "05",
+      "title": "Online-Fragebogen",
+      "blocks": [
+        {
+          "p": "Über den Fragebogen können Sie mir Ihr Anliegen beschreiben. Dabei verarbeite ich:"
+        },
+        {
+          "list": [
+            "Angaben zu Ihrem Betrieb, etwa Branche und Größe",
+            "Ihre Beschreibung des Ablaufs, um den es geht",
+            "Name und E-Mail-Adresse, optional Telefonnummer und Ort"
+          ]
+        },
+        {
+          "defs": [
+            {
+              "k": "ZWECK",
+              "v": "Vorbereitung und Übermittlung einer persönlichen Einschätzung sowie Kontaktaufnahme"
+            },
+            {
+              "k": "RECHTSGRUNDLAGE",
+              "v": "Art. 6 Abs. 1 lit. b DSGVO – vorvertragliche Maßnahmen auf Ihre Anfrage hin"
+            },
+            {
+              "k": "SPEICHERDAUER",
+              "v": "12 Monate nach der letzten Kommunikation, danach automatische Löschung. Kommt ein Auftrag zustande, gelten die gesetzlichen Aufbewahrungsfristen."
+            }
+          ]
+        },
+        {
+          "p": "Die Pflichtfelder sind als solche gekennzeichnet. Ohne diese Angaben kann ich Ihnen keine Einschätzung zusenden. Alle weiteren Angaben sind freiwillig."
+        },
+        {
+          "p": "Der Fragebogen wird technisch bereitgestellt durch die Tally BV, Sint-Pietersnieuwstraat 11, 9000 Gent, Belgien (Unternehmensnummer und UID: BE 0776.979.007). Tally verarbeitet die Daten als Auftragsverarbeiterin in meinem Auftrag auf Grundlage eines Vertrags gemäß Art. 28 DSGVO."
+        }
+      ]
+    },
+    {
+      "n": "06",
+      "title": "Cookies",
+      "blocks": [
+        {
+          "p": "Diese Website setzt ausschließlich technisch notwendige Cookies ein, die für den Betrieb erforderlich sind. Eine Einwilligung ist dafür nicht erforderlich (§ 165 Abs. 3 TKG 2021)."
+        },
+        {
+          "p": "Analyse-, Tracking- oder Marketing-Cookies setze ich nicht ein. Ihr Verhalten auf dieser Website wird nicht ausgewertet."
+        }
+      ]
+    },
+    {
+      "n": "07",
+      "title": "Empfänger Ihrer Daten",
+      "blocks": [
+        {
+          "p": "Ihre Daten erhalten ausschließlich:"
+        },
+        {
+          "list": [
+            "die oben genannten Dienstleister im Rahmen der Auftragsverarbeitung",
+            "meine Steuerberatung, soweit es um Belege und Rechnungen geht",
+            "Behörden, soweit ich gesetzlich dazu verpflichtet bin"
+          ]
+        },
+        {
+          "p": "Eine darüber hinausgehende Weitergabe findet nicht statt."
+        }
+      ]
+    },
+    {
+      "n": "08",
+      "title": "Ihre Rechte",
+      "blocks": [
+        {
+          "p": "Sie haben jederzeit das Recht auf Auskunft über die zu Ihnen gespeicherten Daten, auf Berichtigung, auf Löschung, auf Einschränkung der Verarbeitung, auf Datenübertragbarkeit sowie auf Widerspruch gegen Verarbeitungen, die auf ein berechtigtes Interesse gestützt sind. Haben Sie eine Einwilligung erteilt, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen."
+        },
+        {
+          "p": "Wenden Sie sich dafür formlos an ki@dominik-tantscher.at. Ich antworte innerhalb eines Monats."
+        },
+        {
+          "p": "Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen geltendes Recht verstößt, können Sie sich bei der Aufsichtsbehörde beschweren:"
+        },
+        {
+          "lines": [
+            "Österreichische Datenschutzbehörde",
+            "Barichgasse 40–42, 1030 Wien",
+            "dsb@dsb.gv.at · www.dsb.gv.at"
+          ]
+        }
+      ]
+    },
+    {
+      "n": "09",
+      "title": "Änderungen",
+      "blocks": [
+        {
+          "p": "Ich passe diese Datenschutzerklärung an, wenn sich die Verarbeitung ändert oder neue Dienste zum Einsatz kommen. Es gilt jeweils die auf dieser Website veröffentlichte Fassung."
+        }
+      ]
+    }
+  ],
+  "stand": "STAND 28.09.2026"
+}

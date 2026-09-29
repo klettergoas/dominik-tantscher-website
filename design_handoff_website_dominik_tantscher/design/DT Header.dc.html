@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<header style="display:flex;align-items:center;justify-content:space-between;padding:0 64px;height:80px;border-bottom:1px solid #2D3038;background:#0A0C11;font-family:'Archivo',sans-serif;box-sizing:border-box">
+  <a href="#2a" style="display:flex;align-items:center;gap:14px;color:#F0F2F5;text-decoration:none"><img src="assets/dt-lockup.svg" alt="Dominik Tantscher – Startseite" style="height:36px;width:auto;display:block"></a>
+  <nav style="display:flex;gap:32px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.12em">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="5">
+      <a href="{{ it.href }}" style="color:{{ it.color }};text-decoration:none;padding:6px 0;border-bottom:2px solid {{ it.border }}" style-hover="color:#F0F2F5">{{ it.label }}</a>
+    </sc-for>
+  </nav>
+  <a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:12px 18px;text-decoration:none" style-hover="background:#F0F2F5;color:#0A0C11">FRAGEBOGEN AUSFÜLLEN →</a>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;start&quot;,&quot;leistungen&quot;,&quot;preise&quot;,&quot;ueber&quot;,&quot;kontakt&quot;,&quot;none&quot;],&quot;default&quot;:&quot;start&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const a = this.props.active ?? 'start';
+    const nav = [['start','START','#2a'],['leistungen','LEISTUNGEN','#2b'],['preise','PREISE','#2c'],['ueber','ÜBER MICH','#2d'],['kontakt','KONTAKT','#2e']];
+    return { items: nav.map(([k,label,href]) => ({ label, href, color: k===a ? '#F0F2F5' : '#A2A4AC', border: k===a ? '#69D98D' : 'transparent' })) };
+  }
+}
+</script>
+</body>
+</html>

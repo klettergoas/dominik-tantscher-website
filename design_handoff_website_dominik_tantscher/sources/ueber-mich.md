@@ -1,0 +1,11 @@
+Über mich
+
+Ich beschäftige mich seit über fünf Jahren mit künstlicher Intelligenz. Beruflich in einem Industrieunternehmen — und privat, weil mich das Thema nicht loslässt.
+
+Im Unternehmen sehe ich KI aus mehreren Richtungen. Was die Technik heute wirklich kann und was nicht. Wie man sie sicher und regelkonform einsetzt. Wo sie Nutzen bringt und wo der Aufwand größer ist als der Gewinn. Dazu halte ich Schulungen und Workshops. Ich weiß also auch, an welcher Stelle Leute aussteigen und welche Erklärung ankommt.
+
+Was ich dort im Großen sehe, probiere ich in meiner Freizeit im Kleinen aus. Nicht weil es jemand von mir verlangt, sondern weil ich wissen will, wie es funktioniert. Genau dieses Ausprobieren ist der Grund, warum ich einschätzen kann, was in einem kleinen Betrieb trägt und was nur in Präsentationen gut aussieht.
+
+Was ich nicht mache: Konzepte schreiben, die danach in einer Schublade liegen. Ich setze mich zu Ihnen, wir nehmen einen konkreten Ablauf aus Ihrem Alltag, und am Ende läuft etwas, das Sie am nächsten Tag verwenden können.
+
+Und wenn KI bei Ihnen keinen Sinn ergibt, sage ich Ihnen das. Das ist mir lieber als ein Auftrag, der niemandem hilft.

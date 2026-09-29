@@ -1,0 +1,110 @@
+---
+import site from '../content/site.json';
+
+interface Props { active: string }
+const { active } = Astro.props;
+---
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="/">
+      <img src="/assets/dt-lockup.svg" alt="Dominik Tantscher – Startseite" width="194" height="36" />
+    </a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      {site.nav.map((item) => (
+        <a href={item.href} aria-current={item.key === active ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+    <a class="btn btn--primary btn--sm site-header__cta" href={site.tallyUrl} target="_blank" rel="noopener">{site.tallyLabel}</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" hidden>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header__inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    height: var(--header-h);
+    padding: 0 var(--pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .site-header__logo {
+    display: flex;
+    align-items: center;
+    flex: none;
+  }
+  .site-header__logo img {
+    height: 36px;
+    width: auto;
+  }
+  .site-header__cta { white-space: nowrap; }
+  .site-nav {
+    display: flex;
+    gap: 32px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: .12em;
+  }
+  .site-nav a {
+    white-space: nowrap;
+    color: var(--text-2);
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .site-nav a:hover { color: var(--text); }
+  .site-nav a[aria-current='page'] {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin-right: -10px;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 6px;
+    padding-right: 10px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+  }
+  .menu-toggle span:last-child {
+    width: 16px;
+    background: var(--accent);
+  }
+
+  @media (max-width: 1279px) {
+    .site-nav { gap: 20px; }
+  }
+  @media (max-width: 1023px) {
+    .site-nav, .site-header__cta { display: none; }
+    .menu-toggle:not([hidden]) { display: flex; }
+  }
+  @media (min-width: 1024px) {
+    .menu-toggle { display: none; }
+  }
+  @media (max-width: 767px) {
+    .site-header__logo img { height: 28px; }
+  }
+</style>

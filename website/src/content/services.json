@@ -1,0 +1,31 @@
+{
+  "label": "LEISTUNGEN · ALLES AUS EINER HAND",
+  "items": [
+    { "n": "01", "title": "Analyse", "text": "Ich gehe Ihre Abläufe mit Ihnen durch, finde die größten Zeitfresser und bewerte den Nutzen realistisch.", "tag": "KLARHEIT VOR KOSTEN" },
+    { "n": "02", "title": "Einrichtung", "text": "ChatGPT, Claude oder Gemini – eingerichtet mit Ihrem Firmenwissen und Ihren Vorlagen, angebunden an E-Mail, Kalender und Ablage.", "tag": "HERSTELLERUNABHÄNGIG" },
+    { "n": "03", "title": "Eigene Lösungen", "text": "Wo Standard nicht reicht, baue ich für ein klar definiertes Problem eine eigene Lösung: einen Chatbot für Ihr Firmenwissen, ein Tool für Ihre Rechnungen.", "tag": "AUF MASS GEBAUT" },
+    { "n": "04", "title": "Schulung & Begleitung", "text": "Praxisnahe Einweisung Ihres Teams – auch zur KI-Kompetenz nach EU AI Act. Danach bleibe ich Ihr Ansprechpartner.", "tag": "PERSÖNLICH BETREUT" }
+  ],
+  "process": {
+    "label": "BEISPIEL · VON DER ANFRAGE ZUM ANGEBOT",
+    "title": "Die KI bereitet vor. Sie entscheiden.",
+    "steps": [
+      { "label": "1 · SIE", "title": "Angaben weitergeben", "text": "Kundenanfrage und Ihre Notizen zum Auftrag", "ai": false },
+      { "label": "2 · IHRE KI", "title": "Entwurf erstellen", "text": "mit Ihren Leistungen, Preisen und Ihrer Angebotsvorlage", "ai": true },
+      { "label": "3 · SIE", "title": "Prüfen und versenden", "text": "Angaben kontrollieren, anpassen, Angebot freigeben", "ai": false }
+    ]
+  },
+  "benefits": {
+    "figure": "10",
+    "unit": "Std.",
+    "headline": "mehr Zeit – jeden Monat",
+    "equation": "= 120 STD./JAHR ≈ 3 ARBEITSWOCHEN",
+    "note": "Rechenbeispiel: 30 Min. weniger Büroarbeit pro Tag × 20 Arbeitstage. Ihren realistischen Wert ermitteln wir gemeinsam an Ihrem Ablauf.",
+    "items": [
+      { "title": "Schneller antworten", "text": "Anfragen und Angebote in Minuten vorbereitet – solange der Kunde noch interessiert ist." },
+      { "title": "Freie Abende", "text": "Büroarbeit wird tagsüber vorbereitet, statt abends nachgeholt." },
+      { "title": "Einheitlich professionell", "text": "Jedes Dokument in Ihrer Vorlage und Ihrem Ton – egal, wer es erstellt." },
+      { "title": "Datenschutz mitgedacht", "text": "Klare Regeln, welche Daten die KI nutzt – eingerichtet nach DSGVO-Grundsätzen." }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import Button from '../components/Button.astro';
+import ContactForm from '../components/ContactForm.astro';
+import page from '../content/kontakt.json';
+import site from '../content/site.json';
+import { nbsp } from '../lib/format';
+---
+<Base title={page.meta.title} description={page.meta.description} active="kontakt">
+  <section class="grid contact-hero">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+    </div>
+  </section>
+
+  <section class="grid contact" aria-label="Kontaktmöglichkeiten">
+    <div class="contact__form">
+      <ContactForm />
+    </div>
+    <aside class="contact__side">
+      <div class="contact__links">
+        <a href={`mailto:${site.email}`}><span class="label-s">{page.emailLabel}</span><span class="contact__value">{site.email}</span></a>
+        <a href={site.phoneHref}><span class="label-s">{page.phoneLabel}</span><span class="contact__value">{nbsp(site.phone)}</span></a>
+      </div>
+      <div class="card contact__cta">
+        <h2 class="contact__cta-title">{site.cta.title}</h2>
+        <p class="contact__cta-text">{site.cta.text}</p>
+        <div><Button href={site.tallyUrl} external size="sm">{site.tallyLabel}</Button></div>
+      </div>
+    </aside>
+  </section>
+</Base>
+
+<style>
+  .contact-hero {
+    padding: var(--sec-y) var(--pad-x) 64px;
+  }
+  .page-hero {
+    grid-column: 1 / span 8;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .contact {
+    padding: 0 var(--pad-x) var(--sec-y);
+  }
+  .contact__form { grid-column: 1 / span 7; }
+  .contact__side {
+    grid-column: 9 / span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .contact__links {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+  .contact__links a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .contact__links a:hover { color: var(--accent); }
+  .contact__value {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  .contact__cta {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact__cta-title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .contact__cta-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  @media (max-width: 1023px) {
+    .contact__form { grid-column: 1 / span 12; }
+    .contact__side {
+      grid-column: 1 / span 12;
+      margin-top: 64px;
+    }
+  }
+  @media (max-width: 767px) {
+    .contact-hero { padding-bottom: 40px; }
+    .page-hero { gap: 24px; }
+    .contact__side { margin-top: 56px; }
+    .contact__cta { padding: 28px 20px; }
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  rows: { k: string; v: string }[];
+  note: string;
+}
+const { title, rows, note } = Astro.props;
+---
+<div class="values">
+  <h2 class="values__title">{title}</h2>
+  <dl class="values__list">
+    {rows.map((r) => (
+      <div class="values__row"><dt>{r.k}</dt><dd>{r.v}</dd></div>
+    ))}
+  </dl>
+  <p class="values__note">{note}</p>
+</div>
+
+<style>
+  .values {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .values__title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .values__list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+  .values__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .values__row dt { color: var(--text-2); }
+  .values__row dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: right;
+  }
+  .values__note {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  @media (max-width: 767px) {
+    .values { gap: 20px; }
+    .values__title { font-size: 24px; }
+    .values__row { font-size: 16px; gap: 16px; }
+  }
+</style>

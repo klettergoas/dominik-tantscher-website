@@ -1,0 +1,74 @@
+---
+import services from '../content/services.json';
+---
+<div class="service-rows">
+  {services.items.map((s) => (
+    <article class="service-row grid">
+      <span class="service-row__n" data-n={s.n} aria-hidden="true"></span>
+      <div class="service-row__head">
+        <h2 class="service-row__title">{s.title}</h2>
+        <p class="service-row__tag">{s.tag}</p>
+      </div>
+      <p class="service-row__text">{s.text}</p>
+    </article>
+  ))}
+</div>
+
+<style>
+  .service-rows {
+    padding: 0 var(--pad-x);
+    border-bottom: 1px solid var(--border);
+  }
+  .service-row {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .service-row:last-child { border-bottom: 0; }
+  .service-row__n {
+    grid-column: 1 / span 3;
+    font-size: 64px;
+    line-height: .9;
+    font-weight: 700;
+    color: var(--border);
+    letter-spacing: -.03em;
+  }
+  /* Rein dekorativ in Rahmenfarbe laut Design, daher als CSS-Inhalt */
+  .service-row__n::before { content: attr(data-n); }
+  .service-row__head {
+    grid-column: 4 / span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .service-row__title {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  .service-row__tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    color: var(--accent);
+  }
+  .service-row__text {
+    grid-column: 8 / span 5;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--text-2);
+    padding-top: 6px;
+  }
+  @media (max-width: 1023px) {
+    .service-row__n { grid-column: 1 / span 2; }
+    .service-row__head { grid-column: 3 / span 10; }
+    .service-row__text { grid-column: 3 / span 10; padding-top: 20px; }
+  }
+  @media (max-width: 767px) {
+    .service-row {
+      padding: 40px 0;
+      gap: 14px;
+    }
+    .service-row__n { font-size: 48px; margin-bottom: 6px; }
+    .service-row__title { font-size: 28px; line-height: 1.15; }
+    .service-row__text { font-size: 17px; padding-top: 4px; }
+  }
+</style>

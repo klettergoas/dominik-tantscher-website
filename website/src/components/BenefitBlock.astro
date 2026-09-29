@@ -1,0 +1,125 @@
+---
+import services from '../content/services.json';
+import SectionLabel from './SectionLabel.astro';
+
+interface Props { label: string }
+const { label } = Astro.props;
+const b = services.benefits;
+---
+<section class="section benefits grid" aria-labelledby="nutzen-titel">
+  <SectionLabel class="benefits__label">{label}</SectionLabel>
+  <h2 id="nutzen-titel" class="sr-only">Ihr Nutzen</h2>
+  <div class="benefits__figure">
+    <p class="benefits__number"><span class="benefits__big">{b.figure}</span><span class="benefits__unit">{b.unit}</span></p>
+    <p class="benefits__headline">{b.headline}</p>
+    <p class="benefits__equation">{b.equation}</p>
+    <p class="benefits__note">{b.note}</p>
+  </div>
+  <ul class="benefits__list">
+    {b.items.map((item) => (
+      <li>
+        <h3 class="benefits__title">{item.title}</h3>
+        <p class="benefits__text">{item.text}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .benefits__label {
+    grid-column: 1 / span 12;
+    margin-bottom: 48px;
+  }
+  .benefits__figure {
+    grid-column: 1 / span 5;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 24px;
+    border-right: 1px solid var(--border);
+  }
+  .benefits__number {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .benefits__big {
+    font-size: 160px;
+    line-height: .9;
+    letter-spacing: -.04em;
+  }
+  .benefits__unit {
+    font-size: 48px;
+    line-height: 1;
+  }
+  .benefits__headline {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .benefits__equation {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: .16em;
+    color: var(--text);
+  }
+  .benefits__note {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+  .benefits__list {
+    grid-column: 6 / span 7;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 24px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+    align-content: start;
+  }
+  .benefits__list li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 2px solid var(--accent);
+    padding-top: 16px;
+  }
+  .benefits__title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .benefits__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+
+  @media (max-width: 1023px) {
+    .benefits__big { font-size: 128px; }
+    .benefits__unit { font-size: 40px; }
+  }
+  @media (max-width: 767px) {
+    .benefits { gap: 16px; }
+    .benefits__label { margin-bottom: 8px; }
+    .benefits__figure {
+      padding-right: 0;
+      border-right: 0;
+    }
+    .benefits__number { gap: 6px; }
+    .benefits__big { font-size: 112px; }
+    .benefits__unit { font-size: 36px; }
+    .benefits__headline { font-size: 20px; }
+    .benefits__equation { font-size: 12px; letter-spacing: .14em; }
+    .benefits__list {
+      padding: 0;
+      margin-top: 24px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+    }
+    .benefits__list li { padding-top: 14px; }
+    .benefits__title { font-size: 19px; }
+  }
+</style>

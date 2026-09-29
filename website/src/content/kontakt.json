@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Kontakt · Dominik Tantscher",
+    "description": "Schreiben Sie mir, rufen Sie an unter 0664 50 77 100 oder beschreiben Sie Ihren Ablauf im Online-Fragebogen."
+  },
+  "hero": { "label": "KONTAKT", "title": "Kontakt" },
+  "form": {
+    "fields": [
+      { "label": "NAME *", "name": "name", "type": "text", "autocomplete": "name", "required": true, "maxlength": 200, "error": "Bitte geben Sie Ihren Namen an." },
+      { "label": "BETRIEB / FIRMA", "name": "firma", "type": "text", "autocomplete": "organization", "required": false, "maxlength": 200 },
+      { "label": "E-MAIL *", "name": "email", "type": "email", "autocomplete": "email", "required": true, "maxlength": 254, "error": "Bitte geben Sie eine gültige E-Mail-Adresse an." },
+      { "label": "TELEFON", "name": "telefon", "type": "tel", "autocomplete": "tel", "required": false, "maxlength": 50 }
+    ],
+    "message": { "label": "NACHRICHT *", "name": "nachricht", "rows": 7, "required": true, "maxlength": 5000, "error": "Bitte schreiben Sie kurz, worum es geht." },
+    "hintBefore": "* Pflichtfeld. Ihre Angaben verwende ich nur zur Bearbeitung Ihrer Anfrage. Details in der ",
+    "hintLink": "Datenschutzerklärung",
+    "hintAfter": ".",
+    "submit": "NACHRICHT SENDEN →",
+    "successTitle": "Danke, Ihre Nachricht ist angekommen.",
+    "successText": "Ich melde mich persönlich bei Ihnen.",
+    "errorBefore": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an ",
+    "errorAfter": "."
+  },
+  "emailLabel": "E-MAIL",
+  "phoneLabel": "TELEFON"
+}

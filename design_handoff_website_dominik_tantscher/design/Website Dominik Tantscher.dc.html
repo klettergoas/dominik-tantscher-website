@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#1d1f25;-webkit-font-smoothing:antialiased}
+a{color:#69D98D;text-decoration:none}
+a:hover{color:#F0F2F5}
+</style>
+</helmet>
+
+<section data-screen-label="Runde 2" style="padding:80px;display:flex;flex-direction:column;gap:40px;font-family:'Archivo',sans-serif;color:#F0F2F5">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:1280px">
+    <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#A2A4AC">RUNDE 2 · AUSARBEITUNG RICHTUNG 1A · DESKTOP 1280 PX + MOBIL 390 PX</div>
+    <div style="font-size:32px;font-weight:700">Website Dominik Tantscher</div>
+    <div style="font-size:17px;color:#A2A4AC;line-height:1.5;max-width:960px;text-wrap:pretty">Seiten: <a href="#2a">2a</a> Start · <a href="#2b">2b</a> Leistungen · <a href="#2c">2c</a> Preise · <a href="#2d">2d</a> Über mich · <a href="#2e">2e</a> Kontakt · <a href="#2f">2f</a> Impressum · <a href="#2g">2g</a> Datenschutz · <a href="#2h">2h</a> Start mobil · <a href="#2i">2i</a> Menü mobil · <a href="#2j">2j</a> Komponenten und Zustände. Alle Maße, Regeln und offenen Punkte stehen in „Designdokumentation.md“.</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:80px;align-items:flex-start">
+
+<div id="2a" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2a</div><div style="font-size:18px;font-weight:600">Start</div></div>
+  <div data-screen-label="Start" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="start" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px 104px;border-bottom:1px solid #2D3038;background-image:linear-gradient(to right,#15171E 1px,transparent 1px);background-size:calc((100% - 128px + 24px)/12) 100%;background-position:64px 0">
+      <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">KI-EINRICHTUNG FÜR KLEINBETRIEBE</div>
+        <h1 style="margin:0;font-size:76px;line-height:1.02;font-weight:700;letter-spacing:-.02em">Weniger Büroarbeit.<br><span style="color:#69D98D">Mehr Zeit für Ihre Kunden.</span></h1>
+        <p style="margin:0;font-size:20px;line-height:1.55;color:#A2A4AC;max-width:620px;text-wrap:pretty">Ich richte künstliche Intelligenz persönlich in Ihrem Betrieb ein – passend zu Ihren Abläufen, sicher im Umgang mit Ihren Daten und so verständlich, dass Ihr Team sie jeden Tag nutzt.</p>
+        <div style="display:flex;gap:16px;align-items:center">
+          <a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style-hover="background:#F0F2F5;color:#0A0C11" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 24px">FRAGEBOGEN AUSFÜLLEN →</a>
+          <a href="#2c" style-hover="border-color:#69D98D;color:#69D98D" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;color:#F0F2F5;padding:17px 24px;border:1px solid #2D3038">LEISTUNGEN UND PREISE</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 3;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">01 — WARUM ICH</div>
+      <div style="grid-column:4 / span 9;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <h2 style="margin:0;font-size:40px;line-height:1.12;font-weight:700;text-wrap:pretty">KI ist da. Nur in kleinen Betrieben arbeitet sie noch nicht.</h2>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Konzerne nutzen KI längst im Alltag, Kleinbetrieben fehlt dafür die Zeit. Beratungen sind auf Großunternehmen zugeschnitten, der Selbstversuch endet oft in einem Chatfenster. Genau diese Lücke schließe ich – als fester Ansprechpartner, der Ihren Betrieb versteht.</p>
+        </div>
+        <div style="background:#15171E;border:1px solid #2D3038;padding:32px;display:flex;flex-direction:column;gap:16px;align-self:start">
+          <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A2A4AC">MEIN ZIEL</div>
+          <div style="font-size:24px;line-height:1.3;font-weight:600;text-wrap:pretty">KI, die in Ihrem Betrieb verlässlich mitarbeitet – statt nur ausprobiert zu werden.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 3;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D;line-height:1.6">02 — KOMMT IHNEN DAS BEKANNT VOR?</div>
+      <div style="grid-column:4 / span 9;display:flex;flex-direction:column;gap:40px">
+        <h2 style="margin:0;font-size:40px;line-height:1.12;font-weight:700">Der Auftrag ist fertig. Die Büroarbeit nicht.</h2>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #2D3038">
+          <sc-for list="{{ pains }}" as="p" hint-placeholder-count="6">
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px 20px 0;border-bottom:1px solid #2D3038;font-size:18px;line-height:1.45">
+              <span style="flex:none;width:20px;height:20px;border:2px solid #69D98D;display:flex;align-items:center;justify-content:center;color:#69D98D;font-size:13px;font-weight:700;margin-top:2px">✓</span><span>{{ p }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:20px;font-weight:600;color:#69D98D">Jeder Haken ist ein Ablauf, den KI für Sie vorbereiten kann.</div>
+      </div>
+    </div>
+    <div style="padding:96px 64px;border-bottom:1px solid #2D3038;display:flex;flex-direction:column;gap:48px">
+      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">03 — LEISTUNGEN · ALLES AUS EINER HAND</div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #2D3038">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+          <div style="padding:32px 28px;border-right:1px solid #2D3038;display:flex;flex-direction:column;gap:16px;min-height:340px">
+            <div style="font-family:'Space Mono',monospace;font-size:14px;color:#A2A4AC">{{ s.n }}</div>
+            <div style="font-size:24px;font-weight:700">{{ s.title }}</div>
+            <div style="font-size:16px;line-height:1.55;color:#A2A4AC;flex:1;text-wrap:pretty">{{ s.text }}</div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">{{ s.tag }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A2A4AC">BEISPIEL · VON DER ANFRAGE ZUM ANGEBOT</div>
+          <div style="font-size:18px;font-weight:600">Die KI bereitet vor. Sie entscheiden.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr) 40px minmax(0,1fr);align-items:stretch">
+          <div style="background:#15171E;border:1px solid #2D3038;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#69D98D">1 · SIE</div><div style="font-size:20px;font-weight:600">Angaben weitergeben</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Kundenanfrage und Ihre Notizen zum Auftrag</div></div>
+          <div style="display:flex;align-items:center;justify-content:center;color:#A2A4AC;font-size:20px">→</div>
+          <div style="background:#15171E;border:1px solid #849DFF;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#849DFF">2 · IHRE KI</div><div style="font-size:20px;font-weight:600">Entwurf erstellen</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">mit Ihren Leistungen, Preisen und Ihrer Angebotsvorlage</div></div>
+          <div style="display:flex;align-items:center;justify-content:center;color:#A2A4AC;font-size:20px">→</div>
+          <div style="background:#15171E;border:1px solid #2D3038;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#69D98D">3 · SIE</div><div style="font-size:20px;font-weight:600">Prüfen und versenden</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Angaben kontrollieren, anpassen, Angebot freigeben</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 12;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D;margin-bottom:48px">04 — IHR NUTZEN</div>
+      <div style="grid-column:1 / span 5;display:flex;flex-direction:column;gap:16px;padding-right:24px;border-right:1px solid #2D3038">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:160px;line-height:.9;font-weight:700;color:#69D98D;letter-spacing:-.04em">10</span><span style="font-size:48px;font-weight:700;color:#69D98D">Std.</span></div>
+        <div style="font-size:24px;font-weight:600">mehr Zeit – jeden Monat</div>
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#F0F2F5">= 120 STD./JAHR ≈ 3 ARBEITSWOCHEN</div>
+        <div style="font-size:15px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">Rechenbeispiel: 30 Min. weniger Büroarbeit pro Tag × 20 Arbeitstage. Ihren realistischen Wert ermitteln wir gemeinsam an Ihrem Ablauf.</div>
+      </div>
+      <div style="grid-column:6 / span 7;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;padding-left:24px">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #69D98D;padding-top:16px"><div style="font-size:20px;font-weight:700">{{ b.title }}</div><div style="font-size:16px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">{{ b.text }}</div></div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:4 / span 8;font-size:28px;line-height:1.4;font-weight:400;text-wrap:pretty"><strong style="font-weight:700;color:#69D98D">Maßgeschneidert statt von der Stange.</strong> Ich bringe Erfahrung aus KI-Strategie, KI-Umsetzung und KI-Governance in der Industrie mit – und mache dieses Wissen für kleine Betriebe nutzbar. Persönlich vor Ort oder online.</div>
+    </div>
+    <div style="padding:96px 64px">
+      <div style="background:#15171E;border:1px solid #2D3038;padding:64px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:20px"><h2 style="margin:0;font-size:44px;line-height:1.1;font-weight:700">Welcher Ablauf kostet Sie am meisten Zeit?</h2><p style="margin:0;font-size:18px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann.</p></div>
+        <div style="display:flex;justify-content:flex-end"><a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style-hover="background:#F0F2F5;color:#0A0C11" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:20px 28px">FRAGEBOGEN AUSFÜLLEN →</a></div>
+      </div>
+    </div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div id="2b" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2b</div><div style="font-size:18px;font-weight:600">Leistungen</div></div>
+  <div data-screen-label="Leistungen" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="leistungen" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 9;display:flex;flex-direction:column;gap:32px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">LEISTUNGEN · ALLES AUS EINER HAND</div>
+        <h1 style="margin:0;font-size:76px;line-height:1.02;font-weight:700;letter-spacing:-.02em">Leistungen</h1>
+      </div>
+    </div>
+    <div style="padding:0 64px;border-bottom:1px solid #2D3038">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:56px 0;border-bottom:1px solid #2D3038">
+          <div style="grid-column:1 / span 3;display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:64px;line-height:.9;font-weight:700;color:#2D3038;letter-spacing:-.03em">{{ s.n }}</div>
+          </div>
+          <div style="grid-column:4 / span 4;display:flex;flex-direction:column;gap:14px">
+            <h2 style="margin:0;font-size:36px;line-height:1.1;font-weight:700">{{ s.title }}</h2>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">{{ s.tag }}</div>
+          </div>
+          <div style="grid-column:8 / span 5;font-size:19px;line-height:1.6;color:#A2A4AC;padding-top:6px;text-wrap:pretty">{{ s.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="padding:96px 64px;border-bottom:1px solid #2D3038;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A2A4AC">BEISPIEL · VON DER ANFRAGE ZUM ANGEBOT</div>
+        <div style="font-size:18px;font-weight:600">Die KI bereitet vor. Sie entscheiden.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr) 40px minmax(0,1fr);align-items:stretch">
+        <div style="background:#15171E;border:1px solid #2D3038;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#69D98D">1 · SIE</div><div style="font-size:20px;font-weight:600">Angaben weitergeben</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Kundenanfrage und Ihre Notizen zum Auftrag</div></div>
+        <div style="display:flex;align-items:center;justify-content:center;color:#A2A4AC;font-size:20px">→</div>
+        <div style="background:#15171E;border:1px solid #849DFF;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#849DFF">2 · IHRE KI</div><div style="font-size:20px;font-weight:600">Entwurf erstellen</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">mit Ihren Leistungen, Preisen und Ihrer Angebotsvorlage</div></div>
+        <div style="display:flex;align-items:center;justify-content:center;color:#A2A4AC;font-size:20px">→</div>
+        <div style="background:#15171E;border:1px solid #2D3038;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#69D98D">3 · SIE</div><div style="font-size:20px;font-weight:600">Prüfen und versenden</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Angaben kontrollieren, anpassen, Angebot freigeben</div></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 12;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D;margin-bottom:48px">IHR NUTZEN</div>
+      <div style="grid-column:1 / span 5;display:flex;flex-direction:column;gap:16px;padding-right:24px;border-right:1px solid #2D3038">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:160px;line-height:.9;font-weight:700;color:#69D98D;letter-spacing:-.04em">10</span><span style="font-size:48px;font-weight:700;color:#69D98D">Std.</span></div>
+        <div style="font-size:24px;font-weight:600">mehr Zeit – jeden Monat</div>
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#F0F2F5">= 120 STD./JAHR ≈ 3 ARBEITSWOCHEN</div>
+        <div style="font-size:15px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">Rechenbeispiel: 30 Min. weniger Büroarbeit pro Tag × 20 Arbeitstage. Ihren realistischen Wert ermitteln wir gemeinsam an Ihrem Ablauf.</div>
+      </div>
+      <div style="grid-column:6 / span 7;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;padding-left:24px">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #69D98D;padding-top:16px"><div style="font-size:20px;font-weight:700">{{ b.title }}</div><div style="font-size:16px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">{{ b.text }}</div></div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="padding:96px 64px 64px">
+      <div style="background:#15171E;border:1px solid #2D3038;padding:64px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:20px"><h2 style="margin:0;font-size:44px;line-height:1.1;font-weight:700">Welcher Ablauf kostet Sie am meisten Zeit?</h2><p style="margin:0;font-size:18px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann.</p></div>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end">
+          <a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:20px 28px" style-hover="background:#F0F2F5;color:#0A0C11">FRAGEBOGEN AUSFÜLLEN →</a>
+          <a href="#2c" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;color:#F0F2F5;padding:19px 28px;border:1px solid #2D3038" style-hover="border-color:#69D98D;color:#69D98D">LEISTUNGEN UND PREISE</a>
+        </div>
+      </div>
+    </div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div id="2c" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2c</div><div style="font-size:18px;font-weight:600">Preise</div></div>
+  <div data-screen-label="Preise" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="preise" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 9;display:flex;flex-direction:column;gap:32px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">LEISTUNGEN UND PREISE · STAND 09/2026</div>
+        <h1 style="margin:0;font-size:76px;line-height:1.02;font-weight:700;letter-spacing:-.02em;text-wrap:pretty">Was es kostet – bevor Sie fragen müssen.</h1>
+        <p style="margin:0;font-size:20px;line-height:1.55;color:#A2A4AC;max-width:720px;text-wrap:pretty">Jede Leistung hat einen festen Umfang und einen festen Preis. Sie wissen vorab, was Sie bekommen und was es kostet. Was darüber hinausgeht, rechne ich nach Stunden ab – nie ohne Ihre Freigabe.</p>
+      </div>
+    </div>
+    <div style="padding:96px 64px;border-bottom:1px solid #2D3038;display:flex;flex-direction:column;gap:40px">
+      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">LEISTUNGSPAKETE</div>
+      <div style="display:flex;flex-direction:column;border:1px solid #2D3038">
+        <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 208px 208px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:#A2A4AC;border-bottom:1px solid #2D3038">
+          <div style="padding:18px 0 18px 28px;grid-column:1 / span 2">LEISTUNG UND UMFANG</div>
+          <div style="padding:18px 28px;background:#15171E;color:#69D98D;border-left:1px solid #2D3038;border-top:2px solid #69D98D">PILOTPREIS</div>
+          <div style="padding:18px 28px;border-left:1px solid #2D3038">REGULÄR</div>
+        </div>
+        <sc-for list="{{ packages }}" as="pk" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 208px 208px;border-bottom:1px solid #2D3038">
+            <div style="padding:32px 0 32px 28px;font-family:'Space Mono',monospace;font-size:14px;color:#A2A4AC">{{ pk.n }}</div>
+            <div style="padding:32px 40px 32px 0;display:flex;flex-direction:column;gap:12px"><div style="font-size:26px;font-weight:700">{{ pk.title }}</div><div style="font-size:16px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">{{ pk.text }}</div></div>
+            <div style="padding:32px 28px;background:#15171E;border-left:1px solid #2D3038;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;gap:6px;color:#69D98D"><span style="font-size:18px;font-weight:600">{{ pk.pilotPre }}</span><span style="font-size:36px;font-weight:700;letter-spacing:-.01em;white-space:nowrap">{{ pk.pilot }}</span></div>
+              <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#F0F2F5">{{ pk.pilotLabel }}</div>
+            </div>
+            <div style="padding:32px 28px;border-left:1px solid #2D3038;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:baseline;gap:6px"><span style="font-size:18px;font-weight:600">{{ pk.regPre }}</span><span style="font-size:36px;font-weight:700;letter-spacing:-.01em;white-space:nowrap">{{ pk.reg }}</span></div>
+              <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">{{ pk.regLabel }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="padding:96px 64px;border-bottom:1px solid #2D3038;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:32px;line-height:1.15;font-weight:700">Was darüber hinausgeht</h2>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2D3038">
+          <sc-for list="{{ extra }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;justify-content:space-between;gap:24px;padding:16px 0;border-bottom:1px solid #2D3038;font-size:17px"><span style="color:#A2A4AC">{{ r.k }}</span><span style="font-family:'Space Mono',monospace;font-weight:700;white-space:nowrap">{{ r.v }}</span></div>
+          </sc-for>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Ich beginne erst nach Ihrer schriftlichen Freigabe. Übersteigt der Aufwand die Schätzung, melde ich mich vorher – nicht mit der Rechnung.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <h2 style="margin:0;font-size:32px;line-height:1.15;font-weight:700">Anfahrt</h2>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2D3038">
+          <sc-for list="{{ travel }}" as="r" hint-placeholder-count="5">
+            <div style="display:flex;justify-content:space-between;gap:24px;padding:16px 0;border-bottom:1px solid #2D3038;font-size:17px"><span style="color:#A2A4AC">{{ r.k }}</span><span style="font-family:'Space Mono',monospace;font-weight:700;white-space:nowrap">{{ r.v }}</span></div>
+          </sc-for>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Entfernung einfach, ab 8121 Deutschfeistritz. Einrichtung und Schulung wirken vor Ort meist besser, der Potenzialcheck funktioniert online genauso gut.</p>
+      </div>
+    </div>
+    <div style="padding:96px 64px 0">
+      <div style="border:1px solid #69D98D;padding:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:48px">
+        <h2 style="margin:0;font-size:32px;line-height:1.15;font-weight:700;color:#69D98D;text-wrap:pretty">Pilotpreise – für die ersten Betriebe</h2>
+        <p style="margin:0;font-size:18px;line-height:1.6;text-wrap:pretty">Ich baue dieses Angebot gerade auf und suche dafür fünf Betriebe, die den Anfang machen. Sie bekommen dieselbe Leistung zum reduzierten Preis. Dafür bitte ich Sie um zweierlei: ein kurzes Gespräch rund acht Wochen nach der Einrichtung darüber, was im Alltag funktioniert und was nicht – und um die Erlaubnis, Ihren Betrieb als Referenz zu nennen.</p>
+      </div>
+    </div>
+    <div style="padding:96px 64px 64px">
+      <div style="background:#15171E;border:1px solid #2D3038;padding:64px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:20px"><h2 style="margin:0;font-size:44px;line-height:1.1;font-weight:700">Welcher Ablauf kostet Sie am meisten Zeit?</h2><p style="margin:0;font-size:18px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann.</p></div>
+        <div style="display:flex;justify-content:flex-end"><a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:20px 28px" style-hover="background:#F0F2F5;color:#0A0C11">FRAGEBOGEN AUSFÜLLEN →</a></div>
+      </div>
+    </div>
+    <div style="padding:0 64px 64px"><p style="margin:0;font-size:14px;line-height:1.6;color:#A2A4AC;max-width:960px;text-wrap:pretty">Alle Preise in Euro. Als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG wird keine Umsatzsteuer ausgewiesen, die Preise sind somit Endpreise. Lizenz- und Betriebskosten der eingesetzten Werkzeuge (z. B. ChatGPT, Claude, Gemini) trägt der Auftraggeber direkt beim jeweiligen Anbieter. Angebote sind 30 Tage gültig. Preisänderungen vorbehalten.</p></div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div id="2d" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2d</div><div style="font-size:18px;font-weight:600">Über mich</div></div>
+  <div data-screen-label="Über mich" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="ueber" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:1 / span 9;display:flex;flex-direction:column;gap:32px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">ÜBER MICH</div>
+        <h1 style="margin:0;font-size:76px;line-height:1.02;font-weight:700;letter-spacing:-.02em">Über mich</h1>
+        <p style="margin:0;font-size:28px;line-height:1.4;max-width:820px;text-wrap:pretty">Ich beschäftige mich seit über fünf Jahren mit künstlicher Intelligenz. Beruflich in einem Industrieunternehmen — und privat, weil mich das Thema nicht loslässt.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px;border-bottom:1px solid #2D3038">
+      <div style="grid-column:4 / span 7;display:flex;flex-direction:column;gap:28px;font-size:19px;line-height:1.65;color:#A2A4AC">
+        <p style="margin:0;text-wrap:pretty">Im Unternehmen sehe ich KI aus mehreren Richtungen. Was die Technik heute wirklich kann und was nicht. Wie man sie sicher und regelkonform einsetzt. Wo sie Nutzen bringt und wo der Aufwand größer ist als der Gewinn. Dazu halte ich Schulungen und Workshops. Ich weiß also auch, an welcher Stelle Leute aussteigen und welche Erklärung ankommt.</p>
+        <p style="margin:0;text-wrap:pretty">Was ich dort im Großen sehe, probiere ich in meiner Freizeit im Kleinen aus. Nicht weil es jemand von mir verlangt, sondern weil ich wissen will, wie es funktioniert. Genau dieses Ausprobieren ist der Grund, warum ich einschätzen kann, was in einem kleinen Betrieb trägt und was nur in Präsentationen gut aussieht.</p>
+        <p style="margin:0;text-wrap:pretty"><strong style="color:#F0F2F5;font-weight:700">Was ich nicht mache:</strong> Konzepte schreiben, die danach in einer Schublade liegen. Ich setze mich zu Ihnen, wir nehmen einen konkreten Ablauf aus Ihrem Alltag, und am Ende läuft etwas, das Sie am nächsten Tag verwenden können.</p>
+        <div style="background:#15171E;border:1px solid #2D3038;padding:32px;margin-top:12px"><div style="font-size:24px;line-height:1.35;font-weight:600;color:#F0F2F5;text-wrap:pretty">Und wenn KI bei Ihnen keinen Sinn ergibt, sage ich Ihnen das. Das ist mir lieber als ein Auftrag, der niemandem hilft.</div></div>
+      </div>
+    </div>
+    <div style="padding:96px 64px 64px">
+      <div style="background:#15171E;border:1px solid #2D3038;padding:64px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:20px"><h2 style="margin:0;font-size:44px;line-height:1.1;font-weight:700">Welcher Ablauf kostet Sie am meisten Zeit?</h2><p style="margin:0;font-size:18px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann.</p></div>
+        <div style="display:flex;justify-content:flex-end"><a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:20px 28px" style-hover="background:#F0F2F5;color:#0A0C11">FRAGEBOGEN AUSFÜLLEN →</a></div>
+      </div>
+    </div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div id="2e" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2e</div><div style="font-size:18px;font-weight:600">Kontakt</div></div>
+  <div data-screen-label="Kontakt" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="kontakt" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px 64px">
+      <div style="grid-column:1 / span 8;display:flex;flex-direction:column;gap:32px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">KONTAKT</div>
+        <h1 style="margin:0;font-size:76px;line-height:1.02;font-weight:700;letter-spacing:-.02em">Kontakt</h1>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:0 64px 96px;border-bottom:1px solid #2D3038">
+      <form style="grid-column:1 / span 7;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+        <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+          <label style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">{{ f.label }}</span>
+            <input type="{{ f.type }}" name="{{ f.name }}" autocomplete="{{ f.ac }}" style="height:56px;box-sizing:border-box;background:#15171E;border:1px solid #2D3038;color:#F0F2F5;font-family:'Archivo',sans-serif;font-size:17px;padding:0 16px;outline:none;border-radius:0" style-focus="border-color:#849DFF;box-shadow:0 0 0 1px #849DFF">
+          </label>
+        </sc-for>
+        <label style="grid-column:1 / span 2;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">NACHRICHT *</span>
+          <textarea name="nachricht" rows="7" style="box-sizing:border-box;background:#15171E;border:1px solid #2D3038;color:#F0F2F5;font-family:'Archivo',sans-serif;font-size:17px;line-height:1.55;padding:14px 16px;outline:none;resize:vertical;border-radius:0" style-focus="border-color:#849DFF;box-shadow:0 0 0 1px #849DFF"></textarea>
+        </label>
+        <div style="grid-column:1 / span 2;display:flex;justify-content:space-between;align-items:center;gap:32px">
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#A2A4AC;max-width:440px;text-wrap:pretty">* Pflichtfeld. Ihre Angaben verwende ich nur zur Bearbeitung Ihrer Anfrage. Details in der <a href="#2g" style="color:#69D98D" style-hover="color:#F0F2F5">Datenschutzerklärung</a>.</p>
+          <button type="button" style="flex:none;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 24px;border:0;cursor:pointer;border-radius:0" style-hover="background:#F0F2F5">NACHRICHT SENDEN →</button>
+        </div>
+      </form>
+      <div style="grid-column:9 / span 4;display:flex;flex-direction:column;gap:32px">
+        <div style="display:flex;flex-direction:column;border-top:1px solid #2D3038">
+          <a href="mailto:ki@dominik-tantscher.at" style="display:flex;flex-direction:column;gap:8px;padding:24px 0;border-bottom:1px solid #2D3038;color:#F0F2F5" style-hover="color:#69D98D"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">E-MAIL</span><span style="font-size:20px;font-weight:600">ki@dominik-tantscher.at</span></a>
+          <a href="tel:+436645077100" style="display:flex;flex-direction:column;gap:8px;padding:24px 0;border-bottom:1px solid #2D3038;color:#F0F2F5" style-hover="color:#69D98D"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">TELEFON</span><span style="font-size:20px;font-weight:600">0664 50 77 100</span></a>
+        </div>
+        <div style="background:#15171E;border:1px solid #2D3038;padding:32px;display:flex;flex-direction:column;gap:16px">
+          <h2 style="margin:0;font-size:24px;line-height:1.2;font-weight:700">Welcher Ablauf kostet Sie am meisten Zeit?</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann.</p>
+          <div style="display:flex"><a href="https://tally.so/r/5BRD2d" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:14px 18px" style-hover="background:#F0F2F5;color:#0A0C11">FRAGEBOGEN AUSFÜLLEN →</a></div>
+        </div>
+      </div>
+    </div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div id="2f" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2f</div><div style="font-size:18px;font-weight:600">Impressum</div></div>
+  <div data-screen-label="Impressum" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="none" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px 64px">
+      <div style="grid-column:1 / span 9;display:flex;flex-direction:column;gap:24px">
+        <h1 style="margin:0;font-size:56px;line-height:1.05;font-weight:700;letter-spacing:-.02em">Impressum</h1>
+        <p style="margin:0;font-size:18px;line-height:1.6;color:#A2A4AC">Angaben gemäß § 5 E-Commerce-Gesetz und § 25 Mediengesetz</p>
+      </div>
+    </div>
+    <div style="padding:0 64px 96px">
+      <sc-for list="{{ impressum }}" as="g" hint-placeholder-count="7">
+        <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:28px 0;border-top:1px solid #2D3038">
+          <div style="grid-column:1 / span 3;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;color:#69D98D;text-transform:uppercase;padding-top:3px">{{ g.k }}</div>
+          <div style="grid-column:4 / span 7;display:flex;flex-direction:column;gap:4px;font-size:18px;line-height:1.55">
+            <sc-for list="{{ g.lines }}" as="l"><div>{{ l }}</div></sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div id="2g" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2g</div><div style="font-size:18px;font-weight:600">Datenschutz</div></div>
+  <div data-screen-label="Datenschutz" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <dc-import name="DT Header" active="none" hint-size="1280px,80px"></dc-import>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:96px 64px 64px">
+      <div style="grid-column:1 / span 9;display:flex;flex-direction:column;gap:24px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">DATENSCHUTZERKLÄRUNG · STAND SEPTEMBER 2026</div>
+        <h1 style="margin:0;font-size:56px;line-height:1.05;font-weight:700;letter-spacing:-.02em">Datenschutzerklärung</h1>
+        <p style="margin:0;font-size:20px;line-height:1.55;color:#A2A4AC;max-width:760px;text-wrap:pretty">Ich verarbeite personenbezogene Daten nur, soweit das für den Betrieb dieser Website und für die Bearbeitung Ihrer Anfragen erforderlich ist. Ich verkaufe keine Daten und gebe sie nicht zu Werbezwecken weiter.</p>
+      </div>
+    </div>
+    <div style="padding:0 64px 96px">
+      <sc-for list="{{ ds }}" as="sec" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:48px 0;border-top:1px solid #2D3038">
+          <div style="grid-column:1 / span 3;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D;padding-top:8px">{{ sec.n }}</div>
+          <div style="grid-column:4 / span 8;display:flex;flex-direction:column;gap:20px">
+            <sc-if value="{{ sec.draft }}" hint-placeholder-val="{{ false }}"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#849DFF;border:1px dashed #849DFF;padding:6px 10px;align-self:flex-start">NEU · ENTWURF – VOR VERÖFFENTLICHUNG RECHTLICH PRÜFEN</div></sc-if>
+            <h2 style="margin:0;font-size:28px;line-height:1.2;font-weight:700">{{ sec.t }}</h2>
+            <sc-for list="{{ sec.blocks }}" as="b">
+              <sc-if value="{{ b.p }}"><p style="margin:0;font-size:17px;line-height:1.65;color:#A2A4AC;text-wrap:pretty">{{ b.p }}</p></sc-if>
+              <sc-if value="{{ b.sub }}"><h3 style="margin:12px 0 0;font-size:20px;font-weight:700">{{ b.sub }}</h3></sc-if>
+              <sc-if value="{{ b.lines }}"><div style="display:flex;flex-direction:column;gap:2px;font-size:17px;line-height:1.6"><sc-for list="{{ b.lines }}" as="l"><div>{{ l }}</div></sc-for></div></sc-if>
+              <sc-if value="{{ b.list }}"><div style="display:flex;flex-direction:column;gap:8px"><sc-for list="{{ b.list }}" as="li"><div style="display:flex;gap:14px;align-items:baseline;font-size:17px;line-height:1.55"><span style="flex:none;width:8px;height:8px;background:#69D98D;transform:translateY(-2px)"></span><span>{{ li }}</span></div></sc-for></div></sc-if>
+              <sc-if value="{{ b.defs }}"><div style="display:flex;flex-direction:column;border-top:1px solid #2D3038"><sc-for list="{{ b.defs }}" as="d"><div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:14px 0;border-bottom:1px solid #2D3038"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC;padding-top:3px">{{ d.k }}</span><span style="font-size:16px;line-height:1.55">{{ d.v }}</span></div></sc-for></div></sc-if>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div style="border-top:1px solid #2D3038;padding-top:28px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">STAND 26.09.2026</div>
+    </div>
+    <dc-import name="DT Footer" hint-size="1280px,100px"></dc-import>
+  </div>
+</div>
+
+<div style="display:flex;gap:80px;flex:none;align-items:flex-start">
+<div id="2h" style="width:390px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2h</div><div style="font-size:18px;font-weight:600">Start mobil</div></div>
+  <div data-screen-label="Start mobil" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;overflow:hidden">
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:64px;border-bottom:1px solid #2D3038">
+      <a href="#2h" style="display:flex;align-items:center;gap:10px;color:#F0F2F5"><img src="assets/dt-lockup.svg" alt="Dominik Tantscher – Startseite" style="height:28px;width:auto;display:block"></a>
+      <a href="#2i" aria-label="Menü öffnen" style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:6px"><span style="width:24px;height:2px;background:#F0F2F5;display:block"></span><span style="width:24px;height:2px;background:#F0F2F5;display:block"></span><span style="width:16px;height:2px;background:#69D98D;display:block"></span></a>
+    </header>
+    <div style="padding:56px 20px;display:flex;flex-direction:column;gap:24px;border-bottom:1px solid #2D3038">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">KI-EINRICHTUNG FÜR KLEINBETRIEBE</div>
+      <h1 style="margin:0;font-size:42px;line-height:1.05;font-weight:700;letter-spacing:-.02em">Weniger Büroarbeit.<br><span style="color:#69D98D">Mehr Zeit für Ihre Kunden.</span></h1>
+      <p style="margin:0;font-size:17px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">Ich richte künstliche Intelligenz persönlich in Ihrem Betrieb ein – passend zu Ihren Abläufen, sicher im Umgang mit Ihren Daten und so verständlich, dass Ihr Team sie jeden Tag nutzt.</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="https://tally.so/r/5BRD2d" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 20px;text-align:center">FRAGEBOGEN AUSFÜLLEN →</a>
+        <a href="#2c" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;color:#F0F2F5;padding:17px 20px;border:1px solid #2D3038;text-align:center">LEISTUNGEN UND PREISE</a>
+      </div>
+    </div>
+    <div style="padding:56px 20px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid #2D3038">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">01 — WARUM ICH</div>
+      <h2 style="margin:0;font-size:28px;line-height:1.15;font-weight:700;text-wrap:pretty">KI ist da. Nur in kleinen Betrieben arbeitet sie noch nicht.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Konzerne nutzen KI längst im Alltag, Kleinbetrieben fehlt dafür die Zeit. Beratungen sind auf Großunternehmen zugeschnitten, der Selbstversuch endet oft in einem Chatfenster. Genau diese Lücke schließe ich – als fester Ansprechpartner, der Ihren Betrieb versteht.</p>
+      <div style="background:#15171E;border:1px solid #2D3038;padding:24px;display:flex;flex-direction:column;gap:12px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">MEIN ZIEL</div><div style="font-size:20px;line-height:1.3;font-weight:600">KI, die in Ihrem Betrieb verlässlich mitarbeitet – statt nur ausprobiert zu werden.</div></div>
+    </div>
+    <div style="padding:56px 20px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid #2D3038">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">02 — KOMMT IHNEN DAS BEKANNT VOR?</div>
+      <h2 style="margin:0;font-size:28px;line-height:1.15;font-weight:700">Der Auftrag ist fertig. Die Büroarbeit nicht.</h2>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #2D3038">
+        <sc-for list="{{ pains }}" as="p" hint-placeholder-count="6">
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #2D3038;font-size:17px;line-height:1.45"><span style="flex:none;width:20px;height:20px;border:2px solid #69D98D;display:flex;align-items:center;justify-content:center;color:#69D98D;font-size:13px;font-weight:700;margin-top:1px">✓</span><span>{{ p }}</span></div>
+        </sc-for>
+      </div>
+      <div style="font-size:18px;font-weight:600;color:#69D98D">Jeder Haken ist ein Ablauf, den KI für Sie vorbereiten kann.</div>
+    </div>
+    <div style="padding:56px 20px;display:flex;flex-direction:column;gap:20px;border-bottom:1px solid #2D3038">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">03 — LEISTUNGEN · ALLES AUS EINER HAND</div>
+      <div style="display:flex;flex-direction:column;border:1px solid #2D3038">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+          <div style="padding:24px 20px;border-bottom:1px solid #2D3038;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:22px;font-weight:700">{{ s.title }}</div><div style="font-family:'Space Mono',monospace;font-size:13px;color:#A2A4AC">{{ s.n }}</div></div>
+            <div style="font-size:16px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">{{ s.text }}</div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">{{ s.tag }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC;margin-top:16px">BEISPIEL · VON DER ANFRAGE ZUM ANGEBOT</div>
+      <div style="font-size:18px;font-weight:600">Die KI bereitet vor. Sie entscheiden.</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="background:#15171E;border:1px solid #2D3038;padding:20px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">1 · SIE</div><div style="font-size:19px;font-weight:600">Angaben weitergeben</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Kundenanfrage und Ihre Notizen zum Auftrag</div></div>
+        <div style="height:32px;display:flex;align-items:center;justify-content:center;color:#A2A4AC">↓</div>
+        <div style="background:#15171E;border:1px solid #849DFF;padding:20px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#849DFF">2 · IHRE KI</div><div style="font-size:19px;font-weight:600">Entwurf erstellen</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">mit Ihren Leistungen, Preisen und Ihrer Angebotsvorlage</div></div>
+        <div style="height:32px;display:flex;align-items:center;justify-content:center;color:#A2A4AC">↓</div>
+        <div style="background:#15171E;border:1px solid #2D3038;padding:20px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">3 · SIE</div><div style="font-size:19px;font-weight:600">Prüfen und versenden</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Angaben kontrollieren, anpassen, Angebot freigeben</div></div>
+      </div>
+    </div>
+    <div style="padding:56px 20px;display:flex;flex-direction:column;gap:16px;border-bottom:1px solid #2D3038">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#69D98D">04 — IHR NUTZEN</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><span style="font-size:112px;line-height:.9;font-weight:700;color:#69D98D;letter-spacing:-.04em">10</span><span style="font-size:36px;font-weight:700;color:#69D98D">Std.</span></div>
+      <div style="font-size:20px;font-weight:600">mehr Zeit – jeden Monat</div>
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em">= 120 STD./JAHR ≈ 3 ARBEITSWOCHEN</div>
+      <div style="font-size:15px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">Rechenbeispiel: 30 Min. weniger Büroarbeit pro Tag × 20 Arbeitstage. Ihren realistischen Wert ermitteln wir gemeinsam an Ihrem Ablauf.</div>
+      <div style="display:flex;flex-direction:column;gap:28px;margin-top:24px">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #69D98D;padding-top:14px"><div style="font-size:19px;font-weight:700">{{ b.title }}</div><div style="font-size:16px;line-height:1.55;color:#A2A4AC;text-wrap:pretty">{{ b.text }}</div></div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="padding:56px 20px;border-bottom:1px solid #2D3038;font-size:21px;line-height:1.45;text-wrap:pretty"><strong style="font-weight:700;color:#69D98D">Maßgeschneidert statt von der Stange.</strong> Ich bringe Erfahrung aus KI-Strategie, KI-Umsetzung und KI-Governance in der Industrie mit – und mache dieses Wissen für kleine Betriebe nutzbar. Persönlich vor Ort oder online.</div>
+    <div style="padding:56px 20px">
+      <div style="background:#15171E;border:1px solid #2D3038;padding:28px 20px;display:flex;flex-direction:column;gap:18px">
+        <h2 style="margin:0;font-size:28px;line-height:1.15;font-weight:700">Welcher Ablauf kostet Sie am meisten Zeit?</h2>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#A2A4AC;text-wrap:pretty">Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann.</p>
+        <a href="https://tally.so/r/5BRD2d" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 20px;text-align:center">FRAGEBOGEN AUSFÜLLEN →</a>
+      </div>
+    </div>
+    <footer style="border-top:1px solid #2D3038;padding:32px 20px;display:flex;flex-direction:column;gap:20px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.08em;color:#A2A4AC">
+      <div style="display:flex;flex-direction:column;gap:4px"><a href="mailto:ki@dominik-tantscher.at" style="color:#F0F2F5;padding:10px 0">ki@dominik-tantscher.at</a><a href="tel:+436645077100" style="color:#F0F2F5;padding:10px 0">0664 50 77 100</a></div>
+      <div style="display:flex;gap:24px"><a href="#2f" style="color:#A2A4AC;padding:10px 0">IMPRESSUM</a><a href="#2g" style="color:#A2A4AC;padding:10px 0">DATENSCHUTZ</a></div>
+      <span style="letter-spacing:.2em">DOMINIK TANTSCHER</span>
+    </footer>
+  </div>
+</div>
+
+<div id="2i" style="width:390px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2i</div><div style="font-size:18px;font-weight:600">Menü mobil (geöffnet)</div></div>
+  <div data-screen-label="Menü mobil" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;height:844px;display:flex;flex-direction:column">
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:64px;border-bottom:1px solid #2D3038;flex:none">
+      <a href="#2h" style="display:flex;align-items:center;gap:10px;color:#F0F2F5"><img src="assets/dt-lockup.svg" alt="Dominik Tantscher – Startseite" style="height:28px;width:auto;display:block"></a>
+      <a href="#2h" aria-label="Menü schließen" style="width:44px;height:44px;display:flex;align-items:center;justify-content:flex-end;color:#F0F2F5;font-size:26px;line-height:1">✕</a>
+    </header>
+    <nav style="display:flex;flex-direction:column;padding:16px 20px 0">
+      <sc-for list="{{ mobileNav }}" as="m" hint-placeholder-count="5">
+        <a href="{{ m.href }}" style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #2D3038;font-size:30px;font-weight:700;color:#F0F2F5"><span>{{ m.label }}</span><span style="font-family:'Space Mono',monospace;font-size:13px;color:{{ m.numColor }}">{{ m.n }}</span></a>
+      </sc-for>
+    </nav>
+    <div style="margin-top:auto;padding:24px 20px 32px;display:flex;flex-direction:column;gap:16px">
+      <a href="https://tally.so/r/5BRD2d" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 20px;text-align:center">FRAGEBOGEN AUSFÜLLEN →</a>
+      <div style="display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:13px"><a href="tel:+436645077100" style="color:#F0F2F5;padding:10px 0">0664 50 77 100</a><a href="mailto:ki@dominik-tantscher.at" style="color:#F0F2F5;padding:10px 0">E-MAIL</a></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="2j" style="width:1280px;flex:none;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:center;gap:12px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:#69D98D;color:#0A0C11;padding:4px 10px">2j</div><div style="font-size:18px;font-weight:600">Komponenten und Zustände</div></div>
+  <div data-screen-label="Komponenten" style="background:#0A0C11;color:#F0F2F5;font-family:'Archivo',sans-serif;padding:64px;display:flex;flex-direction:column;gap:64px">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">FARBE · CI 04</div>
+      <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:16px">
+        <sc-for list="{{ colors }}" as="c" hint-placeholder-count="8">
+          <div style="display:flex;flex-direction:column;gap:10px"><div style="height:88px;background:{{ c.hex }};border:1px solid #2D3038"></div><div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700">{{ c.hex }}</div><div style="font-size:14px;color:#A2A4AC;line-height:1.4">{{ c.role }}</div></div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">TYPOGRAFIE · DESKTOP / MOBIL</div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #2D3038">
+        <sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="10">
+          <div style="display:grid;grid-template-columns:120px 260px minmax(0,1fr);gap:24px;align-items:baseline;padding:16px 0;border-bottom:1px solid #2D3038">
+            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#69D98D">{{ t.token }}</div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;color:#A2A4AC;line-height:1.5">{{ t.spec }}</div>
+            <div style="font-family:{{ t.family }};font-size:{{ t.size }};font-weight:{{ t.weight }};letter-spacing:{{ t.ls }};line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.sample }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">BUTTONS · DEFAULT / HOVER / FOKUS</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <span style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 24px">PRIMÄR →</span>
+            <span style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#F0F2F5;color:#0A0C11;padding:18px 24px">HOVER →</span>
+            <span style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;background:#69D98D;color:#0A0C11;padding:18px 24px;outline:2px solid #849DFF;outline-offset:3px">FOKUS →</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <span style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;color:#F0F2F5;padding:17px 24px;border:1px solid #2D3038">SEKUNDÄR</span>
+            <span style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;color:#69D98D;padding:17px 24px;border:1px solid #69D98D">HOVER</span>
+            <span style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.12em;color:#F0F2F5;padding:17px 24px;border:1px solid #2D3038;outline:2px solid #849DFF;outline-offset:3px">FOKUS</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">FORMULARFELD · DEFAULT / FOKUS / FEHLER (#FF7B7B = CI-ERGÄNZUNG)</div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+          <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">NAME</span><div style="height:56px;background:#15171E;border:1px solid #2D3038"></div></div>
+          <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">NAME</span><div style="height:56px;background:#15171E;border:1px solid #849DFF;box-shadow:0 0 0 1px #849DFF;display:flex;align-items:center;padding:0 16px;font-size:17px">Dominik|</div></div>
+          <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;color:#A2A4AC">E-MAIL *</span><div style="height:56px;background:#15171E;border:1px solid #FF7B7B;box-shadow:0 0 0 1px #FF7B7B;display:flex;align-items:center;padding:0 16px;font-size:17px">dominik@</div><div style="display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.4;color:#FF7B7B"><span style="flex:none;width:16px;height:16px;border:1.5px solid #FF7B7B;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px">!</span><span>Bitte geben Sie eine gültige E-Mail-Adresse an.</span></div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#69D98D">FORMULAR · GESENDET / SENDEN FEHLGESCHLAGEN</div>
+          <div style="background:#15171E;border:1px solid #69D98D;padding:20px 24px;display:flex;gap:16px;align-items:flex-start"><span style="flex:none;width:24px;height:24px;background:#69D98D;color:#0A0C11;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">✓</span><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:18px;font-weight:700">Danke, Ihre Nachricht ist angekommen.</div><div style="font-size:15px;line-height:1.5;color:#A2A4AC">Ich melde mich persönlich bei Ihnen.</div></div></div>
+          <div style="background:#15171E;border:1px solid #FF7B7B;padding:20px 24px;display:flex;gap:16px;align-items:flex-start"><span style="flex:none;width:24px;height:24px;border:1.5px solid #FF7B7B;border-radius:50%;color:#FF7B7B;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">!</span><div style="font-size:15px;line-height:1.5;color:#F0F2F5">Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an <span style="color:#69D98D">ki@dominik-tantscher.at</span>.</div></div>
+        </div>
+        <div style="display:flex;gap:32px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.12em;align-items:center">
+          <span style="color:#A2A4AC">NAV DEFAULT</span><span style="color:#F0F2F5">NAV HOVER</span><span style="color:#F0F2F5;border-bottom:2px solid #69D98D;padding:6px 0">NAV AKTIV</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const L = (arr) => arr;
+    return {
+      pains: [
+        "Angebote und Rechnungen entstehen am Abend.",
+        "E-Mails und Anfragen bleiben zwischen Terminen liegen.",
+        "Dieselben Angaben werden immer wieder abgetippt.",
+        "Aus Notizen müssen noch Berichte werden.",
+        "Texte für Website und Social Media bleiben liegen.",
+        "Wissen steckt in Köpfen statt in Vorlagen."
+      ],
+      services: [
+        { n: "01", title: "Analyse", text: "Ich gehe Ihre Abläufe mit Ihnen durch, finde die größten Zeitfresser und bewerte den Nutzen realistisch.", tag: "KLARHEIT VOR KOSTEN" },
+        { n: "02", title: "Einrichtung", text: "ChatGPT, Claude oder Gemini – eingerichtet mit Ihrem Firmenwissen und Ihren Vorlagen, angebunden an E-Mail, Kalender und Ablage.", tag: "HERSTELLERUNABHÄNGIG" },
+        { n: "03", title: "Eigene Lösungen", text: "Wo Standard nicht reicht, baue ich für ein klar definiertes Problem eine eigene Lösung: einen Chatbot für Ihr Firmenwissen, ein Tool für Ihre Rechnungen.", tag: "AUF MASS GEBAUT" },
+        { n: "04", title: "Schulung & Begleitung", text: "Praxisnahe Einweisung Ihres Teams – auch zur KI-Kompetenz nach EU AI Act. Danach bleibe ich Ihr Ansprechpartner.", tag: "PERSÖNLICH BETREUT" }
+      ],
+      benefits: [
+        { title: "Schneller antworten", text: "Anfragen und Angebote in Minuten vorbereitet – solange der Kunde noch interessiert ist." },
+        { title: "Freie Abende", text: "Büroarbeit wird tagsüber vorbereitet, statt abends nachgeholt." },
+        { title: "Einheitlich professionell", text: "Jedes Dokument in Ihrer Vorlage und Ihrem Ton – egal, wer es erstellt." },
+        { title: "Datenschutz mitgedacht", text: "Klare Regeln, welche Daten die KI nutzt – eingerichtet nach DSGVO-Grundsätzen." }
+      ],
+      packages: [
+        { n: "01", title: "Potenzialcheck", text: "90 Minuten online oder vor Ort. Wir gehen Ihren Büroalltag durch. Sie erhalten danach einen Kurzbericht mit drei priorisierten Prozessen und einer realistischen Einschätzung, was KI dort leisten kann – und was nicht. Dazu drei Quick Wins: konkrete Tipps, die Sie sofort selbst umsetzen können, auch ohne Auftrag.", pilotPre: "", pilot: "0 €", pilotLabel: "PILOT", regPre: "", reg: "149 €", regLabel: "JE TERMIN" },
+        { n: "02", title: "Einrichtung", text: "Ein halber Tag. Ein Werkzeug (ChatGPT, Claude oder Gemini), ein Prozess (z. B. Angebotserstellung), bis zu drei Vorlagen mit Ihrem Firmenwissen und Ihrem Ton, dazu die Einweisung. Jeder weitere Prozess sowie Anbindungen an E-Mail, Kalender oder Ablage nach Aufwand.", pilotPre: "", pilot: "299 €", pilotLabel: "PILOT", regPre: "", reg: "499 €", regLabel: "FIXPREIS" },
+        { n: "03", title: "Eigene Lösung", text: "Gebaut für ein klar definiertes Problem: ein Chatbot für Ihr Firmenwissen, ein Werkzeug für Ihre Rechnungen. Enthalten sind ein Anwendungsfall, eine Wissensquelle, zwei Korrekturschleifen und ein Übergabe-Workshop, nach dem Sie selbst Änderungen machen können. Alle Zugänge laufen auf Ihren Betrieb. Größerer Umfang nach Aufwand.", pilotPre: "ab", pilot: "999 €", pilotLabel: "PILOT", regPre: "ab", reg: "1.499 €", regLabel: "FESTPREIS-ANGEBOT" },
+        { n: "04", title: "Schulung und Begleitung", text: "Praxisnah an Ihren eigenen Aufgaben, nicht an Beispielen. Auf Wunsch inklusive der KI-Kompetenz nach EU AI Act, die Betriebe mit KI-Einsatz seit Februar 2025 sicherstellen müssen. Bis 8 Personen.", pilotPre: "", pilot: "149 €", pilotLabel: "90 MINUTEN", regPre: "", reg: "499 €", regLabel: "HALBTAG" }
+      ],
+      extra: [
+        { k: "Weitere Prozesse, Anbindungen, Änderungen", v: "110 €/h" },
+        { k: "Angebot und Kostenschätzung vorab", v: "kostenlos" },
+        { k: "Mindestverrechnung je Einsatz", v: "30 Min" },
+        { k: "Abrechnung danach in Schritten von", v: "15 Min" }
+      ],
+      travel: [
+        { k: "Online, unabhängig von der Entfernung", v: "0 €" },
+        { k: "Vor Ort bis 20 km", v: "0 €" },
+        { k: "Vor Ort 21 – 40 km", v: "39 €" },
+        { k: "Vor Ort 41 – 80 km", v: "79 €" },
+        { k: "Vor Ort über 80 km", v: "auf Anfrage" }
+      ],
+      fields: [
+        { label: "NAME *", name: "name", type: "text", ac: "name" },
+        { label: "BETRIEB / FIRMA", name: "firma", type: "text", ac: "organization" },
+        { label: "E-MAIL *", name: "email", type: "email", ac: "email" },
+        { label: "TELEFON", name: "telefon", type: "tel", ac: "tel" }
+      ],
+      impressum: [
+        { k: "", lines: ["Dominik Tantscher", "Einzelunternehmen", "Am Flurweg 6", "8121 Deutschfeistritz", "Österreich"] },
+        { k: "Kontakt", lines: ["E-Mail: ki@dominik-tantscher.at", "Telefon: 0664 50 77 100"] },
+        { k: "Unternehmensgegenstand", lines: ["Einrichtung und Implementierung von KI-Anwendungen sowie Schulungen für Klein- und Kleinstunternehmen"] },
+        { k: "Gewerbewortlaut", lines: ["Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik"] },
+        { k: "Gewerbebehörde", lines: ["Bezirkshauptmannschaft Graz-Umgebung"] },
+        { k: "Umsatzsteuer", lines: ["Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG. Es wird keine Umsatzsteuer ausgewiesen."] },
+        { k: "Verantwortlich für den Inhalt", lines: ["Dominik Tantscher, Anschrift wie oben"] }
+      ],
+      ds: [
+        { n: "01", t: "Verantwortlicher", blocks: [
+          { lines: ["Dominik Tantscher", "Am Flurweg 6", "8121 Deutschfeistritz, Österreich", "ki@dominik-tantscher.at · 0664 50 77 100"] },
+          { p: "Für alle Fragen zum Datenschutz erreichen Sie mich direkt unter dieser Adresse. Einen Datenschutzbeauftragten muss ich nicht bestellen, weil mein Unternehmen die dafür maßgeblichen Voraussetzungen nicht erfüllt." } ] },
+        { n: "02", t: "Aufruf der Website", blocks: [
+          { p: "Beim Aufruf dieser Website werden vom Webserver automatisch jene Daten erfasst, die Ihr Browser übermittelt:" },
+          { list: ["IP-Adresse", "Datum und Uhrzeit des Zugriffs", "aufgerufene Seite und übertragene Datenmenge", "Browsertyp und Betriebssystem", "gegebenenfalls die zuvor besuchte Seite"] },
+          { defs: [ { k: "ZWECK", v: "Betrieb, Stabilität und Sicherheit der Website" }, { k: "RECHTSGRUNDLAGE", v: "Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse an einem technisch fehlerfreien und sicheren Betrieb" }, { k: "SPEICHERDAUER", v: "7 Tage, danach automatische Löschung" } ] },
+          { p: "Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und nicht dazu verwendet, Sie zu identifizieren." },
+          { sub: "Hosting" },
+          { p: "Die Website wird gehostet von der World4You Internet Services GmbH, Hafenstraße 35, 4020 Linz, Österreich. Der Anbieter verarbeitet die oben genannten Daten in meinem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrags gemäß Art. 28 DSGVO. Die Server stehen in Österreich." } ] },
+        { n: "03", t: "Kontaktaufnahme per E-Mail oder Telefon", blocks: [
+          { p: "Wenn Sie mich kontaktieren, verarbeite ich die dabei übermittelten Daten – insbesondere Ihren Namen, Ihre Kontaktdaten und den Inhalt Ihrer Nachricht." },
+          { defs: [ { k: "ZWECK", v: "Bearbeitung Ihrer Anfrage" }, { k: "RECHTSGRUNDLAGE", v: "Art. 6 Abs. 1 lit. b DSGVO bei Anfragen im Zusammenhang mit einem Vertrag oder dessen Anbahnung, ansonsten Art. 6 Abs. 1 lit. f DSGVO" }, { k: "SPEICHERDAUER", v: "Bis zur abschließenden Bearbeitung Ihrer Anfrage. Entsteht daraus ein Auftrag, gelten die gesetzlichen Aufbewahrungsfristen von bis zu sieben Jahren." } ] },
+          { p: "Mein E-Mail-Postfach wird über Google Workspace betrieben (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Dazu besteht ein Auftragsverarbeitungsvertrag. Eine Verarbeitung in Drittstaaten ist dabei nicht ausgeschlossen; Google stützt diese auf die Standardvertragsklauseln der Europäischen Kommission." } ] },
+        { n: "04", t: "Kontaktformular", draft: true, blocks: [
+          { p: "Wenn Sie das Kontaktformular auf dieser Website nutzen, verarbeite ich die Angaben, die Sie dort eintragen:" },
+          { list: ["Name und E-Mail-Adresse (Pflichtfelder)", "Betrieb / Firma und Telefonnummer (freiwillig)", "den Inhalt Ihrer Nachricht (Pflichtfeld)"] },
+          { defs: [ { k: "ZWECK", v: "Bearbeitung Ihrer Anfrage und Kontaktaufnahme" }, { k: "RECHTSGRUNDLAGE", v: "Art. 6 Abs. 1 lit. b DSGVO bei Anfragen im Zusammenhang mit einem Vertrag oder dessen Anbahnung, ansonsten Art. 6 Abs. 1 lit. f DSGVO" }, { k: "SPEICHERDAUER", v: "Bis zur abschließenden Bearbeitung Ihrer Anfrage. Entsteht daraus ein Auftrag, gelten die gesetzlichen Aufbewahrungsfristen von bis zu sieben Jahren." } ] },
+          { p: "Die Formulardaten werden verschlüsselt (TLS) an den Webserver dieser Website übertragen und von dort als E-Mail an mein Postfach weitergeleitet (Hosting siehe Abschnitt 02, E-Mail siehe Abschnitt 03). Eine zusätzliche Speicherung in einer Datenbank findet nicht statt." } ] },
+        { n: "05", t: "Online-Fragebogen", blocks: [
+          { p: "Über den Fragebogen können Sie mir Ihr Anliegen beschreiben. Dabei verarbeite ich:" },
+          { list: ["Angaben zu Ihrem Betrieb, etwa Branche und Größe", "Ihre Beschreibung des Ablaufs, um den es geht", "Name und E-Mail-Adresse, optional Telefonnummer und Ort"] },
+          { defs: [ { k: "ZWECK", v: "Vorbereitung und Übermittlung einer persönlichen Einschätzung sowie Kontaktaufnahme" }, { k: "RECHTSGRUNDLAGE", v: "Art. 6 Abs. 1 lit. b DSGVO – vorvertragliche Maßnahmen auf Ihre Anfrage hin" }, { k: "SPEICHERDAUER", v: "12 Monate nach der letzten Kommunikation, danach automatische Löschung. Kommt ein Auftrag zustande, gelten die gesetzlichen Aufbewahrungsfristen." } ] },
+          { p: "Die Pflichtfelder sind als solche gekennzeichnet. Ohne diese Angaben kann ich Ihnen keine Einschätzung zusenden. Alle weiteren Angaben sind freiwillig." },
+          { p: "Der Fragebogen wird technisch bereitgestellt durch die Tally BV, Sint-Pietersnieuwstraat 11, 9000 Gent, Belgien (Unternehmensnummer und UID: BE 0776.979.007). Tally verarbeitet die Daten als Auftragsverarbeiterin in meinem Auftrag auf Grundlage eines Vertrags gemäß Art. 28 DSGVO." } ] },
+        { n: "06", t: "Cookies", blocks: [
+          { p: "Diese Website setzt ausschließlich technisch notwendige Cookies ein, die für den Betrieb erforderlich sind. Eine Einwilligung ist dafür nicht erforderlich (§ 165 Abs. 3 TKG 2021)." },
+          { p: "Analyse-, Tracking- oder Marketing-Cookies setze ich nicht ein. Ihr Verhalten auf dieser Website wird nicht ausgewertet." } ] },
+        { n: "07", t: "Empfänger Ihrer Daten", blocks: [
+          { p: "Ihre Daten erhalten ausschließlich:" },
+          { list: ["die oben genannten Dienstleister im Rahmen der Auftragsverarbeitung", "meine Steuerberatung, soweit es um Belege und Rechnungen geht", "Behörden, soweit ich gesetzlich dazu verpflichtet bin"] },
+          { p: "Eine darüber hinausgehende Weitergabe findet nicht statt." } ] },
+        { n: "08", t: "Ihre Rechte", blocks: [
+          { p: "Sie haben jederzeit das Recht auf Auskunft über die zu Ihnen gespeicherten Daten, auf Berichtigung, auf Löschung, auf Einschränkung der Verarbeitung, auf Datenübertragbarkeit sowie auf Widerspruch gegen Verarbeitungen, die auf ein berechtigtes Interesse gestützt sind. Haben Sie eine Einwilligung erteilt, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen." },
+          { p: "Wenden Sie sich dafür formlos an ki@dominik-tantscher.at. Ich antworte innerhalb eines Monats." },
+          { p: "Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen geltendes Recht verstößt, können Sie sich bei der Aufsichtsbehörde beschweren:" },
+          { lines: ["Österreichische Datenschutzbehörde", "Barichgasse 40–42, 1030 Wien", "dsb@dsb.gv.at · www.dsb.gv.at"] } ] },
+        { n: "09", t: "Änderungen", blocks: [
+          { p: "Ich passe diese Datenschutzerklärung an, wenn sich die Verarbeitung ändert oder neue Dienste zum Einsatz kommen. Es gilt jeweils die auf dieser Website veröffentlichte Fassung." } ] }
+      ],
+      mobileNav: [
+        { label: "Start", n: "01", href: "#2h", numColor: "#69D98D" },
+        { label: "Leistungen", n: "02", href: "#2b", numColor: "#A2A4AC" },
+        { label: "Preise", n: "03", href: "#2c", numColor: "#A2A4AC" },
+        { label: "Über mich", n: "04", href: "#2d", numColor: "#A2A4AC" },
+        { label: "Kontakt", n: "05", href: "#2e", numColor: "#A2A4AC" }
+      ],
+      colors: [
+        { hex: "#0A0C11", role: "Grundfläche" }, { hex: "#15171E", role: "Flächen" }, { hex: "#2D3038", role: "Rahmen" }, { hex: "#69D98D", role: "Primärakzent" },
+        { hex: "#849DFF", role: "Zustände, Diagramme" }, { hex: "#F0F2F5", role: "Text, Hell" }, { hex: "#22864A", role: "Akzent auf Hell" }, { hex: "#A2A4AC", role: "Sekundärtext" }
+      ],
+      typeScale: [
+        { token: "display", spec: "Archivo 700 · 160/144 · lh .9 · -0.04em\nmobil 112", family: "Archivo", size: "64px", weight: 700, ls: "-.04em", sample: "10 Std." },
+        { token: "h1", spec: "Archivo 700 · 76 · lh 1.02 · -0.02em\nmobil 42 · lh 1.05", family: "Archivo", size: "56px", weight: 700, ls: "-.02em", sample: "Weniger Büroarbeit." },
+        { token: "h1-legal", spec: "Archivo 700 · 56 · lh 1.05", family: "Archivo", size: "44px", weight: 700, ls: "-.02em", sample: "Impressum" },
+        { token: "h2-cta", spec: "Archivo 700 · 44 · lh 1.1 · mobil 28", family: "Archivo", size: "40px", weight: 700, ls: "0", sample: "Welcher Ablauf kostet Sie …" },
+        { token: "h2", spec: "Archivo 700 · 40 · lh 1.12 · mobil 28", family: "Archivo", size: "40px", weight: 700, ls: "0", sample: "Der Auftrag ist fertig." },
+        { token: "h3", spec: "Archivo 700 · 24–32 · lh 1.15–1.2", family: "Archivo", size: "28px", weight: 700, ls: "0", sample: "Was darüber hinausgeht" },
+        { token: "lead", spec: "Archivo 400 · 20 · lh 1.55 · mobil 17", family: "Archivo", size: "20px", weight: 400, ls: "0", sample: "Ich richte künstliche Intelligenz persönlich …" },
+        { token: "body", spec: "Archivo 400 · 18/16 · lh 1.6", family: "Archivo", size: "18px", weight: 400, ls: "0", sample: "Konzerne nutzen KI längst im Alltag …" },
+        { token: "label", spec: "Space Mono 400 · 13 · +0.2em · VERSAL", family: "Space Mono", size: "13px", weight: 400, ls: ".2em", sample: "01 — WARUM ICH" },
+        { token: "button", spec: "Space Mono 700 · 14 · +0.12em · VERSAL", family: "Space Mono", size: "14px", weight: 700, ls: ".12em", sample: "FRAGEBOGEN AUSFÜLLEN →" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

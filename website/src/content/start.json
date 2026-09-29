@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "KI-Einrichtung für Kleinbetriebe · Dominik Tantscher",
+    "description": "Ich richte KI persönlich in Ihrem Betrieb ein – passend zu Ihren Abläufen, sicher mit Ihren Daten. Vor Ort oder online."
+  },
+  "hero": {
+    "label": "KI-EINRICHTUNG FÜR KLEINBETRIEBE",
+    "title": "Weniger Büroarbeit.",
+    "titleAccent": "Mehr Zeit für Ihre Kunden.",
+    "lead": "Ich richte künstliche Intelligenz persönlich in Ihrem Betrieb ein – passend zu Ihren Abläufen, sicher im Umgang mit Ihren Daten und so verständlich, dass Ihr Team sie jeden Tag nutzt."
+  },
+  "why": {
+    "label": "01 — WARUM ICH",
+    "title": "KI ist da. Nur in kleinen Betrieben arbeitet sie noch nicht.",
+    "text": "Konzerne nutzen KI längst im Alltag, Kleinbetrieben fehlt dafür die Zeit. Beratungen sind auf Großunternehmen zugeschnitten, der Selbstversuch endet oft in einem Chatfenster. Genau diese Lücke schließe ich – als fester Ansprechpartner, der Ihren Betrieb versteht.",
+    "goalLabel": "MEIN ZIEL",
+    "goal": "KI, die in Ihrem Betrieb verlässlich mitarbeitet – statt nur ausprobiert zu werden."
+  },
+  "pains": {
+    "label": "02 — KOMMT IHNEN DAS BEKANNT VOR?",
+    "title": "Der Auftrag ist fertig. Die Büroarbeit nicht.",
+    "items": [
+      "Angebote und Rechnungen entstehen am Abend.",
+      "E-Mails und Anfragen bleiben zwischen Terminen liegen.",
+      "Dieselben Angaben werden immer wieder abgetippt.",
+      "Aus Notizen müssen noch Berichte werden.",
+      "Texte für Website und Social Media bleiben liegen.",
+      "Wissen steckt in Köpfen statt in Vorlagen."
+    ],
+    "summary": "Jeder Haken ist ein Ablauf, den KI für Sie vorbereiten kann."
+  },
+  "servicesLabel": "03 — LEISTUNGEN · ALLES AUS EINER HAND",
+  "benefitsLabel": "04 — IHR NUTZEN",
+  "tailored": {
+    "strong": "Maßgeschneidert statt von der Stange.",
+    "text": "Ich bringe Erfahrung aus KI-Strategie, KI-Umsetzung und KI-Governance in der Industrie mit – und mache dieses Wissen für kleine Betriebe nutzbar. Persönlich vor Ort oder online."
+  }
+}

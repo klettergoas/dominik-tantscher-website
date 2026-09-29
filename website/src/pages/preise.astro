@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import PriceTable from '../components/PriceTable.astro';
+import ValueTable from '../components/ValueTable.astro';
+import CtaBox from '../components/CtaBox.astro';
+import page from '../content/preise.json';
+---
+<Base title={page.meta.title} description={page.meta.description} active="preise">
+  <section class="section grid">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+      <p class="lead page-hero__lead">{page.hero.lead}</p>
+    </div>
+  </section>
+
+  <section class="section packages" aria-labelledby="pakete-titel">
+    <SectionLabel>{page.packages.label}</SectionLabel>
+    <h2 id="pakete-titel" class="sr-only">Leistungspakete</h2>
+    <PriceTable />
+  </section>
+
+  <section class="section value-tables">
+    <ValueTable title={page.extra.title} rows={page.extra.rows} note={page.extra.note} />
+    <ValueTable title={page.travel.title} rows={page.travel.rows} note={page.travel.note} />
+  </section>
+
+  <section class="section section--flush pilot-wrap">
+    <div class="pilot">
+      <h2 class="pilot__title">{page.pilot.title}</h2>
+      <p class="pilot__text">{page.pilot.text}</p>
+    </div>
+  </section>
+
+  <section class="section section--flush cta-wrap">
+    <CtaBox />
+  </section>
+
+  <div class="footnote">
+    <p>{page.footnote}</p>
+  </div>
+</Base>
+
+<style>
+  .page-hero {
+    grid-column: 1 / span 9;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .page-hero__lead { max-width: 720px; }
+  .packages {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .value-tables {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+  }
+  .pilot-wrap { padding-bottom: 0; }
+  .pilot {
+    border: 1px solid var(--accent);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 48px;
+  }
+  .pilot__title {
+    font-size: 32px;
+    line-height: 1.15;
+    color: var(--accent);
+    text-wrap: pretty;
+  }
+  .pilot__text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .cta-wrap { padding-bottom: 64px; }
+  .footnote {
+    padding: 0 var(--pad-x) 64px;
+  }
+  .footnote p {
+    max-width: 960px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  @media (max-width: 1023px) {
+    .pilot { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  }
+  @media (max-width: 767px) {
+    .page-hero { gap: 24px; }
+    .packages { gap: 24px; }
+    .value-tables { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+    .pilot { padding: 28px 20px; gap: 16px; }
+    .pilot__title { font-size: 24px; }
+    .pilot__text { font-size: 17px; }
+    .cta-wrap { padding-bottom: 40px; }
+    .footnote { padding-bottom: var(--sec-y); }
+  }
+</style>
