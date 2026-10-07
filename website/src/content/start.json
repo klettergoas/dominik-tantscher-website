@@ -34,5 +34,79 @@
   "tailored": {
     "strong": "Maßgeschneidert statt von der Stange.",
     "text": "Ich bringe Erfahrung aus KI-Strategie, KI-Umsetzung und KI-Governance in der Industrie mit – und mache dieses Wissen für kleine Betriebe nutzbar. Persönlich vor Ort oder online."
+  },
+  "ways": {
+    "title": "KI wirksam in den Arbeitsalltag bringen",
+    "text": "Von der konkreten Prozesslösung im kleinen Betrieb bis zu Strategie, Governance und Befähigung in Organisationen. Ich sorge dafür, dass KI nicht nur ausprobiert, sondern im Alltag genutzt wird.",
+    "cards": [
+      {
+        "quote": "„Ich möchte einen konkreten Prozess verbessern“",
+        "sub": "Für kleine Unternehmen, Handwerk und Freiberufler",
+        "text": "Angebote schreiben, Anfragen beantworten, Dokumente erstellen: Ich nehme mir einen Arbeitsprozess vor und bringe die Lösung in Ihren Betrieb. Mit klaren Paketen und Preisen.",
+        "points": [
+          "Klare Pakete und Fixpreise",
+          "Konkrete Beispiele aus dem Büroalltag",
+          "Einstieg mit dem Potenzialcheck"
+        ],
+        "primary": {
+          "label": "Potenzialcheck vereinbaren",
+          "href": "/kontakt?anliegen=prozess"
+        },
+        "secondary": {
+          "label": "Pakete und Preise ansehen",
+          "href": "/ki-umsetzung"
+        }
+      },
+      {
+        "quote": "„Wir müssen KI strukturiert im Unternehmen verankern“",
+        "sub": "Für Organisationen, in denen KI genutzt wird oder werden soll",
+        "text": "Wenn Werkzeuge schon im Einsatz sind, aber Regeln, Zuständigkeiten und Kompetenz in der Breite fehlen. Ich schaffe Klarheit darüber, wo Sie stehen, und baue die Strukturen und Fähigkeiten auf, die KI im Alltag tragfähig machen.",
+        "points": [
+          "Standortbestimmung",
+          "Governance und Verantwortlichkeiten",
+          "Enablement und Adoption"
+        ],
+        "primary": {
+          "label": "Erstgespräch vereinbaren",
+          "href": "/kontakt?anliegen=organisation"
+        },
+        "secondary": {
+          "label": "Leistungen ansehen",
+          "href": "/ki-strategie-governance"
+        }
+      }
+    ]
+  },
+  "difference": {
+    "title": "Was mich unterscheidet",
+    "items": [
+      {
+        "title": "Umsetzung statt Foliensatz",
+        "text": "Ich baue und richte selbst ein. Auch Strategie- und Governance-Arbeit messe ich daran, ob sie im Alltag funktioniert."
+      },
+      {
+        "title": "Ehrlich, was KI kann und was nicht",
+        "text": "Sie bekommen eine realistische Einschätzung, keine Versprechen, die im Alltag nicht halten."
+      },
+      {
+        "title": "Ihre Werkzeuge, Ihre Zugänge",
+        "text": "Lizenzen und Zugänge laufen auf Ihr Unternehmen. Sie bleiben unabhängig."
+      }
+    ]
+  },
+  "examplesTeaser": {
+    "title": "Praxisbeispiele",
+    "link": {
+      "label": "Alle Praxisbeispiele ansehen",
+      "href": "/praxisbeispiele"
+    }
+  },
+  "closing": {
+    "title": "Nicht sicher, welcher Weg passt?",
+    "text": "Schreiben Sie mir kurz, worum es geht. Ich melde mich mit einer ehrlichen Einschätzung.",
+    "cta": {
+      "label": "Kontakt aufnehmen",
+      "href": "/kontakt"
+    }
   }
 }
