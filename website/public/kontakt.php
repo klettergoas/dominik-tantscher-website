@@ -20,6 +20,14 @@ require __DIR__ . '/lib/phpmailer/SMTP.php';
 
 const MIN_SECONDS = 3;
 
+// Auswahl „Anliegen“ im Formular (Wert => Bezeichnung in der E-Mail)
+const ANLIEGEN = [
+    'prozess' => 'Einen konkreten Prozess verbessern',
+    'organisation' => 'KI strukturiert im Unternehmen verankern',
+    'schulung' => 'Schulung',
+    'sonstiges' => 'Etwas anderes',
+];
+
 $wantsJson = stripos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false;
 
 function respond(bool $ok, bool $wantsJson, array $errors = []): never
@@ -88,6 +96,7 @@ $name = field('name', 200);
 $firma = field('firma', 200);
 $email = field('email', 254);
 $telefon = field('telefon', 50);
+$anliegen = field('anliegen', 30);
 $nachricht = field('nachricht', 5000, true);
 
 $errors = [];
@@ -96,6 +105,9 @@ if ($name === '') {
 }
 if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
     $errors['email'] = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
+}
+if (!array_key_exists($anliegen, ANLIEGEN)) {
+    $errors['anliegen'] = 'Bitte wählen Sie ein Anliegen aus.';
 }
 if ($nachricht === '') {
     $errors['nachricht'] = 'Bitte schreiben Sie kurz, worum es geht.';
@@ -113,7 +125,8 @@ $body = "Neue Nachricht über das Kontaktformular auf dominik-tantscher.at\n\n"
     . "Name: {$name}\n"
     . 'Betrieb / Firma: ' . ($firma !== '' ? $firma : '–') . "\n"
     . "E-Mail: {$email}\n"
-    . 'Telefon: ' . ($telefon !== '' ? $telefon : '–') . "\n\n"
+    . 'Telefon: ' . ($telefon !== '' ? $telefon : '–') . "\n"
+    . 'Anliegen: ' . ANLIEGEN[$anliegen] . "\n\n"
     . "Nachricht:\n{$nachricht}\n";
 
 $mail = new PHPMailer(true);

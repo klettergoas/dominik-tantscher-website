@@ -3,6 +3,7 @@ import kontakt from '../content/kontakt.json';
 import site from '../content/site.json';
 const f = kontakt.form;
 const m = f.message;
+const t = f.topic;
 ---
 <div class="contact-form">
   <div id="gesendet" class="form-box form-box--ok" role="status" tabindex="-1">
@@ -32,6 +33,14 @@ const m = f.message;
       </div>
     ))}
     <div class="field field--wide">
+      <label class="label-s" for={`f-${t.name}`}>{t.label}</label>
+      <select id={`f-${t.name}`} name={t.name} required data-error={t.error}>
+        <option value="">{t.placeholder}</option>
+        {t.options.map((o) => <option value={o.value}>{o.label}</option>)}
+      </select>
+      <p class="field__error" id={`err-${t.name}`} hidden><span class="field__icon" aria-hidden="true">!</span><span>{t.error}</span></p>
+    </div>
+    <div class="field field--wide">
       <label class="label-s" for={`f-${m.name}`}>{m.label}</label>
       <textarea id={`f-${m.name}`} name={m.name} rows={m.rows} maxlength={m.maxlength} required data-error={m.error}></textarea>
       <p class="field__error" id={`err-${m.name}`} hidden><span class="field__icon" aria-hidden="true">!</span><span>{m.error}</span></p>
@@ -53,6 +62,7 @@ const m = f.message;
       <p class="form__hint">{f.hintBefore}<a class="text-link" href="/datenschutz">{f.hintLink}</a>{f.hintAfter}</p>
       <button class="btn btn--primary btn--block-m form__submit" type="submit">{f.submit}</button>
     </div>
+    <p class="form__confidential field--wide">{f.confidentialHint}</p>
   </form>
 </div>
 
@@ -69,6 +79,7 @@ const m = f.message;
   }
   .field--wide { grid-column: 1 / span 2; }
   .field input,
+  .field select,
   .field textarea {
     width: 100%;
     background: var(--surface);
@@ -80,9 +91,18 @@ const m = f.message;
     outline: none;
     transition: border-color 150ms ease;
   }
-  .field input {
+  .field input,
+  .field select {
     height: 56px;
     padding: 0 16px;
+  }
+  .field select {
+    appearance: none;
+    padding-right: 44px;
+    background-image: linear-gradient(45deg, transparent 50%, var(--text-2) 50%), linear-gradient(135deg, var(--text-2) 50%, transparent 50%);
+    background-position: calc(100% - 22px) 25px, calc(100% - 16px) 25px;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
   }
   .field textarea {
     min-height: 120px;
@@ -91,6 +111,7 @@ const m = f.message;
     resize: vertical;
   }
   .field input:focus,
+  .field select:focus,
   .field textarea:focus {
     border-color: var(--state);
     box-shadow: 0 0 0 1px var(--state);
@@ -145,6 +166,11 @@ const m = f.message;
     max-width: 440px;
   }
   .form__submit { flex: none; }
+  .form__confidential {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
 
   /* Rückmeldungen: ohne JS über Sprungmarke (#gesendet / #sendefehler) sichtbar */
   .form-box {
@@ -233,19 +259,25 @@ const m = f.message;
     const failure = root.querySelector<HTMLElement>('#sendefehler')!;
     const submit = form.querySelector<HTMLButtonElement>('.form__submit')!;
     const dauer = form.querySelector<HTMLInputElement>('input[name="dauer"]')!;
-    const fields = Array.from(form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-error]'));
+    type Field = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    const fields = Array.from(form.querySelectorAll<Field>('[data-error]'));
+
+    // ?anliegen=prozess|organisation|schulung|sonstiges wählt das Anliegen vor
+    const topic = form.querySelector<HTMLSelectElement>('select[name="anliegen"]');
+    const wanted = new URLSearchParams(location.search).get('anliegen');
+    if (topic && wanted && Array.from(topic.options).some((o) => o.value === wanted)) topic.value = wanted;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     form.noValidate = true;
 
-    const isValid = (el: HTMLInputElement | HTMLTextAreaElement) => {
+    const isValid = (el: Field) => {
       const value = el.value.trim();
       if (el.required && value === '') return false;
       if (el.type === 'email' && value !== '' && !emailPattern.test(value)) return false;
       return true;
     };
 
-    const validate = (el: HTMLInputElement | HTMLTextAreaElement) => {
+    const validate = (el: Field) => {
       const ok = isValid(el);
       const error = document.getElementById(`err-${el.name}`);
       el.setAttribute('aria-invalid', String(!ok));
@@ -259,9 +291,11 @@ const m = f.message;
 
     fields.forEach((el) => {
       el.addEventListener('blur', () => validate(el));
-      el.addEventListener('input', () => {
+      const recheck = () => {
         if (el.getAttribute('aria-invalid') === 'true') validate(el);
-      });
+      };
+      el.addEventListener('input', recheck);
+      el.addEventListener('change', recheck);
     });
 
     const showFailure = () => {
