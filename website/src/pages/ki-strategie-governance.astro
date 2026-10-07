@@ -1,0 +1,199 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import Button from '../components/Button.astro';
+import CheckList from '../components/CheckList.astro';
+import page from '../content/ki-strategie-governance.json';
+---
+<Base title={page.meta.title} description={page.meta.description} active="ki-strategie-governance">
+  <section class="section grid">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+      <p class="lead page-hero__lead">{page.hero.lead}</p>
+    </div>
+  </section>
+
+  <section class="section signs">
+    <h2 class="h2">{page.signs.title}</h2>
+    <CheckList items={page.signs.items} />
+  </section>
+
+  <section class="section modules-wrap">
+    <div class="modules">
+      {page.modules.map((m) => (
+        <article class="card module">
+          <h2 class="module__title">{m.title}</h2>
+          <p class="body">{m.text}</p>
+          <p class="label-s">{page.resultsLabel}</p>
+          <ul class="bullets">
+            {m.results.map((r) => <li>{r}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+    <p class="crosslink">
+      {page.crossLink.text} <a class="text-link" href={page.crossLink.href}>{page.crossLink.label} →</a>
+    </p>
+  </section>
+
+  <section class="section process">
+    <h2 class="h2">{page.process.title}</h2>
+    <ol class="steps">
+      {page.process.steps.map((s, i) => (
+        <li class="step">
+          <span class="step__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="step__title">{s.title}</h3>
+          <p class="step__text">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section section--flush closing">
+    <div class="card price-note">
+      <p>{page.priceNote}</p>
+      <div><Button href={page.cta.href} size="lg">{page.cta.label}</Button></div>
+    </div>
+    <p class="disclaimer">{page.disclaimer}</p>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    grid-column: 1 / span 9;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .page-hero__lead { max-width: 720px; }
+
+  .signs, .process {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .modules-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .modules {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .module {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 2px solid var(--accent);
+  }
+  .module__title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bullets li {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .bullets li::before {
+    content: '';
+    flex: none;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+  .crosslink {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 2px solid var(--accent);
+    padding-top: 16px;
+  }
+  .step__n {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .step__title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .step__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+
+  .closing {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 64px;
+  }
+  .price-note {
+    padding: 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) auto;
+    gap: 48px;
+    align-items: center;
+  }
+  .price-note p {
+    font-size: 20px;
+    line-height: 1.55;
+  }
+  .disclaimer {
+    max-width: 960px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+
+  @media (max-width: 1139px) {
+    .page-hero { grid-column: 1 / span 12; }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+    .price-note { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  }
+  @media (max-width: 767px) {
+    .page-hero { gap: 24px; }
+    .signs, .process { gap: 24px; }
+    .modules { grid-template-columns: minmax(0, 1fr); }
+    .module { padding: 28px 20px; gap: 16px; }
+    .module__title { font-size: 24px; }
+    .bullets li { font-size: 16px; }
+    .crosslink { font-size: 17px; }
+    .steps { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+    .price-note { padding: 28px 20px; }
+    .price-note p { font-size: 17px; }
+    .closing { padding-bottom: var(--sec-y); }
+  }
+</style>

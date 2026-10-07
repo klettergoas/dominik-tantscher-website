@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "KI-Standortbestimmung und KI-Governance für Organisationen | Dominik Tantscher",
+    "description": "Wo steht Ihr Unternehmen bei KI, und wer entscheidet was? Standortbestimmung und Governance-Sprint mit Blick auf die Umsetzung."
+  },
+  "hero": {
+    "label": "KI-STRATEGIE & GOVERNANCE",
+    "title": "KI strukturiert im Unternehmen verankern",
+    "lead": "Ich verbinde KI-Strategie, Governance und Befähigung mit konkreter Umsetzung. Sie bekommen Klarheit darüber, wo Sie stehen, und Regeln, die im Alltag funktionieren. Kein Konzept für die Schublade."
+  },
+  "signs": {
+    "title": "Woran Sie merken, dass es Zeit ist",
+    "items": [
+      "Mitarbeitende nutzen KI-Werkzeuge, aber es gibt keine gemeinsamen Regeln.",
+      "Mehrere KI-Initiativen laufen nebeneinander, ohne Überblick.",
+      "Niemand ist klar zuständig für Freigaben, Risiken oder Fragen zum EU AI Act.",
+      "Die Führung will KI vorantreiben, aber es fehlt eine belastbare Ausgangsbasis."
+    ]
+  },
+  "resultsLabel": "Sie erhalten:",
+  "modules": [
+    {
+      "title": "KI-Standortbestimmung",
+      "text": "Ich erfasse Reifegrad, laufende Initiativen, Kompetenzen, Risiken und Engpässe in Ihrem Unternehmen.",
+      "results": [
+        "ein Reifegradbild über Ziele, Anwendungsfälle, Werkzeuge, Governance und Kompetenz",
+        "eine Übersicht über laufende Initiativen und genutzte Werkzeuge",
+        "die wichtigsten Risiken und Engpässe",
+        "priorisierte Handlungsfelder und eine Empfehlung für die nächsten Schritte"
+      ]
+    },
+    {
+      "title": "KI-Governance-Sprint",
+      "text": "Ich entwickle mit Ihnen Rollen, Verantwortlichkeiten und Regeln für den KI-Einsatz, schlank genug, um gelebt zu werden.",
+      "results": [
+        "ein Rollen- und Verantwortlichkeitsmodell",
+        "einen Freigabeprozess für neue KI-Anwendungen",
+        "ein KI-Inventar mit Erstbefüllung",
+        "eine KI-Nutzungsrichtlinie",
+        "Eskalationswege und einen Überprüfungsrhythmus"
+      ]
+    }
+  ],
+  "crossLink": {
+    "text": "Kompetenz in der Breite aufbauen?",
+    "label": "KI-Enablement-Programm",
+    "href": "/schulung-enablement#organisationen"
+  },
+  "process": {
+    "title": "So läuft ein Projekt ab",
+    "steps": [
+      { "title": "Erstgespräch", "text": "Sie schildern die Ausgangslage, ich stelle Fragen." },
+      { "title": "Abgrenzung", "text": "Wir klären Ziel, Umfang und Beteiligte." },
+      { "title": "Angebot", "text": "Sie erhalten ein projektbezogenes Angebot mit Ergebnissen, Phasen und Preis." },
+      { "title": "Umsetzung in Phasen", "text": "An jedem Entscheidungspunkt entscheiden Sie, wie es weitergeht." }
+    ]
+  },
+  "priceNote": "Organisationen und Vorhaben unterscheiden sich stark. Deshalb gibt es hier keine Paketpreise. Nach einer kurzen Abgrenzung erhalten Sie ein projektbezogenes Angebot.",
+  "cta": { "label": "Erstgespräch vereinbaren", "href": "/kontakt?anliegen=organisation" },
+  "disclaimer": "Meine Governance-Ergebnisse sind organisatorische Arbeitsgrundlagen. Eine rechtliche Beurteilung, etwa nach EU AI Act oder Datenschutzrecht, ersetzen sie nicht."
+}
