@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "KI-Umsetzung für kleine Unternehmen – Pakete und Preise | Dominik Tantscher",
+    "description": "Ein konkreter Arbeitsprozess, eine funktionierende KI-Lösung im Betrieb. Potenzialcheck, Einrichtung, eigene Lösung und Schulung zu klaren Preisen."
+  },
+  "hero": {
+    "label": "KI-UMSETZUNG",
+    "title": "Ein konkreter Prozess. Eine Lösung, die im Betrieb läuft.",
+    "lead": "Für Handwerker, Freiberufler und kleine Unternehmen, bei denen die Büroarbeit neben der eigentlichen Arbeit zu viel Zeit frisst. Ich löse einen konkreten Arbeitsprozess und bringe die Lösung tatsächlich in den Betrieb."
+  },
+  "packagesTitle": "Pakete",
+  "potenzialcheckCta": {
+    "label": "Potenzialcheck vereinbaren",
+    "href": "/kontakt?anliegen=prozess"
+  },
+  "maintenanceTitle": "Wartung und Weiterentwicklung",
+  "goodToKnowTitle": "Gut zu wissen",
+  "travelTitle": "Anfahrt"
+}
