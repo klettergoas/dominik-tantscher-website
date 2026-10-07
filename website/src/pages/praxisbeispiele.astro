@@ -5,7 +5,7 @@ import page from '../content/praxisbeispiele.json';
 
 const parts = ['ausgangslage', 'vorgehen', 'ergebnis'] as const;
 ---
-<Base title={page.meta.title} active="praxisbeispiele">
+<Base title={page.meta.title} description={page.meta.description} active="praxisbeispiele">
   <section class="section grid">
     <div class="page-hero">
       <SectionLabel>{page.hero.label}</SectionLabel>

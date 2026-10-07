@@ -1,6 +1,9 @@
 import site from '../content/site.json';
 
-const paths = ['/', '/leistungen', '/preise', '/referenzen', '/ueber-mich', '/kontakt', '/impressum', '/datenschutz'];
+const paths = [
+  '/', '/ki-umsetzung', '/ki-strategie-governance', '/schulung-enablement', '/leistungen', '/preise',
+  '/praxisbeispiele', '/referenzen', '/ueber-mich', '/kontakt', '/impressum', '/datenschutz',
+];
 
 export function GET() {
   const urls = paths.map((p) => `  <url><loc>${site.url}${p}</loc></url>`).join('\n');

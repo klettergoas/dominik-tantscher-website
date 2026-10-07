@@ -22,6 +22,24 @@
       "href": "/"
     },
     {
+      "key": "ki-umsetzung",
+      "label": "KI-UMSETZUNG",
+      "mobileLabel": "KI-Umsetzung",
+      "href": "/ki-umsetzung"
+    },
+    {
+      "key": "ki-strategie-governance",
+      "label": "KI-STRATEGIE & GOVERNANCE",
+      "mobileLabel": "KI-Strategie & Governance",
+      "href": "/ki-strategie-governance"
+    },
+    {
+      "key": "schulung-enablement",
+      "label": "SCHULUNG & ENABLEMENT",
+      "mobileLabel": "Schulung & Enablement",
+      "href": "/schulung-enablement"
+    },
+    {
       "key": "leistungen",
       "label": "LEISTUNGEN",
       "mobileLabel": "Leistungen",
@@ -32,6 +50,12 @@
       "label": "PREISE",
       "mobileLabel": "Preise",
       "href": "/preise"
+    },
+    {
+      "key": "praxisbeispiele",
+      "label": "PRAXISBEISPIELE",
+      "mobileLabel": "Praxisbeispiele",
+      "href": "/praxisbeispiele"
     },
     {
       "key": "referenzen",

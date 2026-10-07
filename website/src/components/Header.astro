@@ -14,10 +14,12 @@ const { active } = Astro.props;
         <a href={item.href} aria-current={item.key === active ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
-    <a class="btn btn--primary btn--sm site-header__cta" href={site.tallyUrl} target="_blank" rel="noopener">{site.tallyLabel}</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" hidden>
-      <span></span><span></span><span></span>
-    </button>
+    <div class="site-header__actions">
+      <a class="btn btn--primary btn--sm site-header__cta" href={site.tallyUrl} target="_blank" rel="noopener">{site.tallyLabel}</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" hidden>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -32,7 +34,7 @@ const { active } = Astro.props;
   .site-header__inner {
     max-width: var(--max);
     margin: 0 auto;
-    height: var(--header-h);
+    min-height: var(--header-h);
     padding: 0 var(--pad-x);
     display: flex;
     align-items: center;
@@ -51,7 +53,9 @@ const { active } = Astro.props;
   .site-header__cta { white-space: nowrap; }
   .site-nav {
     display: flex;
-    gap: 32px;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    padding: 12px 0;
     font-family: var(--font-mono);
     font-size: 13px;
     letter-spacing: .12em;
@@ -94,15 +98,17 @@ const { active } = Astro.props;
     background: var(--accent);
   }
 
-  @media (max-width: 1279px) {
-    .site-nav { gap: 20px; }
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: none;
   }
-  @media (max-width: 1139px) {
-    .site-nav, .site-header__cta { display: none; }
-    .menu-toggle:not([hidden]) { display: flex; }
-  }
-  @media (min-width: 1140px) {
-    .menu-toggle { display: none; }
+  .menu-toggle:not([hidden]) { display: flex; }
+  /* Mit JavaScript: Navigation im Menü-Overlay statt in der Kopfzeile */
+  :global(.js) .site-nav { display: none; }
+  @media (max-width: 899px) {
+    .site-header__cta { display: none; }
   }
   @media (max-width: 767px) {
     .site-header__logo img { height: 28px; }

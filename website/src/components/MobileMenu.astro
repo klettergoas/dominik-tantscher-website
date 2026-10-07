@@ -40,6 +40,13 @@ const { active } = Astro.props;
     overflow-y: auto;
   }
   .mobile-menu[hidden] { display: none; }
+  /* Inhalt wie die Seite auf 1280 px begrenzt */
+  .mobile-menu__head, .mobile-menu__nav, .mobile-menu__foot {
+    width: 100%;
+    max-width: var(--max);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .mobile-menu__head {
     flex: none;
     height: var(--header-h);
@@ -75,9 +82,9 @@ const { active } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 14px 0;
     border-bottom: 1px solid var(--border);
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 1.2;
     color: var(--text);
@@ -121,7 +128,6 @@ const { active } = Astro.props;
 
   if (menu && toggle && close) {
     toggle.hidden = false;
-    const desktop = window.matchMedia('(min-width: 1140px)');
     const focusables = () =>
       Array.from(menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
 
@@ -156,9 +162,6 @@ const { active } = Astro.props;
           first.focus();
         }
       }
-    });
-    desktop.addEventListener('change', (e) => {
-      if (e.matches && !menu.hidden) shut(false);
     });
   }
 </script>

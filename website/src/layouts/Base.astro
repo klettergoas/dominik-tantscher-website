@@ -28,6 +28,7 @@ const ogImage = site.url + '/og-image.png';
     {noindex && <meta name="robots" content="noindex" />}
     {canonical && <link rel="canonical" href={canonicalUrl} />}
     <meta name="theme-color" content="#0A0C11" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <link rel="preload" href="/fonts/archivo-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

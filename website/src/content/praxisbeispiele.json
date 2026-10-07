@@ -1,13 +1,18 @@
 {
   "meta": {
-    "title": "Praxisbeispiele – KI im Arbeitsalltag | Dominik Tantscher"
+    "title": "Praxisbeispiele – KI im Arbeitsalltag | Dominik Tantscher",
+    "description": "Die folgenden Beispiele sind typische Szenarien. Sie zeigen, wie ich arbeite."
   },
   "hero": {
     "label": "PRAXISBEISPIELE",
     "title": "So kann das aussehen",
     "lead": "Die folgenden Beispiele sind typische Szenarien. Sie zeigen, wie ich arbeite. Sobald Kunden einer Nennung zustimmen, ergänze ich echte Referenzen."
   },
-  "labels": { "ausgangslage": "Ausgangslage", "vorgehen": "Vorgehen", "ergebnis": "Ergebnis" },
+  "labels": {
+    "ausgangslage": "Ausgangslage",
+    "vorgehen": "Vorgehen",
+    "ergebnis": "Ergebnis"
+  },
   "items": [
     {
       "typ": "Beispielszenario",
