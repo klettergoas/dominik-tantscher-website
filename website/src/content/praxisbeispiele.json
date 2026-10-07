@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Praxisbeispiele – KI im Arbeitsalltag | Dominik Tantscher"
+  },
+  "hero": {
+    "label": "PRAXISBEISPIELE",
+    "title": "So kann das aussehen",
+    "lead": "Die folgenden Beispiele sind typische Szenarien. Sie zeigen, wie ich arbeite. Sobald Kunden einer Nennung zustimmen, ergänze ich echte Referenzen."
+  },
+  "labels": { "ausgangslage": "Ausgangslage", "vorgehen": "Vorgehen", "ergebnis": "Ergebnis" },
+  "items": [
+    {
+      "typ": "Beispielszenario",
+      "linie": "KI-Umsetzung",
+      "titel": "Handwerksbetrieb – Angebote schneller schreiben",
+      "ausgangslage": "Angebote entstehen abends, jedes Mal von Grund auf neu.",
+      "vorgehen": "Einrichtung eines KI-Werkzeugs mit Vorlagen in Firmenton und Leistungsbeschreibungen.",
+      "ergebnis": "ein Entwurf in Minuten, der nur noch geprüft und angepasst wird."
+    },
+    {
+      "typ": "Beispielszenario",
+      "linie": "KI-Umsetzung",
+      "titel": "Freiberuflerin – wiederkehrende Anfragen beantworten",
+      "ausgangslage": "viele ähnliche E-Mail-Anfragen.",
+      "vorgehen": "Antwortvorlagen und eine Wissensquelle mit den häufigsten Fragen.",
+      "ergebnis": "konsistente Antworten, weniger Zeit im Postfach."
+    },
+    {
+      "typ": "Beispielszenario",
+      "linie": "Organisationen",
+      "titel": "Mittelständisches Unternehmen – Schatten-KI in geordnete Bahnen",
+      "ausgangslage": "Mitarbeitende nutzen verschiedene KI-Werkzeuge über private Konten.",
+      "vorgehen": "Standortbestimmung, danach Governance-Sprint mit Nutzungsrichtlinie, Freigabeprozess und Inventar.",
+      "ergebnis": "freigegebene Werkzeuge, klare Regeln, benannte Zuständige."
+    },
+    {
+      "typ": "Beispielszenario",
+      "linie": "Organisationen",
+      "titel": "Organisation mit mehreren Bereichen – KI-Kompetenz aufbauen",
+      "ausgangslage": "punktuelle Schulungen ohne Wirkung im Alltag.",
+      "vorgehen": "Briefing für Führungskräfte, rollenbezogene Trainings, KI-Champions.",
+      "ergebnis": "Nutzung an echten Aufgaben, interne Ansprechpersonen, dokumentierte Kompetenzmaßnahmen."
+    }
+  ]
+}

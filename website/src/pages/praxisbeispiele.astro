@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import page from '../content/praxisbeispiele.json';
+
+const parts = ['ausgangslage', 'vorgehen', 'ergebnis'] as const;
+---
+<Base title={page.meta.title} active="praxisbeispiele">
+  <section class="section grid">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+      <p class="lead page-hero__lead">{page.hero.lead}</p>
+    </div>
+  </section>
+
+  <section class="section section--flush cases-wrap" aria-label="Beispiele">
+    <ul class="cases">
+      {page.items.map((item) => (
+        <li class="card case">
+          <div class="case__tags">
+            <span class="case__type">{item.typ}</span>
+            <span class="case__line">{item.linie}</span>
+          </div>
+          <h2 class="case__title">{item.titel}</h2>
+          <dl class="case__parts">
+            {parts.map((key) => (
+              <div>
+                <dt>{page.labels[key]}</dt>
+                <dd>{item[key]}</dd>
+              </div>
+            ))}
+          </dl>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    grid-column: 1 / span 9;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .page-hero__lead { max-width: 720px; }
+
+  .cases {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .case {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .case__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  /* „Beispielszenario“ muss deutlich sichtbar sein (Briefing) */
+  .case__type {
+    padding: 6px 10px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+  }
+  .case__line { color: var(--text-2); }
+  .case__title {
+    font-size: 26px;
+    line-height: 1.2;
+    text-wrap: pretty;
+  }
+  .case__parts {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+  .case__parts div {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .case__parts dt {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 3px;
+  }
+  .case__parts dd {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .cases-wrap { padding-bottom: 96px; }
+
+  @media (max-width: 1139px) {
+    .page-hero { grid-column: 1 / span 12; }
+  }
+  @media (max-width: 1023px) {
+    .cases { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 767px) {
+    .page-hero { gap: 24px; }
+    .case { padding: 28px 20px; gap: 16px; }
+    .case__title { font-size: 22px; }
+    .case__parts div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .cases-wrap { padding-bottom: var(--sec-y); }
+  }
+</style>
