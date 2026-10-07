@@ -121,7 +121,7 @@ const { active } = Astro.props;
 
   if (menu && toggle && close) {
     toggle.hidden = false;
-    const desktop = window.matchMedia('(min-width: 1024px)');
+    const desktop = window.matchMedia('(min-width: 1140px)');
     const focusables = () =>
       Array.from(menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
 

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Referenzen · Dominik Tantscher",
+    "description": "Referenzen: ein Rechnungsportal für die Wäscherei Brunnhofer und ein Web-Chatbot für No Carbs, No Glory!"
+  },
+  "hero": {
+    "label": "REFERENZEN",
+    "title": "Referenzen"
+  },
+  "items": [
+    {
+      "name": "Wäscherei Brunnhofer",
+      "logo": {
+        "src": "/assets/referenzen/brunnhofer.webp",
+        "width": 800,
+        "height": 457,
+        "fill": true
+      },
+      "label": "RECHNUNGSPORTAL",
+      "title": "Monatsrechnungen per Knopfdruck",
+      "text": "Lieferungen werden laufend erfasst, kundenspezifische Preise sind hinterlegt. Am Monatsende entstehen alle Rechnungen mit einem Klick als fertiges PDF."
+    },
+    {
+      "name": "No Carbs, No Glory!",
+      "logo": {
+        "src": "/assets/referenzen/ncng.png",
+        "width": 237,
+        "height": 244,
+        "fill": false
+      },
+      "label": "WEB-CHATBOT",
+      "title": "Antworten auf Kundenfragen – direkt auf der Website",
+      "text": "Ein KI-Chatbot beantwortet Fragen zu Sporternährung und Produkten. Grundlage ist das eigene Wissen des Unternehmens: Podcast-Folgen, Artikel und Produktdaten."
+    }
+  ]
+}

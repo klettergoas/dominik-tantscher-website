@@ -1,0 +1,177 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import CtaBox from '../components/CtaBox.astro';
+import page from '../content/referenzen.json';
+---
+<Base title={page.meta.title} description={page.meta.description} active="referenzen">
+  <section class="section">
+    <div class="page-hero">
+      <SectionLabel>{page.hero.label}</SectionLabel>
+      <h1 class="h1">{page.hero.title}</h1>
+    </div>
+    <ul class="refs" aria-label="Referenzkunden">
+      {page.items.map((item) => (
+        <li class="ref" tabindex="0">
+          <div class:list={['ref__tile', item.logo.fill && 'ref__tile--fill']}>
+            <img src={item.logo.src} width={item.logo.width} height={item.logo.height} alt={`Logo ${item.name}`} />
+          </div>
+          <p class="ref__name">{item.name}</p>
+          <div class="ref__pop">
+            <p class="ref__label">{item.label}</p>
+            <h2 class="ref__title">{item.title}</h2>
+            <p class="ref__text">{item.text}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section section--flush cta-wrap">
+    <CtaBox />
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  .refs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .ref {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .ref:focus-visible { outline-offset: 6px; }
+
+  /* Logo-Kachel: heller Grund, damit beide Logos in Originalfarben stehen */
+  .ref__tile {
+    aspect-ratio: 800 / 457;
+    background: var(--text);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color 150ms ease, opacity 150ms ease;
+  }
+  .ref__tile img {
+    width: auto;
+    height: 58%;
+  }
+  .ref__tile--fill img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ref__name {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: var(--text-2);
+    transition: color 150ms ease;
+  }
+
+  .ref__pop {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ref__label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    color: var(--accent);
+  }
+  .ref__title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .ref__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+
+  /* Geräte mit Maus: Projektbeschreibung als Popup beim Überfahren (oder per Tastaturfokus).
+     Auf Touch-Geräten steht sie dauerhaft unter dem Logo. */
+  @media (hover: hover) {
+    .refs { padding-bottom: 232px; }
+    .ref { cursor: default; }
+    .ref__pop {
+      position: absolute;
+      z-index: 2;
+      top: calc(100% + 12px);
+      left: 0;
+      right: 0;
+      padding: 24px 24px 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+    /* kleine Spitze, die das Popup mit dem Logo verbindet */
+    .ref__pop::before {
+      content: '';
+      position: absolute;
+      top: -9px;
+      left: 28px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+    .ref__pop > * {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+    .ref:hover .ref__pop,
+    .ref:focus-within .ref__pop,
+    .ref:focus .ref__pop {
+      opacity: 1;
+      transform: none;
+    }
+    .ref:hover .ref__pop > *,
+    .ref:focus .ref__pop > * {
+      opacity: 1;
+      transform: none;
+    }
+    .ref:hover .ref__pop > :nth-child(2), .ref:focus .ref__pop > :nth-child(2) { transition-delay: 70ms; }
+    .ref:hover .ref__pop > :nth-child(3), .ref:focus .ref__pop > :nth-child(3) { transition-delay: 140ms; }
+
+    .ref:hover .ref__tile, .ref:focus .ref__tile { border-color: var(--accent); }
+    .ref:hover .ref__name, .ref:focus .ref__name { color: var(--text); }
+    /* die übrigen Logos treten zurück */
+    .refs:has(.ref:hover) .ref:not(:hover) .ref__tile { opacity: .35; }
+  }
+
+  .cta-wrap { padding-bottom: 64px; }
+
+  @media (max-width: 1139px) {
+    .refs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 767px) {
+    .page-hero { gap: 24px; margin-bottom: 40px; }
+    .refs { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+    .cta-wrap { padding-bottom: var(--sec-y); }
+  }
+</style>

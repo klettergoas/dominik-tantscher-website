@@ -15,15 +15,49 @@
     "country": "AT"
   },
   "nav": [
-    { "key": "start", "label": "START", "mobileLabel": "Start", "href": "/" },
-    { "key": "leistungen", "label": "LEISTUNGEN", "mobileLabel": "Leistungen", "href": "/leistungen" },
-    { "key": "preise", "label": "PREISE", "mobileLabel": "Preise", "href": "/preise" },
-    { "key": "ueber-mich", "label": "ÜBER MICH", "mobileLabel": "Über mich", "href": "/ueber-mich" },
-    { "key": "kontakt", "label": "KONTAKT", "mobileLabel": "Kontakt", "href": "/kontakt" }
+    {
+      "key": "start",
+      "label": "START",
+      "mobileLabel": "Start",
+      "href": "/"
+    },
+    {
+      "key": "leistungen",
+      "label": "LEISTUNGEN",
+      "mobileLabel": "Leistungen",
+      "href": "/leistungen"
+    },
+    {
+      "key": "preise",
+      "label": "PREISE",
+      "mobileLabel": "Preise",
+      "href": "/preise"
+    },
+    {
+      "key": "referenzen",
+      "label": "REFERENZEN",
+      "mobileLabel": "Referenzen",
+      "href": "/referenzen"
+    },
+    {
+      "key": "ueber-mich",
+      "label": "ÜBER MICH",
+      "mobileLabel": "Über mich",
+      "href": "/ueber-mich"
+    },
+    {
+      "key": "kontakt",
+      "label": "KONTAKT",
+      "mobileLabel": "Kontakt",
+      "href": "/kontakt"
+    }
   ],
   "cta": {
     "title": "Welcher Ablauf kostet Sie am meisten Zeit?",
     "text": "Beschreiben Sie ihn in wenigen Minuten im Online-Fragebogen. Unverbindlich – Sie erhalten von mir eine persönliche Einschätzung, was KI in genau diesem Ablauf leisten kann."
   },
-  "pricesButton": { "label": "LEISTUNGEN UND PREISE", "href": "/preise" }
+  "pricesButton": {
+    "label": "LEISTUNGEN UND PREISE",
+    "href": "/preise"
+  }
 }
