@@ -68,11 +68,11 @@
       "options": [
         {
           "value": "prozess",
-          "label": "Einen konkreten Prozess verbessern"
+          "label": "KI-Implementierung"
         },
         {
           "value": "organisation",
-          "label": "KI strukturiert im Unternehmen verankern"
+          "label": "KI-Beratung"
         },
         {
           "value": "schulung",

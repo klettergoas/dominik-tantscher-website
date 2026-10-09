@@ -16,7 +16,7 @@
   "items": [
     {
       "typ": "Beispielszenario",
-      "linie": "KI-Umsetzung",
+      "linie": "KI-Implementierung",
       "titel": "Handwerksbetrieb – Angebote schneller schreiben",
       "ausgangslage": "Angebote entstehen abends, jedes Mal von Grund auf neu.",
       "vorgehen": "Einrichtung eines KI-Werkzeugs mit Vorlagen in Firmenton und Leistungsbeschreibungen.",
@@ -24,7 +24,7 @@
     },
     {
       "typ": "Beispielszenario",
-      "linie": "KI-Umsetzung",
+      "linie": "KI-Implementierung",
       "titel": "Freiberuflerin – wiederkehrende Anfragen beantworten",
       "ausgangslage": "viele ähnliche E-Mail-Anfragen.",
       "vorgehen": "Antwortvorlagen und eine Wissensquelle mit den häufigsten Fragen.",
@@ -32,7 +32,7 @@
     },
     {
       "typ": "Beispielszenario",
-      "linie": "Organisationen",
+      "linie": "KI-Beratung",
       "titel": "Mittelständisches Unternehmen – Schatten-KI in geordnete Bahnen",
       "ausgangslage": "Mitarbeitende nutzen verschiedene KI-Werkzeuge über private Konten.",
       "vorgehen": "Standortbestimmung, danach Governance-Sprint mit Nutzungsrichtlinie, Freigabeprozess und Inventar.",
@@ -40,7 +40,7 @@
     },
     {
       "typ": "Beispielszenario",
-      "linie": "Organisationen",
+      "linie": "KI-Beratung",
       "titel": "Organisation mit mehreren Bereichen – KI-Kompetenz aufbauen",
       "ausgangslage": "punktuelle Schulungen ohne Wirkung im Alltag.",
       "vorgehen": "Briefing für Führungskräfte, rollenbezogene Trainings, KI-Champions.",

@@ -22,8 +22,8 @@ const MIN_SECONDS = 3;
 
 // Auswahl „Anliegen“ im Formular (Wert => Bezeichnung in der E-Mail)
 const ANLIEGEN = [
-    'prozess' => 'Einen konkreten Prozess verbessern',
-    'organisation' => 'KI strukturiert im Unternehmen verankern',
+    'prozess' => 'KI-Implementierung',
+    'organisation' => 'KI-Beratung',
     'schulung' => 'Schulung',
     'sonstiges' => 'Etwas anderes',
 ];

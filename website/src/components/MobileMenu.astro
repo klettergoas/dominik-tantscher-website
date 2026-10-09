@@ -82,9 +82,9 @@ const { active } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 0;
+    padding: 20px 0;
     border-bottom: 1px solid var(--border);
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1.2;
     color: var(--text);
@@ -128,6 +128,7 @@ const { active } = Astro.props;
 
   if (menu && toggle && close) {
     toggle.hidden = false;
+    const desktop = window.matchMedia('(min-width: 1140px)');
     const focusables = () =>
       Array.from(menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
 
@@ -146,6 +147,9 @@ const { active } = Astro.props;
 
     toggle.addEventListener('click', open);
     close.addEventListener('click', () => shut());
+    desktop.addEventListener('change', (e) => {
+      if (e.matches && !menu.hidden) shut(false);
+    });
     menu.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         e.preventDefault();
