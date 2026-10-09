@@ -1,43 +1,459 @@
 ---
 import Base from '../layouts/Base.astro';
 import SectionLabel from '../components/SectionLabel.astro';
+import Button from '../components/Button.astro';
+import CheckList from '../components/CheckList.astro';
 import ServiceRows from '../components/ServiceRows.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import BenefitBlock from '../components/BenefitBlock.astro';
+import PriceTable from '../components/PriceTable.astro';
+import PackageCard from '../components/PackageCard.astro';
+import ValueTable from '../components/ValueTable.astro';
 import CtaBox from '../components/CtaBox.astro';
 import page from '../content/leistungen.json';
+import preise from '../content/preise.json';
+
+// Preise und Paketinhalte ausschließlich aus src/content/preise.json
+const impl = page.implementierung;
+const ber = page.beratung;
+const training = preise.packages.items.find((pk) => pk.n === ber.training.packageNumber)!;
+const tabs = [impl, ber];
 ---
 <Base title={page.meta.title} description={page.meta.description} active="leistungen">
-  <section class="section grid">
+  <section class="grid hero">
     <div class="page-hero">
       <SectionLabel>{page.hero.label}</SectionLabel>
       <h1 class="h1">{page.hero.title}</h1>
     </div>
   </section>
 
-  <ServiceRows />
+  <!-- Umschalter: mit JavaScript Tabs, ohne JavaScript Sprunglinks zu beiden Bereichen -->
+  <div class="switch-wrap">
+    <div class="switch" role="tablist" aria-label={page.tabsLabel}>
+      {tabs.map((t, i) => (
+        <a class="switch__tab" href={`#${t.id}`} role="tab" id={`tab-${t.id}`} aria-controls={t.id} aria-selected={i === 0 ? 'true' : 'false'}>{t.tab}</a>
+      ))}
+    </div>
+  </div>
 
-  <section class="section">
-    <ProcessSteps />
-  </section>
+  <div class="panel" id={impl.id} role="tabpanel" aria-labelledby={`tab-${impl.id}`}>
+    <section class="section grid">
+      <div class="intro">
+        <h2 class="h2">{impl.title}</h2>
+        <p class="lead">{impl.lead}</p>
+      </div>
+    </section>
 
-  <BenefitBlock label={page.benefitsLabel} />
+    <ServiceRows />
+
+    <section class="section">
+      <ProcessSteps />
+    </section>
+
+    <BenefitBlock label={page.benefitsLabel} />
+
+    <section class="section block">
+      <div class="intro">
+        <SectionLabel>{preise.hero.label}</SectionLabel>
+        <h2 class="h2">{preise.hero.title}</h2>
+        <p class="lead">{preise.hero.lead}</p>
+      </div>
+      <PriceTable />
+      <div><Button href={impl.potenzialcheckCta.href}>{impl.potenzialcheckCta.label}</Button></div>
+    </section>
+
+    <section class="section tables">
+      <ValueTable title={preise.extra.title} rows={preise.extra.rows} note={preise.extra.note} />
+      <ValueTable title={impl.travelTitle} rows={preise.travel.rows} note={preise.travel.note} />
+    </section>
+
+    <section class="section block">
+      <h2 class="h2">{impl.maintenanceTitle}</h2>
+      <div class="maintenance">
+        <table class="rates">
+          <thead>
+            <tr><th scope="col">{preise.maintenance.headScope}</th><th scope="col">{preise.maintenance.headPrice}</th></tr>
+          </thead>
+          <tbody>
+            {preise.maintenance.rows.map((r) => <tr><th scope="row">{r.k}</th><td>{r.v}</td></tr>)}
+          </tbody>
+        </table>
+        <ul class="bullets">
+          {preise.maintenance.bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section block">
+      <div class="pilot">
+        <h2 class="pilot__title">{preise.pilot.title}</h2>
+        <p class="pilot__text">{preise.pilot.text}</p>
+      </div>
+      <p class="footnote">{preise.footnote}</p>
+    </section>
+  </div>
+
+  <div class="panel" id={ber.id} role="tabpanel" aria-labelledby={`tab-${ber.id}`}>
+    <section class="section grid">
+      <div class="intro">
+        <h2 class="h2">{ber.title}</h2>
+        <p class="lead">{ber.lead}</p>
+      </div>
+    </section>
+
+    <section class="section block">
+      <h2 class="h2">{ber.signs.title}</h2>
+      <CheckList items={ber.signs.items} />
+    </section>
+
+    <section class="section">
+      <div class="modules">
+        {ber.modules.map((m) => (
+          <article class="card module">
+            <h2 class="module__title">{m.title}</h2>
+            <p class="body">{m.text}</p>
+            <p class="label-s">{ber.resultsLabel}</p>
+            <ul class="bullets">
+              {m.results.map((r) => <li>{r}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section block">
+      <h2 class="h2">{ber.training.title}</h2>
+      <div class="training">
+        <PackageCard pk={training}>
+          <div><Button href={ber.training.cta.href}>{ber.training.cta.label}</Button></div>
+        </PackageCard>
+        <div class="training__more">
+          <p class="body">{ber.training.note}</p>
+          <ul class="bullets">
+            {ber.training.formats.map((f) => <li>{f}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section block">
+      <h2 class="h2">{ber.process.title}</h2>
+      <ol class="steps">
+        {ber.process.steps.map((s, i) => (
+          <li class="step">
+            <span class="step__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="step__title">{s.title}</h3>
+            <p class="step__text">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="section block">
+      <div class="card price-note">
+        <p>{ber.priceNote}</p>
+        <div><Button href={ber.cta.href} size="lg">{ber.cta.label}</Button></div>
+      </div>
+      <p class="footnote">{ber.disclaimer}</p>
+    </section>
+  </div>
 
   <section class="section section--flush cta-wrap">
-    <CtaBox secondary />
+    <CtaBox />
   </section>
 </Base>
 
+<script>
+  // Umschalter: zeigt je einen Bereich, merkt ihn in der Adresse (#ki-implementierung / #ki-beratung)
+  const tabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('.switch__tab'));
+  const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')!)!);
+
+  const select = (id: string, focus = false) => {
+    tabs.forEach((tab, i) => {
+      const on = tab.getAttribute('aria-controls') === id;
+      tab.setAttribute('aria-selected', String(on));
+      tab.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+      if (on && focus) tab.focus();
+    });
+  };
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    return panels.some((p) => p.id === id) ? id : null;
+  };
+
+  if (tabs.length) {
+    document.documentElement.classList.add('has-tabs');
+    select(fromHash() ?? panels[0].id);
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = tab.getAttribute('aria-controls')!;
+        select(id);
+        history.replaceState(null, '', `#${id}`);
+      });
+      tab.addEventListener('keydown', (e) => {
+        const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!step) return;
+        e.preventDefault();
+        const next = tabs[(i + step + tabs.length) % tabs.length].getAttribute('aria-controls')!;
+        select(next, true);
+        history.replaceState(null, '', `#${next}`);
+      });
+    });
+    // Links von anderen Seiten bzw. innerhalb der Seite (z. B. /leistungen#ki-beratung)
+    window.addEventListener('hashchange', () => {
+      const id = fromHash();
+      if (id) {
+        select(id);
+        document.querySelector('.switch-wrap')?.scrollIntoView();
+      }
+    });
+    if (fromHash()) document.querySelector('.switch-wrap')?.scrollIntoView();
+  }
+</script>
+
 <style>
+  .hero { padding: var(--sec-y) var(--pad-x) 48px; }
   .page-hero {
     grid-column: 1 / span 9;
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
+
+  /* Umschalter */
+  .switch-wrap {
+    padding: 0 var(--pad-x) 48px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: calc(var(--header-h) + 24px);
+  }
+  .switch {
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid var(--border);
+    max-width: 100%;
+  }
+  .switch__tab {
+    padding: 18px 32px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-2);
+  }
+  .switch__tab + .switch__tab { border-left: 1px solid var(--border); }
+  .switch__tab:hover { color: var(--text); }
+  .switch__tab[aria-selected='true'] {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  /* Ohne JavaScript sind beide Bereiche sichtbar; die Auswahl-Markierung gilt nur mit Tabs */
+  :global(html:not(.js)) .switch__tab[aria-selected='true'] {
+    background: transparent;
+    color: var(--text-2);
+  }
+  .panel { scroll-margin-top: calc(var(--header-h) + 24px); }
+  .panel[hidden] { display: none; }
+  /* Bis das Skript läuft: schon den richtigen Bereich zeigen, damit nichts springt */
+  :global(.js:not(.has-tabs)) .panel + .panel { display: none; }
+  :global(.js:not(.has-tabs)) .panel + .panel:target { display: block; }
+  :global(.js:not(.has-tabs):has(.panel + .panel:target)) .switch-wrap + .panel { display: none; }
+
+  .intro {
+    grid-column: 1 / span 9;
+    max-width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .tables {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+  }
+  .footnote {
+    max-width: 960px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+
+  .pilot {
+    border: 1px solid var(--accent);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 48px;
+  }
+  .pilot__title {
+    font-size: 32px;
+    line-height: 1.15;
+    color: var(--accent);
+    text-wrap: pretty;
+  }
+  .pilot__text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .maintenance, .training {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 48px;
+    align-items: start;
+  }
+  .training__more {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rates {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 17px;
+  }
+  .rates th, .rates td {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font-weight: 400;
+  }
+  .rates thead th {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-2);
+  }
+  .rates tbody th { color: var(--text-2); }
+  .rates td, .rates thead th:last-child { text-align: right; }
+  .rates td {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bullets li {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .bullets li::before {
+    content: '';
+    flex: none;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .modules {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .module {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 2px solid var(--accent);
+  }
+  .module__title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 2px solid var(--accent);
+    padding-top: 16px;
+  }
+  .step__n {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .step__title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .step__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+
+  .price-note {
+    padding: 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) auto;
+    gap: 48px;
+    align-items: center;
+  }
+  .price-note p {
+    font-size: 20px;
+    line-height: 1.55;
+  }
   .cta-wrap { padding-bottom: 64px; }
+
+  @media (max-width: 1139px) {
+    .page-hero, .intro { grid-column: 1 / span 12; }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+    .price-note { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  }
+  @media (max-width: 1023px) {
+    .maintenance, .training { grid-template-columns: minmax(0, 1fr); }
+    .pilot { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  }
   @media (max-width: 767px) {
+    .hero { padding-bottom: 32px; }
     .page-hero { gap: 24px; }
+    .switch-wrap { padding-bottom: 32px; }
+    .switch { display: grid; }
+    .switch__tab { padding: 16px 10px; font-size: 13px; letter-spacing: .08em; }
+    .intro { gap: 20px; }
+    .block { gap: 24px; }
+    .tables { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+    .pilot { padding: 28px 20px; gap: 16px; }
+    .pilot__title { font-size: 24px; }
+    .pilot__text { font-size: 17px; }
+    .maintenance, .training { gap: 28px; }
+    .bullets li { font-size: 16px; }
+    .modules { grid-template-columns: minmax(0, 1fr); }
+    .module { padding: 28px 20px; gap: 16px; }
+    .module__title { font-size: 24px; }
+    .steps { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+    .price-note { padding: 28px 20px; }
+    .price-note p { font-size: 17px; }
     .cta-wrap { padding-bottom: var(--sec-y); }
   }
 </style>
