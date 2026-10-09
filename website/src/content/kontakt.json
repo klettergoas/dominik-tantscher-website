@@ -3,15 +3,55 @@
     "title": "Kontakt · Dominik Tantscher",
     "description": "Schreiben Sie mir, rufen Sie an unter 0664 50 77 100 oder beschreiben Sie Ihren Ablauf im Online-Fragebogen."
   },
-  "hero": { "label": "KONTAKT", "title": "Kontakt" },
+  "hero": {
+    "label": "KONTAKT",
+    "title": "Kontakt"
+  },
   "form": {
     "fields": [
-      { "label": "NAME *", "name": "name", "type": "text", "autocomplete": "name", "required": true, "maxlength": 200, "error": "Bitte geben Sie Ihren Namen an." },
-      { "label": "BETRIEB / FIRMA", "name": "firma", "type": "text", "autocomplete": "organization", "required": false, "maxlength": 200 },
-      { "label": "E-MAIL *", "name": "email", "type": "email", "autocomplete": "email", "required": true, "maxlength": 254, "error": "Bitte geben Sie eine gültige E-Mail-Adresse an." },
-      { "label": "TELEFON", "name": "telefon", "type": "tel", "autocomplete": "tel", "required": false, "maxlength": 50 }
+      {
+        "label": "NAME *",
+        "name": "name",
+        "type": "text",
+        "autocomplete": "name",
+        "required": true,
+        "maxlength": 200,
+        "error": "Bitte geben Sie Ihren Namen an."
+      },
+      {
+        "label": "BETRIEB / FIRMA",
+        "name": "firma",
+        "type": "text",
+        "autocomplete": "organization",
+        "required": false,
+        "maxlength": 200
+      },
+      {
+        "label": "E-MAIL *",
+        "name": "email",
+        "type": "email",
+        "autocomplete": "email",
+        "required": true,
+        "maxlength": 254,
+        "error": "Bitte geben Sie eine gültige E-Mail-Adresse an."
+      },
+      {
+        "label": "TELEFON",
+        "name": "telefon",
+        "type": "tel",
+        "autocomplete": "tel",
+        "required": false,
+        "maxlength": 50
+      }
     ],
-    "message": { "label": "NACHRICHT *", "name": "nachricht", "rows": 7, "required": true, "maxlength": 5000, "error": "Bitte schreiben Sie kurz, worum es geht." },
+    "message": {
+      "label": "NACHRICHT *",
+      "name": "nachricht",
+      "rows": 7,
+      "required": true,
+      "maxlength": 5000,
+      "error": "Bitte schreiben Sie kurz, worum es geht."
+    },
     "hintBefore": "* Pflichtfeld. Ihre Angaben verwende ich nur zur Bearbeitung Ihrer Anfrage. Details in der ",
     "hintLink": "Datenschutzerklärung",
     "hintAfter": ".",
@@ -19,8 +59,37 @@
     "successTitle": "Danke, Ihre Nachricht ist angekommen.",
     "successText": "Ich melde mich persönlich bei Ihnen.",
     "errorBefore": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an ",
-    "errorAfter": "."
+    "errorAfter": ".",
+    "topic": {
+      "label": "ANLIEGEN *",
+      "name": "anliegen",
+      "placeholder": "Bitte wählen",
+      "error": "Bitte wählen Sie ein Anliegen aus.",
+      "options": [
+        {
+          "value": "prozess",
+          "label": "KI-Implementierung"
+        },
+        {
+          "value": "organisation",
+          "label": "KI-Beratung"
+        },
+        {
+          "value": "schulung",
+          "label": "Schulung"
+        },
+        {
+          "value": "sonstiges",
+          "label": "Etwas anderes"
+        }
+      ]
+    },
+    "confidentialHint": "Bitte schicken Sie im Formular keine vertraulichen Unterlagen. Die besprechen wir im Erstgespräch."
   },
   "emailLabel": "E-MAIL",
-  "phoneLabel": "TELEFON"
+  "phoneLabel": "TELEFON",
+  "intro": {
+    "title": "Worum geht es?",
+    "text": "Schreiben Sie mir kurz Ihr Anliegen. Ich melde mich mit einer ehrlichen Einschätzung, welcher Weg passt."
+  }
 }

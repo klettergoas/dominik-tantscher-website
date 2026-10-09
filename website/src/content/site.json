@@ -28,10 +28,10 @@
       "href": "/leistungen"
     },
     {
-      "key": "preise",
-      "label": "PREISE",
-      "mobileLabel": "Preise",
-      "href": "/preise"
+      "key": "praxisbeispiele",
+      "label": "PRAXISBEISPIELE",
+      "mobileLabel": "Praxisbeispiele",
+      "href": "/praxisbeispiele"
     },
     {
       "key": "referenzen",
@@ -58,6 +58,6 @@
   },
   "pricesButton": {
     "label": "LEISTUNGEN UND PREISE",
-    "href": "/preise"
+    "href": "/leistungen#ki-implementierung"
   }
 }

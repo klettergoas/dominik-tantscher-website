@@ -40,6 +40,13 @@ const { active } = Astro.props;
     overflow-y: auto;
   }
   .mobile-menu[hidden] { display: none; }
+  /* Inhalt wie die Seite auf 1280 px begrenzt */
+  .mobile-menu__head, .mobile-menu__nav, .mobile-menu__foot {
+    width: 100%;
+    max-width: var(--max);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .mobile-menu__head {
     flex: none;
     height: var(--header-h);
@@ -140,6 +147,9 @@ const { active } = Astro.props;
 
     toggle.addEventListener('click', open);
     close.addEventListener('click', () => shut());
+    desktop.addEventListener('change', (e) => {
+      if (e.matches && !menu.hidden) shut(false);
+    });
     menu.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -156,9 +166,6 @@ const { active } = Astro.props;
           first.focus();
         }
       }
-    });
-    desktop.addEventListener('change', (e) => {
-      if (e.matches && !menu.hidden) shut(false);
     });
   }
 </script>

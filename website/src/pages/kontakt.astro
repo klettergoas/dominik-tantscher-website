@@ -17,6 +17,10 @@ import { nbsp } from '../lib/format';
 
   <section class="grid contact" aria-label="Kontaktmöglichkeiten">
     <div class="contact__form">
+      <div class="contact__intro">
+        <h2 class="contact__intro-title">{page.intro.title}</h2>
+        <p class="body">{page.intro.text}</p>
+      </div>
       <ContactForm />
     </div>
     <aside class="contact__side">
@@ -47,6 +51,16 @@ import { nbsp } from '../lib/format';
     padding: 0 var(--pad-x) var(--sec-y);
   }
   .contact__form { grid-column: 1 / span 7; }
+  .contact__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .contact__intro-title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
   .contact__side {
     grid-column: 9 / span 4;
     display: flex;

@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "KI-Einrichtung für Kleinbetriebe · Dominik Tantscher",
-    "description": "Ich richte KI persönlich in Ihrem Betrieb ein – passend zu Ihren Abläufen, sicher mit Ihren Daten. Vor Ort oder online."
+    "title": "KI-Implementierung und KI-Beratung · Dominik Tantscher",
+    "description": "Ich bringe KI wirksam in den Arbeitsalltag: von der konkreten Prozesslösung bis zu Standortbestimmung, Governance und Schulung. Vor Ort oder online."
   },
   "hero": {
-    "label": "KI-EINRICHTUNG FÜR KLEINBETRIEBE",
+    "label": "KI-IMPLEMENTIERUNG UND KI-BERATUNG",
     "title": "Weniger Büroarbeit.",
     "titleAccent": "Mehr Zeit für Ihre Kunden.",
     "lead": "Ich richte künstliche Intelligenz persönlich in Ihrem Betrieb ein – passend zu Ihren Abläufen, sicher im Umgang mit Ihren Daten und so verständlich, dass Ihr Team sie jeden Tag nutzt."
   },
   "why": {
     "label": "01 — WARUM ICH",
-    "title": "KI ist da. Nur in kleinen Betrieben arbeitet sie noch nicht.",
-    "text": "Konzerne nutzen KI längst im Alltag, Kleinbetrieben fehlt dafür die Zeit. Beratungen sind auf Großunternehmen zugeschnitten, der Selbstversuch endet oft in einem Chatfenster. Genau diese Lücke schließe ich – als fester Ansprechpartner, der Ihren Betrieb versteht.",
+    "title": "KI ist da. Nur im Arbeitsalltag arbeitet sie oft noch nicht.",
+    "text": "Werkzeuge gibt es genug, im Alltag fehlt die Zeit, sie einzurichten. Viele Beratungen bleiben beim Konzept, der Selbstversuch endet oft in einem Chatfenster. Genau diese Lücke schließe ich – als fester Ansprechpartner, der Ihren Betrieb versteht.",
     "goalLabel": "MEIN ZIEL",
     "goal": "KI, die in Ihrem Betrieb verlässlich mitarbeitet – statt nur ausprobiert zu werden."
   },
@@ -29,10 +29,83 @@
     ],
     "summary": "Jeder Haken ist ein Ablauf, den KI für Sie vorbereiten kann."
   },
-  "servicesLabel": "03 — LEISTUNGEN · ALLES AUS EINER HAND",
-  "benefitsLabel": "04 — IHR NUTZEN",
+  "benefitsLabel": "03 — IHR NUTZEN",
   "tailored": {
     "strong": "Maßgeschneidert statt von der Stange.",
-    "text": "Ich bringe Erfahrung aus KI-Strategie, KI-Umsetzung und KI-Governance in der Industrie mit – und mache dieses Wissen für kleine Betriebe nutzbar. Persönlich vor Ort oder online."
+    "text": "Ich bringe Erfahrung aus KI-Strategie, KI-Umsetzung und KI-Governance in der Industrie mit – und mache dieses Wissen für Ihren Betrieb nutzbar. Persönlich vor Ort oder online."
+  },
+  "ways": {
+    "title": "KI wirksam in den Arbeitsalltag bringen",
+    "text": "Von der konkreten Prozesslösung bis zu Strategie, Governance und Befähigung. Ich sorge dafür, dass KI nicht nur ausprobiert, sondern im Alltag genutzt wird.",
+    "cards": [
+      {
+        "quote": "„Ich möchte einen konkreten Prozess verbessern“",
+        "sub": "KI-Implementierung",
+        "text": "Angebote schreiben, Anfragen beantworten, Dokumente erstellen: Ich nehme mir einen Arbeitsprozess vor und bringe die Lösung in Ihren Betrieb. Mit klaren Paketen und Preisen.",
+        "points": [
+          "Klare Pakete und Fixpreise",
+          "Konkrete Beispiele aus dem Büroalltag",
+          "Einstieg mit dem Potenzialcheck"
+        ],
+        "primary": {
+          "label": "Potenzialcheck vereinbaren",
+          "href": "/kontakt?anliegen=prozess"
+        },
+        "secondary": {
+          "label": "Pakete und Preise ansehen",
+          "href": "/leistungen#ki-implementierung"
+        }
+      },
+      {
+        "quote": "„Wir müssen KI strukturiert im Unternehmen verankern“",
+        "sub": "KI-Beratung",
+        "text": "Wenn Werkzeuge schon im Einsatz sind, aber Regeln, Zuständigkeiten und Kompetenz in der Breite fehlen. Ich schaffe Klarheit darüber, wo Sie stehen, und baue die Strukturen und Fähigkeiten auf, die KI im Alltag tragfähig machen.",
+        "points": [
+          "Standortbestimmung",
+          "Governance und Verantwortlichkeiten",
+          "Enablement und Adoption"
+        ],
+        "primary": {
+          "label": "Erstgespräch vereinbaren",
+          "href": "/kontakt?anliegen=organisation"
+        },
+        "secondary": {
+          "label": "Leistungen ansehen",
+          "href": "/leistungen#ki-beratung"
+        }
+      }
+    ]
+  },
+  "difference": {
+    "title": "Was mich unterscheidet",
+    "items": [
+      {
+        "title": "Umsetzung statt Foliensatz",
+        "text": "Ich baue und richte selbst ein. Auch Strategie- und Governance-Arbeit messe ich daran, ob sie im Alltag funktioniert."
+      },
+      {
+        "title": "Ehrlich, was KI kann und was nicht",
+        "text": "Sie bekommen eine realistische Einschätzung, keine Versprechen, die im Alltag nicht halten."
+      },
+      {
+        "title": "Ihre Werkzeuge, Ihre Zugänge",
+        "text": "Lizenzen und Zugänge laufen auf Ihr Unternehmen. Sie bleiben unabhängig."
+      }
+    ]
+  },
+  "examplesTeaser": {
+    "title": "Praxisbeispiele",
+    "link": {
+      "label": "Alle Praxisbeispiele ansehen",
+      "href": "/praxisbeispiele"
+    }
+  },
+  "closing": {
+    "title": "Nicht sicher, welcher Weg passt?",
+    "text": "Schreiben Sie mir kurz, worum es geht. Ich melde mich mit einer ehrlichen Einschätzung.",
+    "cta": {
+      "label": "Kontakt aufnehmen",
+      "href": "/kontakt"
+    }
   }
 }

@@ -256,6 +256,8 @@ a:hover { color: var(--text); }
   font-size: 14px;
   font-weight: 700;
   letter-spacing: .12em;
+  /* CI: Buttons in Versalien, auch wenn der Quelltext gemischt geschrieben ist */
+  text-transform: uppercase;
   line-height: 1.6;
   padding: 18px 24px;
   border: 0;

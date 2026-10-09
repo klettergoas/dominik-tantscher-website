@@ -1,8 +1,106 @@
 {
   "meta": {
     "title": "Leistungen: Analyse, Einrichtung, Schulung · Dominik Tantscher",
-    "description": "Analyse, Einrichtung von ChatGPT, Claude oder Gemini, eigene Lösungen und Schulungen nach EU AI Act – alles aus einer Hand für kleine Betriebe."
+    "description": "KI-Implementierung mit festen Paketen und Preisen sowie KI-Beratung mit Standortbestimmung, Governance und Schulung – alles aus einer Hand."
   },
-  "hero": { "label": "LEISTUNGEN · ALLES AUS EINER HAND", "title": "Leistungen" },
-  "benefitsLabel": "IHR NUTZEN"
+  "hero": {
+    "label": "LEISTUNGEN · ALLES AUS EINER HAND",
+    "title": "Leistungen"
+  },
+  "benefitsLabel": "IHR NUTZEN",
+  "tabsLabel": "Leistungsbereich wählen",
+  "implementierung": {
+    "id": "ki-implementierung",
+    "tab": "KI-Implementierung",
+    "title": "Ein konkreter Prozess. Eine Lösung, die im Betrieb läuft.",
+    "lead": "Wenn die Büroarbeit neben der eigentlichen Arbeit zu viel Zeit frisst: Ich löse einen konkreten Arbeitsprozess und bringe die Lösung tatsächlich in den Betrieb.",
+    "potenzialcheckCta": {
+      "label": "Potenzialcheck vereinbaren",
+      "href": "/kontakt?anliegen=prozess"
+    },
+    "maintenanceTitle": "Wartung und Weiterentwicklung",
+    "travelTitle": "Anfahrt"
+  },
+  "beratung": {
+    "id": "ki-beratung",
+    "tab": "KI-Beratung",
+    "title": "KI strukturiert im Unternehmen verankern",
+    "lead": "Ich verbinde KI-Strategie, Governance und Befähigung mit konkreter Umsetzung. Sie bekommen Klarheit darüber, wo Sie stehen, und Regeln, die im Alltag funktionieren. Kein Konzept für die Schublade.",
+    "signs": {
+      "title": "Woran Sie merken, dass es Zeit ist",
+      "items": [
+        "Mitarbeitende nutzen KI-Werkzeuge, aber es gibt keine gemeinsamen Regeln.",
+        "Mehrere KI-Initiativen laufen nebeneinander, ohne Überblick.",
+        "Niemand ist klar zuständig für Freigaben, Risiken oder Fragen zum EU AI Act.",
+        "Die Führung will KI vorantreiben, aber es fehlt eine belastbare Ausgangsbasis."
+      ]
+    },
+    "resultsLabel": "Sie erhalten:",
+    "modules": [
+      {
+        "title": "KI-Standortbestimmung",
+        "text": "Ich erfasse Reifegrad, laufende Initiativen, Kompetenzen, Risiken und Engpässe in Ihrem Unternehmen.",
+        "results": [
+          "ein Reifegradbild über Ziele, Anwendungsfälle, Werkzeuge, Governance und Kompetenz",
+          "eine Übersicht über laufende Initiativen und genutzte Werkzeuge",
+          "die wichtigsten Risiken und Engpässe",
+          "priorisierte Handlungsfelder und eine Empfehlung für die nächsten Schritte"
+        ]
+      },
+      {
+        "title": "KI-Governance-Sprint",
+        "text": "Ich entwickle mit Ihnen Rollen, Verantwortlichkeiten und Regeln für den KI-Einsatz, schlank genug, um gelebt zu werden.",
+        "results": [
+          "ein Rollen- und Verantwortlichkeitsmodell",
+          "einen Freigabeprozess für neue KI-Anwendungen",
+          "ein KI-Inventar mit Erstbefüllung",
+          "eine KI-Nutzungsrichtlinie",
+          "Eskalationswege und einen Überprüfungsrhythmus"
+        ]
+      }
+    ],
+    "training": {
+      "title": "Schulung und Enablement",
+      "packageNumber": "04",
+      "cta": {
+        "label": "Termin anfragen",
+        "href": "/kontakt?anliegen=schulung"
+      },
+      "note": "Weiterführende und umfassendere Enablement-Formate sind nach Absprache möglich, zum Beispiel:",
+      "formats": [
+        "Briefing für Führungskräfte: Möglichkeiten, Grenzen, Risiken und die Rolle der Führung",
+        "rollenbezogene Trainings an realen Aufgaben",
+        "Aufbau eines Netzwerks interner KI-Champions",
+        "begleitete Anwendung im Alltag über einen festgelegten Zeitraum",
+        "Dokumentation der Maßnahmen, z. B. als Nachweis zur KI-Kompetenz nach EU AI Act"
+      ]
+    },
+    "process": {
+      "title": "So läuft ein Projekt ab",
+      "steps": [
+        {
+          "title": "Erstgespräch",
+          "text": "Sie schildern die Ausgangslage, ich stelle Fragen."
+        },
+        {
+          "title": "Abgrenzung",
+          "text": "Wir klären Ziel, Umfang und Beteiligte."
+        },
+        {
+          "title": "Angebot",
+          "text": "Sie erhalten ein projektbezogenes Angebot mit Ergebnissen, Phasen und Preis."
+        },
+        {
+          "title": "Umsetzung in Phasen",
+          "text": "An jedem Entscheidungspunkt entscheiden Sie, wie es weitergeht."
+        }
+      ]
+    },
+    "priceNote": "Für Standortbestimmung und Governance-Sprint gibt es keine Paketpreise, weil sich Vorhaben stark unterscheiden. Nach einer kurzen Abgrenzung erhalten Sie ein projektbezogenes Angebot.",
+    "cta": {
+      "label": "Erstgespräch vereinbaren",
+      "href": "/kontakt?anliegen=organisation"
+    },
+    "disclaimer": "Meine Governance-Ergebnisse sind organisatorische Arbeitsgrundlagen. Eine rechtliche Beurteilung, etwa nach EU AI Act oder Datenschutzrecht, ersetzen sie nicht."
+  }
 }

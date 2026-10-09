@@ -1,0 +1,124 @@
+---
+// Paket-Karte mit Pilotpreis und regulärem Preis. Daten ausschließlich aus src/content/preise.json.
+import preise from '../content/preise.json';
+
+type Package = (typeof preise.packages.items)[number];
+interface Props { pk: Package }
+const { pk } = Astro.props;
+const p = preise.packages;
+---
+<article class="card package">
+  <div class="package__head">
+    <span class="package__n" aria-hidden="true">{pk.n}</span>
+    <h3 class="package__title">{pk.title}</h3>
+  </div>
+  <p class="package__text">{pk.text}</p>
+  <dl class="package__prices">
+    <div class="package__price package__price--pilot">
+      <dt>{p.headPilot}</dt>
+      <dd>
+        <span class="package__amount">{pk.pilotPre && <span class="package__pre">{pk.pilotPre}</span>}<span class="package__value">{pk.pilot}</span></span>
+        <span class="package__unit">{pk.pilotLabel}</span>
+      </dd>
+    </div>
+    <div class="package__price">
+      <dt>{p.headRegular}</dt>
+      <dd>
+        <span class="package__amount">{pk.regPre && <span class="package__pre">{pk.regPre}</span>}<span class="package__value">{pk.reg}</span></span>
+        <span class="package__unit">{pk.regLabel}</span>
+      </dd>
+    </div>
+  </dl>
+  <slot />
+</article>
+
+<style>
+  .package {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .package__head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .package__n {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .package__title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .package__text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  .package__prices {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid var(--border);
+  }
+  .package__price {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--bg);
+  }
+  .package__price + .package__price { border-left: 1px solid var(--border); }
+  .package__price--pilot {
+    border-top: 2px solid var(--accent);
+    margin-top: -1px;
+    color: var(--accent);
+  }
+  .package__price dt {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    color: var(--text-2);
+  }
+  .package__price--pilot dt { color: var(--accent); }
+  .package__price dd {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .package__amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .package__pre {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .package__value {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+  }
+  .package__unit {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--text-2);
+  }
+  .package__price--pilot .package__unit { color: var(--text); }
+
+  @media (max-width: 767px) {
+    .package { padding: 24px 20px; gap: 16px; }
+    .package__title { font-size: 22px; }
+    .package__price { padding: 16px; }
+    .package__value { font-size: 26px; }
+  }
+</style>

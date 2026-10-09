@@ -3,12 +3,15 @@ import Base from '../layouts/Base.astro';
 import SectionLabel from '../components/SectionLabel.astro';
 import Button from '../components/Button.astro';
 import CheckList from '../components/CheckList.astro';
-import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import BenefitBlock from '../components/BenefitBlock.astro';
 import CtaBox from '../components/CtaBox.astro';
 import start from '../content/start.json';
 import site from '../content/site.json';
+import examples from '../content/praxisbeispiele.json';
+
+// Teaser: je Linie das erste Beispiel aus /praxisbeispiele
+const teaser = [...new Set(examples.items.map((e) => e.linie))].map((linie) => examples.items.find((e) => e.linie === linie)!);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -43,6 +46,29 @@ const jsonLd = {
     </div>
   </section>
 
+  <section class="section ways" aria-labelledby="wege-titel">
+    <div class="ways__intro">
+      <h2 id="wege-titel" class="h2">{start.ways.title}</h2>
+      <p class="body">{start.ways.text}</p>
+    </div>
+    <div class="ways__cards">
+      {start.ways.cards.map((card) => (
+        <article class="card way">
+          <h3 class="way__quote">{card.quote}</h3>
+          <p class="way__sub">{card.sub}</p>
+          <p class="way__text">{card.text}</p>
+          <ul class="way__points">
+            {card.points.map((pt) => <li><span class="check" aria-hidden="true">✓</span><span>{pt}</span></li>)}
+          </ul>
+          <div class="way__actions">
+            <Button href={card.primary.href}>{card.primary.label}</Button>
+            <a class="text-link way__link" href={card.secondary.href}>{card.secondary.label} →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
   <section class="section grid">
     <SectionLabel class="col-label">{start.why.label}</SectionLabel>
     <div class="col-content why">
@@ -66,10 +92,7 @@ const jsonLd = {
     </div>
   </section>
 
-  <section class="section services" aria-labelledby="leistungen-titel">
-    <SectionLabel>{start.servicesLabel}</SectionLabel>
-    <h2 id="leistungen-titel" class="sr-only">Leistungen</h2>
-    <ServiceGrid />
+  <section class="section">
     <ProcessSteps />
   </section>
 
@@ -77,6 +100,42 @@ const jsonLd = {
 
   <section class="section grid">
     <p class="tailored"><strong>{start.tailored.strong}</strong> {start.tailored.text}</p>
+  </section>
+
+  <section class="section more">
+    <h2 class="h2">{start.difference.title}</h2>
+    <ul class="diff">
+      {start.difference.items.map((item) => (
+        <li>
+          <h3 class="diff__title">{item.title}</h3>
+          <p class="diff__text">{item.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section more">
+    <div class="more__head">
+      <h2 class="h2">{start.examplesTeaser.title}</h2>
+      <a class="text-link" href={start.examplesTeaser.link.href}>{start.examplesTeaser.link.label} →</a>
+    </div>
+    <div class="teaser">
+      {teaser.map((item) => (
+        <a class="card teaser__item" href={start.examplesTeaser.link.href}>
+          <span class="teaser__tags"><span class="teaser__type">{item.typ}</span><span>{item.linie}</span></span>
+          <span class="teaser__title">{item.titel}</span>
+          <span class="teaser__text">{item.ergebnis}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section closing">
+    <div class="closing__text">
+      <h2 class="h2">{start.closing.title}</h2>
+      <p class="body">{start.closing.text}</p>
+    </div>
+    <Button href={start.closing.cta.href} variant="secondary" size="lg">{start.closing.cta.label}</Button>
   </section>
 
   <section class="section section--flush">
@@ -103,6 +162,167 @@ const jsonLd = {
     gap: 16px;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  /* Zwei Wege (Briefing 4.1): direkt nach dem Hero, beide Karten gleichwertig */
+  .ways {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .ways__intro {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ways__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .way {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 2px solid var(--accent);
+  }
+  .way__quote {
+    font-size: 30px;
+    line-height: 1.2;
+    text-wrap: pretty;
+  }
+  .way__sub {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .way__text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+  .way__points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+  .way__points li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .way__points .check { margin-top: 2px; }
+  .way__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+    margin-top: 8px;
+  }
+  .way__link { font-size: 16px; }
+
+  .more {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .more__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .diff {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+  .diff li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 2px solid var(--accent);
+    padding-top: 16px;
+  }
+  .diff__title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .diff__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+  .teaser {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .teaser__item {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--text);
+    transition: border-color 150ms ease;
+  }
+  .teaser__item:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
+  .teaser__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-2);
+  }
+  .teaser__type {
+    padding: 6px 10px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+  }
+  .teaser__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .teaser__text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+  .closing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+  }
+  .closing__text {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .col-label { grid-column: 1 / span 3; }
@@ -144,12 +364,6 @@ const jsonLd = {
     color: var(--accent);
   }
 
-  .services {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-
   .tailored {
     grid-column: 4 / span 8;
     font-size: var(--t-quote);
@@ -166,7 +380,18 @@ const jsonLd = {
     .col-content { grid-column: 1 / span 12; }
     .tailored { grid-column: 1 / span 12; }
   }
+  @media (max-width: 1023px) {
+    .ways__cards, .teaser { grid-template-columns: minmax(0, 1fr); }
+    .diff { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .closing { flex-direction: column; align-items: flex-start; gap: 28px; }
+  }
   @media (max-width: 767px) {
+    .ways { gap: 28px; }
+    .way { padding: 28px 20px; gap: 16px; }
+    .way__quote { font-size: 23px; }
+    .way__actions { flex-direction: column; align-items: stretch; }
+    .more { gap: 24px; }
+    .teaser__item { padding: 24px 20px; }
     .hero {
       padding-bottom: var(--sec-y);
       background-image: none;
@@ -185,7 +410,6 @@ const jsonLd = {
     .why__goal-text { font-size: 20px; }
     .pains { gap: 20px; }
     .pains__summary { font-size: 18px; }
-    .services { gap: 20px; }
     .tailored { line-height: 1.45; }
   }
 </style>
