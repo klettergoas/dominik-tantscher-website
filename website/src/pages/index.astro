@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import SectionLabel from '../components/SectionLabel.astro';
 import Button from '../components/Button.astro';
 import CheckList from '../components/CheckList.astro';
-import ServiceGrid from '../components/ServiceGrid.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import BenefitBlock from '../components/BenefitBlock.astro';
 import CtaBox from '../components/CtaBox.astro';
@@ -93,10 +92,7 @@ const jsonLd = {
     </div>
   </section>
 
-  <section class="section services" aria-labelledby="leistungen-titel">
-    <SectionLabel>{start.servicesLabel}</SectionLabel>
-    <h2 id="leistungen-titel" class="sr-only">Leistungen</h2>
-    <ServiceGrid />
+  <section class="section">
     <ProcessSteps />
   </section>
 
@@ -368,12 +364,6 @@ const jsonLd = {
     color: var(--accent);
   }
 
-  .services {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-
   .tailored {
     grid-column: 4 / span 8;
     font-size: var(--t-quote);
@@ -420,7 +410,6 @@ const jsonLd = {
     .why__goal-text { font-size: 20px; }
     .pains { gap: 20px; }
     .pains__summary { font-size: 18px; }
-    .services { gap: 20px; }
     .tailored { line-height: 1.45; }
   }
 </style>
