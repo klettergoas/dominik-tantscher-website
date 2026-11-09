@@ -16,10 +16,12 @@ const p = preise.packages;
   <dl class="package__prices">
     <div class="package__price">
       <dt>{p.headPrice}</dt>
-      <dd>
-        <span class="package__amount">{pk.pricePre && <span class="package__pre">{pk.pricePre}</span>}<span class="package__value">{pk.price}</span></span>
-        <span class="package__unit">{pk.priceLabel}</span>
-      </dd>
+      {pk.prices.map((pr) => (
+        <dd>
+          <span class="package__amount">{pr.pre && <span class="package__pre">{pr.pre}</span>}<span class="package__value">{pr.value}</span></span>
+          <span class="package__unit">{pr.label}</span>
+        </dd>
+      ))}
     </div>
   </dl>
   <slot />
@@ -74,6 +76,11 @@ const p = preise.packages;
     display: flex;
     flex-direction: column;
     gap: 6px;
+  }
+  .package__price dd + dd {
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
   }
   .package__amount {
     display: flex;

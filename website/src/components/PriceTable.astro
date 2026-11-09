@@ -18,8 +18,12 @@ const p = preise.packages;
       </div>
       <div class="prices__cell" role="cell">
         <span class="prices__mlabel">{p.headPrice}</span>
-        <span class="prices__amount">{pk.pricePre && <span class="prices__pre">{pk.pricePre}</span>}<span class="prices__value">{pk.price}</span></span>
-        <span class="prices__unit">{pk.priceLabel}</span>
+        {pk.prices.map((pr) => (
+          <span class="prices__option">
+            <span class="prices__amount">{pr.pre && <span class="prices__pre">{pr.pre}</span>}<span class="prices__value">{pr.value}</span></span>
+            <span class="prices__unit">{pr.label}</span>
+          </span>
+        ))}
       </div>
     </div>
   ))}
@@ -83,6 +87,17 @@ const p = preise.packages;
     gap: 8px;
   }
   .prices__mlabel { display: none; }
+  /* mehrere Formate je Paket (z. B. Schulung: 90 Minuten / Halbtag) untereinander */
+  .prices__option {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .prices__option + .prices__option {
+    margin-top: 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
   .prices__amount {
     display: flex;
     align-items: baseline;

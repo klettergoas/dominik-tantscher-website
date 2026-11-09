@@ -12,33 +12,54 @@
         "n": "01",
         "title": "Potenzialcheck",
         "text": "90 Minuten online oder vor Ort. Wir gehen Ihren Büroalltag durch. Sie erhalten danach einen Kurzbericht mit drei priorisierten Prozessen und einer realistischen Einschätzung, was KI dort leisten kann – und was nicht. Dazu drei Quick Wins: konkrete Tipps, die Sie sofort selbst umsetzen können, auch ohne Auftrag.",
-        "pricePre": "",
-        "price": "149 €",
-        "priceLabel": "JE TERMIN"
+        "prices": [
+          {
+            "pre": "",
+            "value": "149 €",
+            "label": "JE TERMIN"
+          }
+        ]
       },
       {
         "n": "02",
         "title": "Einrichtung",
         "text": "Ein halber Tag. Ein Werkzeug (ChatGPT, Claude oder Gemini), ein Prozess (z. B. Angebotserstellung), bis zu drei Vorlagen mit Ihrem Firmenwissen und Ihrem Ton, dazu die Einweisung. Jeder weitere Prozess sowie Anbindungen an E-Mail, Kalender oder Ablage nach Aufwand.",
-        "pricePre": "",
-        "price": "499 €",
-        "priceLabel": "FIXPREIS"
+        "prices": [
+          {
+            "pre": "",
+            "value": "499 €",
+            "label": "FIXPREIS"
+          }
+        ]
       },
       {
         "n": "03",
         "title": "Eigene Lösung",
         "text": "Gebaut für ein klar definiertes Problem: ein Chatbot für Ihr Firmenwissen, ein Werkzeug für Ihre Rechnungen. Enthalten sind ein Anwendungsfall, eine Wissensquelle, zwei Korrekturschleifen und ein Übergabe-Workshop, nach dem Sie selbst Änderungen machen können. Alle Zugänge laufen auf Ihren Betrieb. Größerer Umfang nach Aufwand.",
-        "pricePre": "ab",
-        "price": "1.499 €",
-        "priceLabel": "FESTPREIS-ANGEBOT"
+        "prices": [
+          {
+            "pre": "ab",
+            "value": "1.499 €",
+            "label": "FESTPREIS-ANGEBOT"
+          }
+        ]
       },
       {
         "n": "04",
         "title": "Schulung und Begleitung",
         "text": "Praxisnah an Ihren eigenen Aufgaben, nicht an Beispielen. Auf Wunsch inklusive der KI-Kompetenz nach EU AI Act, die Betriebe mit KI-Einsatz seit Februar 2025 sicherstellen müssen. Bis 8 Personen.",
-        "pricePre": "",
-        "price": "499 €",
-        "priceLabel": "HALBTAG"
+        "prices": [
+          {
+            "pre": "",
+            "value": "149 €",
+            "label": "90 MINUTEN"
+          },
+          {
+            "pre": "",
+            "value": "499 €",
+            "label": "HALBTAG"
+          }
+        ]
       }
     ],
     "headPrice": "PREIS"
