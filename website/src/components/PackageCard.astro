@@ -1,5 +1,5 @@
 ---
-// Paket-Karte mit Pilotpreis und regulärem Preis. Daten ausschließlich aus src/content/preise.json.
+// Paket-Karte mit Preis. Daten ausschließlich aus src/content/preise.json.
 import preise from '../content/preise.json';
 
 type Package = (typeof preise.packages.items)[number];
@@ -14,18 +14,11 @@ const p = preise.packages;
   </div>
   <p class="package__text">{pk.text}</p>
   <dl class="package__prices">
-    <div class="package__price package__price--pilot">
-      <dt>{p.headPilot}</dt>
-      <dd>
-        <span class="package__amount">{pk.pilotPre && <span class="package__pre">{pk.pilotPre}</span>}<span class="package__value">{pk.pilot}</span></span>
-        <span class="package__unit">{pk.pilotLabel}</span>
-      </dd>
-    </div>
     <div class="package__price">
-      <dt>{p.headRegular}</dt>
+      <dt>{p.headPrice}</dt>
       <dd>
-        <span class="package__amount">{pk.regPre && <span class="package__pre">{pk.regPre}</span>}<span class="package__value">{pk.reg}</span></span>
-        <span class="package__unit">{pk.regLabel}</span>
+        <span class="package__amount">{pk.pricePre && <span class="package__pre">{pk.pricePre}</span>}<span class="package__value">{pk.price}</span></span>
+        <span class="package__unit">{pk.priceLabel}</span>
       </dd>
     </div>
   </dl>
@@ -61,8 +54,6 @@ const p = preise.packages;
   }
   .package__prices {
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     border: 1px solid var(--border);
   }
   .package__price {
@@ -72,19 +63,12 @@ const p = preise.packages;
     gap: 8px;
     background: var(--bg);
   }
-  .package__price + .package__price { border-left: 1px solid var(--border); }
-  .package__price--pilot {
-    border-top: 2px solid var(--accent);
-    margin-top: -1px;
-    color: var(--accent);
-  }
   .package__price dt {
     font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: .18em;
     color: var(--text-2);
   }
-  .package__price--pilot dt { color: var(--accent); }
   .package__price dd {
     margin: 0;
     display: flex;
@@ -95,6 +79,7 @@ const p = preise.packages;
     display: flex;
     align-items: baseline;
     gap: 6px;
+    color: var(--accent);
   }
   .package__pre {
     font-size: 16px;
@@ -111,9 +96,8 @@ const p = preise.packages;
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: .16em;
-    color: var(--text-2);
+    color: var(--text);
   }
-  .package__price--pilot .package__unit { color: var(--text); }
 
   @media (max-width: 767px) {
     .package { padding: 24px 20px; gap: 16px; }

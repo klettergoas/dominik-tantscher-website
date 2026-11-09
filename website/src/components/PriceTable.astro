@@ -2,11 +2,10 @@
 import preise from '../content/preise.json';
 const p = preise.packages;
 ---
-<div class="prices" role="table" aria-label="Leistungspakete mit Pilotpreis und regulärem Preis">
+<div class="prices" role="table" aria-label="Leistungspakete mit Preis">
   <div class="prices__row prices__row--head" role="row">
     <div class="prices__head-service" role="columnheader">{p.headService}</div>
-    <div class="prices__head-pilot" role="columnheader">{p.headPilot}</div>
-    <div class="prices__head-reg" role="columnheader">{p.headRegular}</div>
+    <div class="prices__head-price" role="columnheader">{p.headPrice}</div>
   </div>
   {p.items.map((pk) => (
     <div class="prices__row" role="row">
@@ -17,15 +16,10 @@ const p = preise.packages;
           <p class="prices__text">{pk.text}</p>
         </div>
       </div>
-      <div class="prices__cell prices__cell--pilot" role="cell">
-        <span class="prices__mlabel">{p.headPilot}</span>
-        <span class="prices__amount">{pk.pilotPre && <span class="prices__pre">{pk.pilotPre}</span>}<span class="prices__value">{pk.pilot}</span></span>
-        <span class="prices__unit">{pk.pilotLabel}</span>
-      </div>
       <div class="prices__cell" role="cell">
-        <span class="prices__mlabel">{p.headRegular}</span>
-        <span class="prices__amount">{pk.regPre && <span class="prices__pre">{pk.regPre}</span>}<span class="prices__value">{pk.reg}</span></span>
-        <span class="prices__unit">{pk.regLabel}</span>
+        <span class="prices__mlabel">{p.headPrice}</span>
+        <span class="prices__amount">{pk.pricePre && <span class="prices__pre">{pk.pricePre}</span>}<span class="prices__value">{pk.price}</span></span>
+        <span class="prices__unit">{pk.priceLabel}</span>
       </div>
     </div>
   ))}
@@ -36,11 +30,11 @@ const p = preise.packages;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border);
-    --col-price: 208px;
+    --col-price: 240px;
   }
   .prices__row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) var(--col-price) var(--col-price);
+    grid-template-columns: minmax(0, 1fr) var(--col-price);
     border-bottom: 1px solid var(--border);
   }
   .prices__row:last-child { border-bottom: 0; }
@@ -51,15 +45,7 @@ const p = preise.packages;
     color: var(--text-2);
   }
   .prices__head-service { padding: 18px 0 18px 28px; }
-  .prices__head-pilot {
-    padding: 18px 28px;
-    background: var(--surface);
-    color: var(--accent);
-    border-left: 1px solid var(--border);
-    border-top: 2px solid var(--accent);
-    margin-top: -1px;
-  }
-  .prices__head-reg {
+  .prices__head-price {
     padding: 18px 28px;
     border-left: 1px solid var(--border);
   }
@@ -91,19 +77,17 @@ const p = preise.packages;
   .prices__cell {
     padding: 32px 28px;
     border-left: 1px solid var(--border);
+    background: var(--surface);
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
-  .prices__cell--pilot {
-    background: var(--surface);
-    color: var(--accent);
   }
   .prices__mlabel { display: none; }
   .prices__amount {
     display: flex;
     align-items: baseline;
     gap: 6px;
+    color: var(--accent);
   }
   .prices__pre {
     font-size: 18px;
@@ -120,26 +104,24 @@ const p = preise.packages;
     font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: .18em;
-    color: var(--text-2);
+    color: var(--text);
   }
-  .prices__cell--pilot .prices__unit { color: var(--text); }
 
   @media (max-width: 1279px) {
-    .prices { --col-price: 176px; }
+    .prices { --col-price: 200px; }
     .prices__n { padding-left: 24px; }
     .prices__service { grid-template-columns: 60px minmax(0, 1fr); }
     .prices__head-service { padding-left: 24px; }
     .prices__desc { padding-right: 28px; }
-    .prices__cell, .prices__head-pilot, .prices__head-reg { padding-left: 24px; padding-right: 24px; }
+    .prices__cell, .prices__head-price { padding-left: 24px; padding-right: 24px; }
     .prices__value { font-size: 32px; }
   }
 
-  /* Mobil: gestapelt – Titel, Text, dann Pilot/Regulär nebeneinander */
+  /* Mobil: gestapelt – Titel, Text, darunter der Preis */
   @media (max-width: 767px) {
     .prices__row--head { display: none; }
-    .prices__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .prices__row { grid-template-columns: minmax(0, 1fr); }
     .prices__service {
-      grid-column: 1 / span 2;
       grid-template-columns: minmax(0, 1fr);
       padding: 24px 20px;
       gap: 8px;
@@ -149,11 +131,8 @@ const p = preise.packages;
     .prices__title { font-size: 22px; }
     .prices__cell {
       padding: 20px;
-      border-top: 1px solid var(--border);
-    }
-    .prices__cell--pilot {
       border-left: 0;
-      border-top: 2px solid var(--accent);
+      border-top: 1px solid var(--border);
     }
     .prices__mlabel {
       display: block;
@@ -162,7 +141,6 @@ const p = preise.packages;
       letter-spacing: .18em;
       color: var(--text-2);
     }
-    .prices__cell--pilot .prices__mlabel { color: var(--accent); }
     .prices__value { font-size: 28px; }
     .prices__pre { font-size: 16px; }
     .prices__unit { font-size: 11px; letter-spacing: .14em; }

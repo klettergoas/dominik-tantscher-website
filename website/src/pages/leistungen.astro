@@ -85,10 +85,6 @@ const tabs = [impl, ber];
     </section>
 
     <section class="section block">
-      <div class="pilot">
-        <h2 class="pilot__title">{preise.pilot.title}</h2>
-        <p class="pilot__text">{preise.pilot.text}</p>
-      </div>
       <p class="footnote">{preise.footnote}</p>
     </section>
   </div>
@@ -287,24 +283,6 @@ const tabs = [impl, ber];
     color: var(--text-2);
   }
 
-  .pilot {
-    border: 1px solid var(--accent);
-    padding: 48px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-    gap: 48px;
-  }
-  .pilot__title {
-    font-size: 32px;
-    line-height: 1.15;
-    color: var(--accent);
-    text-wrap: pretty;
-  }
-  .pilot__text {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
   .maintenance, .training {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
@@ -432,7 +410,6 @@ const tabs = [impl, ber];
   }
   @media (max-width: 1023px) {
     .maintenance, .training { grid-template-columns: minmax(0, 1fr); }
-    .pilot { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   }
   @media (max-width: 767px) {
     .hero { padding-bottom: 32px; }
@@ -443,9 +420,6 @@ const tabs = [impl, ber];
     .intro { gap: 20px; }
     .block { gap: 24px; }
     .tables { grid-template-columns: minmax(0, 1fr); gap: 56px; }
-    .pilot { padding: 28px 20px; gap: 16px; }
-    .pilot__title { font-size: 24px; }
-    .pilot__text { font-size: 17px; }
     .maintenance, .training { gap: 28px; }
     .bullets li { font-size: 16px; }
     .modules { grid-template-columns: minmax(0, 1fr); }
